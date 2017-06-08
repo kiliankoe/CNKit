@@ -7,6 +7,18 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		39E5766A1EE97464005B0780 /* Hash.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39E576691EE97464005B0780 /* Hash.swift */; };
+		39E5766B1EE97464005B0780 /* Hash.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39E576691EE97464005B0780 /* Hash.swift */; };
+		39E5766C1EE97464005B0780 /* Hash.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39E576691EE97464005B0780 /* Hash.swift */; };
+		39E5766D1EE97464005B0780 /* Hash.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39E576691EE97464005B0780 /* Hash.swift */; };
+		39E5766F1EE97474005B0780 /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39E5766E1EE97474005B0780 /* Result.swift */; };
+		39E576701EE97474005B0780 /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39E5766E1EE97474005B0780 /* Result.swift */; };
+		39E576711EE97474005B0780 /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39E5766E1EE97474005B0780 /* Result.swift */; };
+		39E576721EE97474005B0780 /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39E5766E1EE97474005B0780 /* Result.swift */; };
+		39E576741EE974B6005B0780 /* Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39E576731EE974B6005B0780 /* Error.swift */; };
+		39E576751EE974B6005B0780 /* Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39E576731EE974B6005B0780 /* Error.swift */; };
+		39E576761EE974B6005B0780 /* Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39E576731EE974B6005B0780 /* Error.swift */; };
+		39E576771EE974B6005B0780 /* Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39E576731EE974B6005B0780 /* Error.swift */; };
 		52D6D9871BEFF229002C0205 /* CNKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52D6D97C1BEFF229002C0205 /* CNKit.framework */; };
 		8933C7851EB5B820000D00A4 /* CNKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8933C7841EB5B820000D00A4 /* CNKit.swift */; };
 		8933C7861EB5B820000D00A4 /* CNKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8933C7841EB5B820000D00A4 /* CNKit.swift */; };
@@ -44,6 +56,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		39E576691EE97464005B0780 /* Hash.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hash.swift; sourceTree = "<group>"; };
+		39E5766E1EE97474005B0780 /* Result.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
+		39E576731EE974B6005B0780 /* Error.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Error.swift; sourceTree = "<group>"; };
+		39E576791EE974FF005B0780 /* Marshal.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Marshal.framework; path = Carthage/Build/iOS/Marshal.framework; sourceTree = "<group>"; };
+		39E5767A1EE97505005B0780 /* Marshal.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Marshal.framework; path = Carthage/Build/Mac/Marshal.framework; sourceTree = "<group>"; };
+		39E5767B1EE9750F005B0780 /* Marshal.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Marshal.framework; path = Carthage/Build/watchOS/Marshal.framework; sourceTree = "<group>"; };
+		39E5767C1EE97513005B0780 /* Marshal.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Marshal.framework; path = Carthage/Build/tvOS/Marshal.framework; sourceTree = "<group>"; };
 		52D6D97C1BEFF229002C0205 /* CNKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CNKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		52D6D9861BEFF229002C0205 /* CNKit-iOS Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "CNKit-iOS Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		52D6D9E21BEFFF6E002C0205 /* CNKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CNKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -113,6 +132,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		39E576781EE974FF005B0780 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				39E5767C1EE97513005B0780 /* Marshal.framework */,
+				39E5767B1EE9750F005B0780 /* Marshal.framework */,
+				39E5767A1EE97505005B0780 /* Marshal.framework */,
+				39E576791EE974FF005B0780 /* Marshal.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		52D6D9721BEFF229002C0205 = {
 			isa = PBXGroup;
 			children = (
@@ -120,6 +150,7 @@
 				8933C7831EB5B7EB000D00A4 /* Tests */,
 				52D6D99C1BEFF38C002C0205 /* Configs */,
 				52D6D97D1BEFF229002C0205 /* Products */,
+				39E576781EE974FF005B0780 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -150,6 +181,9 @@
 			isa = PBXGroup;
 			children = (
 				8933C7841EB5B820000D00A4 /* CNKit.swift */,
+				39E576691EE97464005B0780 /* Hash.swift */,
+				39E576731EE974B6005B0780 /* Error.swift */,
+				39E5766E1EE97474005B0780 /* Result.swift */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
@@ -221,6 +255,7 @@
 				52D6D9781BEFF229002C0205 /* Frameworks */,
 				52D6D9791BEFF229002C0205 /* Headers */,
 				52D6D97A1BEFF229002C0205 /* Resources */,
+				39E5767D1EE9754E005B0780 /* Carthage Copy Frameworks */,
 			);
 			buildRules = (
 			);
@@ -257,6 +292,7 @@
 				52D6D9DE1BEFFF6E002C0205 /* Frameworks */,
 				52D6D9DF1BEFFF6E002C0205 /* Headers */,
 				52D6D9E01BEFFF6E002C0205 /* Resources */,
+				39E5767E1EE9757C005B0780 /* Carthage Copy Frameworks */,
 			);
 			buildRules = (
 			);
@@ -275,6 +311,7 @@
 				52D6D9EC1BEFFFBE002C0205 /* Frameworks */,
 				52D6D9ED1BEFFFBE002C0205 /* Headers */,
 				52D6D9EE1BEFFFBE002C0205 /* Resources */,
+				39E5767F1EE9758B005B0780 /* Carthage Copy Frameworks */,
 			);
 			buildRules = (
 			);
@@ -346,16 +383,16 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0720;
-				LastUpgradeCheck = 0810;
-				ORGANIZATIONNAME = "CNKit";
+				LastUpgradeCheck = 0900;
+				ORGANIZATIONNAME = CNKit;
 				TargetAttributes = {
 					52D6D97B1BEFF229002C0205 = {
 						CreatedOnToolsVersion = 7.1;
-						LastSwiftMigration = 0800;
+						LastSwiftMigration = 0900;
 					};
 					52D6D9851BEFF229002C0205 = {
 						CreatedOnToolsVersion = 7.1;
-						LastSwiftMigration = 0800;
+						LastSwiftMigration = 0900;
 					};
 					52D6D9E11BEFFF6E002C0205 = {
 						CreatedOnToolsVersion = 7.1;
@@ -454,12 +491,63 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		39E5767D1EE9754E005B0780 /* Carthage Copy Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/iOS/Marshal.framework",
+			);
+			name = "Carthage Copy Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks";
+		};
+		39E5767E1EE9757C005B0780 /* Carthage Copy Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/watchOS/Marshal.framework",
+			);
+			name = "Carthage Copy Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks";
+		};
+		39E5767F1EE9758B005B0780 /* Carthage Copy Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/tvOS/Marshal.framework",
+			);
+			name = "Carthage Copy Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		52D6D9771BEFF229002C0205 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				39E576741EE974B6005B0780 /* Error.swift in Sources */,
+				39E5766F1EE97474005B0780 /* Result.swift in Sources */,
 				8933C7851EB5B820000D00A4 /* CNKit.swift in Sources */,
+				39E5766A1EE97464005B0780 /* Hash.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -475,7 +563,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				39E576761EE974B6005B0780 /* Error.swift in Sources */,
+				39E576711EE97474005B0780 /* Result.swift in Sources */,
 				8933C7871EB5B820000D00A4 /* CNKit.swift in Sources */,
+				39E5766C1EE97464005B0780 /* Hash.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -483,7 +574,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				39E576771EE974B6005B0780 /* Error.swift in Sources */,
+				39E576721EE97474005B0780 /* Result.swift in Sources */,
 				8933C7881EB5B820000D00A4 /* CNKit.swift in Sources */,
+				39E5766D1EE97464005B0780 /* Hash.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -491,7 +585,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				39E576751EE974B6005B0780 /* Error.swift in Sources */,
+				39E576701EE97474005B0780 /* Result.swift in Sources */,
 				8933C7861EB5B820000D00A4 /* CNKit.swift in Sources */,
+				39E5766B1EE97464005B0780 /* Hash.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
