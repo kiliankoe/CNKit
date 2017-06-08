@@ -8,11 +8,9 @@
 
 import Foundation
 
-// TODO: Evaluate these
 enum Error: Swift.Error {
     case request
-    case server
-    case decode
+    case server(statusCode: Int)
+    case decode(error: Swift.Error)
     case unknownData(error: Swift.Error)
-    case fatal
 }

@@ -19,6 +19,17 @@
 		39E576751EE974B6005B0780 /* Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39E576731EE974B6005B0780 /* Error.swift */; };
 		39E576761EE974B6005B0780 /* Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39E576731EE974B6005B0780 /* Error.swift */; };
 		39E576771EE974B6005B0780 /* Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39E576731EE974B6005B0780 /* Error.swift */; };
+		39E576881EE9775B005B0780 /* APIResource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39E576871EE9775B005B0780 /* APIResource.swift */; };
+		39E576891EE9775B005B0780 /* APIResource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39E576871EE9775B005B0780 /* APIResource.swift */; };
+		39E5768A1EE9775B005B0780 /* APIResource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39E576871EE9775B005B0780 /* APIResource.swift */; };
+		39E5768B1EE9775B005B0780 /* APIResource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39E576871EE9775B005B0780 /* APIResource.swift */; };
+		39E5768D1EE97E5A005B0780 /* Const.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39E5768C1EE97E5A005B0780 /* Const.swift */; };
+		39E5768E1EE97E5A005B0780 /* Const.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39E5768C1EE97E5A005B0780 /* Const.swift */; };
+		39E5768F1EE97E5A005B0780 /* Const.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39E5768C1EE97E5A005B0780 /* Const.swift */; };
+		39E576901EE97E5A005B0780 /* Const.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39E5768C1EE97E5A005B0780 /* Const.swift */; };
+		39E576921EE9B217005B0780 /* HashTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39E576911EE9B217005B0780 /* HashTests.swift */; };
+		39E576931EE9B217005B0780 /* HashTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39E576911EE9B217005B0780 /* HashTests.swift */; };
+		39E576941EE9B217005B0780 /* HashTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39E576911EE9B217005B0780 /* HashTests.swift */; };
 		52D6D9871BEFF229002C0205 /* CNKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52D6D97C1BEFF229002C0205 /* CNKit.framework */; };
 		8933C7851EB5B820000D00A4 /* CNKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8933C7841EB5B820000D00A4 /* CNKit.swift */; };
 		8933C7861EB5B820000D00A4 /* CNKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8933C7841EB5B820000D00A4 /* CNKit.swift */; };
@@ -59,10 +70,9 @@
 		39E576691EE97464005B0780 /* Hash.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hash.swift; sourceTree = "<group>"; };
 		39E5766E1EE97474005B0780 /* Result.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
 		39E576731EE974B6005B0780 /* Error.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Error.swift; sourceTree = "<group>"; };
-		39E576791EE974FF005B0780 /* Marshal.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Marshal.framework; path = Carthage/Build/iOS/Marshal.framework; sourceTree = "<group>"; };
-		39E5767A1EE97505005B0780 /* Marshal.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Marshal.framework; path = Carthage/Build/Mac/Marshal.framework; sourceTree = "<group>"; };
-		39E5767B1EE9750F005B0780 /* Marshal.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Marshal.framework; path = Carthage/Build/watchOS/Marshal.framework; sourceTree = "<group>"; };
-		39E5767C1EE97513005B0780 /* Marshal.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Marshal.framework; path = Carthage/Build/tvOS/Marshal.framework; sourceTree = "<group>"; };
+		39E576871EE9775B005B0780 /* APIResource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIResource.swift; sourceTree = "<group>"; };
+		39E5768C1EE97E5A005B0780 /* Const.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Const.swift; sourceTree = "<group>"; };
+		39E576911EE9B217005B0780 /* HashTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HashTests.swift; sourceTree = "<group>"; };
 		52D6D97C1BEFF229002C0205 /* CNKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CNKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		52D6D9861BEFF229002C0205 /* CNKit-iOS Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "CNKit-iOS Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		52D6D9E21BEFFF6E002C0205 /* CNKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CNKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -132,17 +142,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		39E576781EE974FF005B0780 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				39E5767C1EE97513005B0780 /* Marshal.framework */,
-				39E5767B1EE9750F005B0780 /* Marshal.framework */,
-				39E5767A1EE97505005B0780 /* Marshal.framework */,
-				39E576791EE974FF005B0780 /* Marshal.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
 		52D6D9721BEFF229002C0205 = {
 			isa = PBXGroup;
 			children = (
@@ -150,7 +149,6 @@
 				8933C7831EB5B7EB000D00A4 /* Tests */,
 				52D6D99C1BEFF38C002C0205 /* Configs */,
 				52D6D97D1BEFF229002C0205 /* Products */,
-				39E576781EE974FF005B0780 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -181,9 +179,11 @@
 			isa = PBXGroup;
 			children = (
 				8933C7841EB5B820000D00A4 /* CNKit.swift */,
-				39E576691EE97464005B0780 /* Hash.swift */,
+				39E5768C1EE97E5A005B0780 /* Const.swift */,
+				39E576871EE9775B005B0780 /* APIResource.swift */,
 				39E576731EE974B6005B0780 /* Error.swift */,
 				39E5766E1EE97474005B0780 /* Result.swift */,
+				39E576691EE97464005B0780 /* Hash.swift */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
@@ -192,6 +192,7 @@
 			isa = PBXGroup;
 			children = (
 				8933C7891EB5B82A000D00A4 /* CNKitTests.swift */,
+				39E576911EE9B217005B0780 /* HashTests.swift */,
 			);
 			name = Tests;
 			path = Tests/CNKitTests;
@@ -255,7 +256,6 @@
 				52D6D9781BEFF229002C0205 /* Frameworks */,
 				52D6D9791BEFF229002C0205 /* Headers */,
 				52D6D97A1BEFF229002C0205 /* Resources */,
-				39E5767D1EE9754E005B0780 /* Carthage Copy Frameworks */,
 			);
 			buildRules = (
 			);
@@ -292,7 +292,6 @@
 				52D6D9DE1BEFFF6E002C0205 /* Frameworks */,
 				52D6D9DF1BEFFF6E002C0205 /* Headers */,
 				52D6D9E01BEFFF6E002C0205 /* Resources */,
-				39E5767E1EE9757C005B0780 /* Carthage Copy Frameworks */,
 			);
 			buildRules = (
 			);
@@ -311,7 +310,6 @@
 				52D6D9EC1BEFFFBE002C0205 /* Frameworks */,
 				52D6D9ED1BEFFFBE002C0205 /* Headers */,
 				52D6D9EE1BEFFFBE002C0205 /* Resources */,
-				39E5767F1EE9758B005B0780 /* Carthage Copy Frameworks */,
 			);
 			buildRules = (
 			);
@@ -491,54 +489,6 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
-/* Begin PBXShellScriptBuildPhase section */
-		39E5767D1EE9754E005B0780 /* Carthage Copy Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"$(SRCROOT)/Carthage/Build/iOS/Marshal.framework",
-			);
-			name = "Carthage Copy Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "/usr/local/bin/carthage copy-frameworks";
-		};
-		39E5767E1EE9757C005B0780 /* Carthage Copy Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"$(SRCROOT)/Carthage/Build/watchOS/Marshal.framework",
-			);
-			name = "Carthage Copy Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "/usr/local/bin/carthage copy-frameworks";
-		};
-		39E5767F1EE9758B005B0780 /* Carthage Copy Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"$(SRCROOT)/Carthage/Build/tvOS/Marshal.framework",
-			);
-			name = "Carthage Copy Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "/usr/local/bin/carthage copy-frameworks";
-		};
-/* End PBXShellScriptBuildPhase section */
-
 /* Begin PBXSourcesBuildPhase section */
 		52D6D9771BEFF229002C0205 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -547,7 +497,9 @@
 				39E576741EE974B6005B0780 /* Error.swift in Sources */,
 				39E5766F1EE97474005B0780 /* Result.swift in Sources */,
 				8933C7851EB5B820000D00A4 /* CNKit.swift in Sources */,
+				39E576881EE9775B005B0780 /* APIResource.swift in Sources */,
 				39E5766A1EE97464005B0780 /* Hash.swift in Sources */,
+				39E5768D1EE97E5A005B0780 /* Const.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -556,6 +508,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8933C7901EB5B82D000D00A4 /* CNKitTests.swift in Sources */,
+				39E576921EE9B217005B0780 /* HashTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -566,7 +519,9 @@
 				39E576761EE974B6005B0780 /* Error.swift in Sources */,
 				39E576711EE97474005B0780 /* Result.swift in Sources */,
 				8933C7871EB5B820000D00A4 /* CNKit.swift in Sources */,
+				39E5768A1EE9775B005B0780 /* APIResource.swift in Sources */,
 				39E5766C1EE97464005B0780 /* Hash.swift in Sources */,
+				39E5768F1EE97E5A005B0780 /* Const.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -577,7 +532,9 @@
 				39E576771EE974B6005B0780 /* Error.swift in Sources */,
 				39E576721EE97474005B0780 /* Result.swift in Sources */,
 				8933C7881EB5B820000D00A4 /* CNKit.swift in Sources */,
+				39E5768B1EE9775B005B0780 /* APIResource.swift in Sources */,
 				39E5766D1EE97464005B0780 /* Hash.swift in Sources */,
+				39E576901EE97E5A005B0780 /* Const.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -588,7 +545,9 @@
 				39E576751EE974B6005B0780 /* Error.swift in Sources */,
 				39E576701EE97474005B0780 /* Result.swift in Sources */,
 				8933C7861EB5B820000D00A4 /* CNKit.swift in Sources */,
+				39E576891EE9775B005B0780 /* APIResource.swift in Sources */,
 				39E5766B1EE97464005B0780 /* Hash.swift in Sources */,
+				39E5768E1EE97E5A005B0780 /* Const.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -597,6 +556,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8933C78F1EB5B82C000D00A4 /* CNKitTests.swift in Sources */,
+				39E576931EE9B217005B0780 /* HashTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -605,6 +565,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8933C78E1EB5B82C000D00A4 /* CNKitTests.swift in Sources */,
+				39E576941EE9B217005B0780 /* HashTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -746,6 +707,10 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = Configs/CNKit.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
@@ -770,6 +735,10 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = Configs/CNKit.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
@@ -787,6 +756,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = Configs/CNKitTests.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.CNKit.CNKit-iOS-Tests";
@@ -801,6 +774,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = Configs/CNKitTests.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.CNKit.CNKit-iOS-Tests";
@@ -820,6 +797,10 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/watchOS",
+				);
 				INFOPLIST_FILE = Configs/CNKit.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -842,6 +823,10 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/watchOS",
+				);
 				INFOPLIST_FILE = Configs/CNKit.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -865,6 +850,10 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/tvOS",
+				);
 				INFOPLIST_FILE = Configs/CNKit.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -887,6 +876,10 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/tvOS",
+				);
 				INFOPLIST_FILE = Configs/CNKit.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -911,6 +904,10 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/Mac",
+				);
 				FRAMEWORK_VERSION = A;
 				INFOPLIST_FILE = Configs/CNKit.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
@@ -934,6 +931,10 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/Mac",
+				);
 				FRAMEWORK_VERSION = A;
 				INFOPLIST_FILE = Configs/CNKit.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
@@ -953,6 +954,10 @@
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "-";
 				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/Mac",
+				);
 				INFOPLIST_FILE = Configs/CNKitTests.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.11;
@@ -968,6 +973,10 @@
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "-";
 				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/Mac",
+				);
 				INFOPLIST_FILE = Configs/CNKitTests.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.11;
@@ -982,6 +991,10 @@
 		DD7502961C690C7A006590AF /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/tvOS",
+				);
 				INFOPLIST_FILE = Configs/CNKitTests.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.CNKit.CNKit-tvOS-Tests";
@@ -995,6 +1008,10 @@
 		DD7502971C690C7A006590AF /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/tvOS",
+				);
 				INFOPLIST_FILE = Configs/CNKitTests.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.CNKit.CNKit-tvOS-Tests";
