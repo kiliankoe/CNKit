@@ -17,7 +17,11 @@ extension Hash: APIResource {
     typealias CollectionType = Hash
     static var expectedEncoding = String.Encoding.utf8
 
-    static var request: URLRequest {
+    struct RequestConfig {
+        private init() {}
+    }
+    typealias RequestResource = RequestConfig?
+    static func request(to resource: RequestConfig? = nil) -> URLRequest {
         let url = URL(string: "m/json_gebaeude/hash", relativeTo: Config.baseURL)!
         return URLRequest(url: url)
     }
