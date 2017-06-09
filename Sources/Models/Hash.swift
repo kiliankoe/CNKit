@@ -17,6 +17,7 @@ extension Hash: APIResource {
     typealias CollectionType = Hash
     static var expectedEncoding = String.Encoding.utf8
 
+    // RequestConfig serves no purpose here, but some kind of type has to be specified for every APIResource. At least it's uninitializable and defaults to nil.
     struct RequestConfig {
         private init() {}
     }
