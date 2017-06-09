@@ -11,25 +11,26 @@ import Foundation
 protocol APIResource {
     associatedtype CollectionType: Decodable
     static var expectedEncoding: String.Encoding { get }
-    static var request: URLRequest { get }
+    associatedtype RequestResource
+    static func request(to resource: RequestResource) -> URLRequest
 }
 
 extension APIResource {
-    static func get(params: [String: Any]? = nil, session: URLSession = URLSession.shared, completion: @escaping (Result<CollectionType>) -> Void) {
-        var request = self.request
+    static func fetch(to resource: RequestResource, body: [String: Any]? = nil, session: URLSession = URLSession.shared, completion: @escaping (Result<CollectionType>) -> Void) {
+        var request = self.request(to: resource)
         request.setValue("UTF-8", forHTTPHeaderField: "charset") // if only this were working 100% of the time :/
 //        request.setValue(L10n.LANGID.string, forHTTPHeaderField: "Accept-Language") // TODO
 
-        if let params = params {
+        if let body = body {
             if request.httpMethod == "GET" {
-                print("Adding request parameters to a GET request, this shouldn't be necessary.")
+                fatalError("Adding body to a GET request, this shouldn't be necessary.")
             }
-            guard let paramsData = params.asURLParams.data(using: .utf8) else {
+            guard let bodyData = body.asURLParams.data(using: .utf8) else {
                 completion(.failure(Error.request))
                 return
             }
             request.setValue("application/x-www-form-urlencoded", forHTTPHeaderField: "Content-Type")
-            request.httpBody = paramsData
+            request.httpBody = bodyData
         }
 
         session.dataTask(with: request) { data, response, error in
