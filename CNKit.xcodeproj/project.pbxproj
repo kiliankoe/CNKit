@@ -22,11 +22,9 @@
 
 /* Begin PBXBuildFile section */
 		OBJ_34 /* Package.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_6 /* Package.swift */; };
-		OBJ_40 /* CNKitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_23 /* CNKitTests.swift */; };
 		OBJ_41 /* HashTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_24 /* HashTests.swift */; };
 		OBJ_43 /* CNKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = "CNKit::CNKit::Product" /* CNKit.framework */; };
 		OBJ_50 /* APIResource.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_9 /* APIResource.swift */; };
-		OBJ_51 /* CNKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_10 /* CNKit.swift */; };
 		OBJ_52 /* Const.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_11 /* Const.swift */; };
 		OBJ_53 /* Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_12 /* Error.swift */; };
 		OBJ_54 /* MKMapRect.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_14 /* MKMapRect.swift */; };
@@ -55,9 +53,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		39185D771F641D3200003BDD /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		"CNKit::CNKit::Product" /* CNKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = CNKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		"CNKit::CNKitTests::Product" /* CNKitTests.xctest */ = {isa = PBXFileReference; lastKnownFileType = file; path = CNKitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		OBJ_10 /* CNKit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CNKit.swift; sourceTree = "<group>"; };
 		OBJ_11 /* Const.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Const.swift; sourceTree = "<group>"; };
 		OBJ_12 /* Error.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Error.swift; sourceTree = "<group>"; };
 		OBJ_14 /* MKMapRect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MKMapRect.swift; sourceTree = "<group>"; };
@@ -66,9 +64,7 @@
 		OBJ_18 /* Campus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Campus.swift; sourceTree = "<group>"; };
 		OBJ_19 /* Hash.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hash.swift; sourceTree = "<group>"; };
 		OBJ_20 /* Result.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
-		OBJ_23 /* CNKitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CNKitTests.swift; sourceTree = "<group>"; };
 		OBJ_24 /* HashTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HashTests.swift; sourceTree = "<group>"; };
-		OBJ_25 /* Configs */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Configs; sourceTree = SOURCE_ROOT; };
 		OBJ_6 /* Package.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; path = Package.swift; sourceTree = "<group>"; };
 		OBJ_9 /* APIResource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIResource.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -122,7 +118,6 @@
 		OBJ_22 /* CNKitTests */ = {
 			isa = PBXGroup;
 			children = (
-				OBJ_23 /* CNKitTests.swift */,
 				OBJ_24 /* HashTests.swift */,
 			);
 			name = CNKitTests;
@@ -141,10 +136,10 @@
 		OBJ_5 /*  */ = {
 			isa = PBXGroup;
 			children = (
+				39185D771F641D3200003BDD /* README.md */,
 				OBJ_6 /* Package.swift */,
 				OBJ_7 /* Sources */,
 				OBJ_21 /* Tests */,
-				OBJ_25 /* Configs */,
 				OBJ_26 /* Products */,
 			);
 			name = "";
@@ -162,7 +157,6 @@
 			isa = PBXGroup;
 			children = (
 				OBJ_9 /* APIResource.swift */,
-				OBJ_10 /* CNKit.swift */,
 				OBJ_11 /* Const.swift */,
 				OBJ_12 /* Error.swift */,
 				OBJ_13 /* Extensions */,
@@ -264,7 +258,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 0;
 			files = (
-				OBJ_40 /* CNKitTests.swift in Sources */,
 				OBJ_41 /* HashTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -274,7 +267,6 @@
 			buildActionMask = 0;
 			files = (
 				OBJ_50 /* APIResource.swift in Sources */,
-				OBJ_51 /* CNKit.swift in Sources */,
 				OBJ_52 /* Const.swift in Sources */,
 				OBJ_53 /* Error.swift in Sources */,
 				OBJ_54 /* MKMapRect.swift in Sources */,
