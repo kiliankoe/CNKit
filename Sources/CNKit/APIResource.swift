@@ -72,7 +72,7 @@ extension APIResource {
     }
 }
 
-extension Dictionary where Key: ExpressibleByStringLiteral {
+extension Dictionary where Key == String {
     var asURLParams: String {
         return self
             .reduce([]) { (params, param: (key: Key, value: Value)) -> [String] in
