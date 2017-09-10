@@ -1,9 +1,15 @@
 import Foundation
 
 protocol APIResource {
+    // The type of data returned when fetching this resource, e.g. self or Array<self>, ...
     associatedtype CollectionType: Decodable
+
+    // How the response for this resource is encoded, see usage of this property below.
     static var expectedEncoding: String.Encoding { get }
+
+    // A type containing the necessary information to request a specific member of this resource.
     associatedtype RequestResource
+    // Build the request to fetching a specific member using `RequestResource`.
     static func request(to resource: RequestResource) -> URLRequest
 }
 
