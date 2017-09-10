@@ -16,15 +16,17 @@ protocol APIResource {
 }
 
 extension APIResource {
-    static func fetch(to resource: RequestResource, body: [String: Any]? = nil, session: URLSession = URLSession.shared, completion: @escaping (Result<CollectionType>) -> Void) {
+    static func fetch(to resource: RequestResource,
+                      body: [String: Any]? = nil,
+                      session: URLSession = URLSession.shared, 
+                      completion: @escaping (Result<CollectionType>) -> Void) {
         var request = self.request(to: resource)
         request.setValue("UTF-8", forHTTPHeaderField: "charset") // if only this were working 100% of the time :/
 //        request.setValue(L10n.LANGID.string, forHTTPHeaderField: "Accept-Language") // TODO
 
         if let body = body {
-            if request.httpMethod == "GET" {
-                fatalError("Adding body to a GET request, this shouldn't be necessary.")
-            }
+            assert(request.httpMethod != "GET", "GET requests shouldn't have a body specified")
+
             guard let bodyData = body.asURLParams.data(using: .utf8) else {
                 completion(.failure(Error.request))
                 return
@@ -33,7 +35,7 @@ extension APIResource {
             request.httpBody = bodyData
         }
 
-        session.dataTask(with: request) { data, response, error in
+        let session = session.dataTask(with: request) { data, response, error in
             guard
                 var data = data,
                 let response = response as? HTTPURLResponse,
@@ -56,7 +58,9 @@ extension APIResource {
             }
 
             // Unfortunately there's are non-JSON-compliant newlines in the data, so we have to strip those as well
-            data = (String(data: data, encoding: .utf8)?.replacingOccurrences(of: "\n", with: "").data(using: .utf8))!
+            data = (String(data: data, encoding: .utf8)?
+                .replacingOccurrences(of: "\n", with: "")
+                .data(using: .utf8))!
 
             let decoded: CollectionType
             do {
@@ -68,7 +72,8 @@ extension APIResource {
 
             completion(.success(decoded))
 
-        }.resume()
+        }
+        session.resume()
     }
 }
 
