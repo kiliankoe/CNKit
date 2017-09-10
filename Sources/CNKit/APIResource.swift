@@ -17,7 +17,7 @@ protocol APIResource {
 
 extension APIResource {
     static func fetch(to resource: RequestResource,
-                      body: [String: Any]? = nil,
+                      body: [String: Any]?,
                       session: URLSession = URLSession.shared, 
                       completion: @escaping (Result<CollectionType>) -> Void) {
         var request = self.request(to: resource)

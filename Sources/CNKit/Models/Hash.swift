@@ -30,6 +30,6 @@ extension Hash: APIResource {
     /// Fetch the current data hash value.
     public static func fetch(session: URLSession = URLSession.shared,
                              completion: @escaping (Result<Hash>) -> Void) {
-        return Hash.fetch(to: nil, session: session, completion: completion)
+        return Hash.fetch(to: nil, body: nil, session: session, completion: completion)
     }
 }
