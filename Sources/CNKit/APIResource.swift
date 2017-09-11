@@ -63,14 +63,19 @@ extension APIResource {
                 data = isoString.data(using: .utf8)!
             }
 
-            // Unfortunately there's are non-JSON-compliant newlines in the data, so we have to strip those as well
-            data = (String(data: data, encoding: .utf8)?
+            // Unfortunately there are non-JSON-compliant newlines in the data, so we have to strip those as well
+            guard let newlinestrippedData = String(data: data, encoding: .utf8)?
                 .replacingOccurrences(of: "\n", with: "")
-                .data(using: .utf8))!
+                .data(using: .utf8)
+            else {
+                print("Maybe the wrong encoding was used to decode the data?")
+                completion(.failure(Error.unknownData(error: nil)))
+                return
+            }
 
             let decoded: CollectionType
             do {
-                decoded = try JSONDecoder().decode(CollectionType.self, from: data)
+                decoded = try JSONDecoder().decode(CollectionType.self, from: newlinestrippedData)
             } catch let error {
                 completion(.failure(Error.decode(error: error)))
                 return
