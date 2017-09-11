@@ -16,7 +16,7 @@ protocol APIResource {
 extension APIResource {
     static func fetch(resource: RequestResource,
                       body: [String: Any]?,
-                      session: URLSession = URLSession.shared, 
+                      session: URLSession,
                       completion: @escaping (Result<CollectionType>) -> Void) {
         var request = self.request(to: resource)
         request.setValue("UTF-8", forHTTPHeaderField: "charset") // if only this were working 100% of the time :/
