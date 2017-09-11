@@ -26,7 +26,7 @@ extension APIResource {
             assert(request.httpMethod != "GET", "GET requests shouldn't have a body specified")
 
             guard let bodyData = body.asURLParams.data(using: .utf8) else {
-                completion(.failure(Error.request))
+                completion(.failure(Error.request(reason: ""))) // FIXME
                 return
             }
             request.setValue("application/x-www-form-urlencoded", forHTTPHeaderField: "Content-Type")
@@ -39,7 +39,7 @@ extension APIResource {
                 let response = response as? HTTPURLResponse,
                 error == nil
             else {
-                completion(.failure(Error.request))
+                completion(.failure(Error.request(reason: ""))) // FIXME
                 return
             }
 
