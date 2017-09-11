@@ -18,7 +18,7 @@ class HashTests: XCTestCase {
     func testFetch() {
         let e = expectation(description: "get data")
 
-        Hash.fetch { result in
+        try! Hash.fetch { result in
             guard let hash = result.success else {
                 XCTFail("got error")
                 e.fulfill()

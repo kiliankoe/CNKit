@@ -92,9 +92,11 @@ extension BuildingComplex.AccessibilityInfo: APIResource {
         let buildingID: String
     }
 
-    static func request(to resource: BuildingComplex.AccessibilityInfo.RequestResource) -> URLRequest {
-        // FIXME: This needs urlqueryallowed escapes and error handling
-        let url = URL(string: "api/0.1/buildinginfo/\(resource.buildingID)?accessibility=true", relativeTo: Config.baseURL)!
+    static func request(to resource: BuildingComplex.AccessibilityInfo.RequestResource) throws -> URLRequest {
+        guard let buildingID = resource.buildingID.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) else {
+            throw Error.invalidQuery(reason: "failed to encode building id \(resource.buildingID)")
+        }
+        let url = URL(string: "api/0.1/buildinginfo/\(buildingID)?accessibility=true", relativeTo: Config.baseURL)!
         return URLRequest(url: url)
     }
 
@@ -104,10 +106,11 @@ extension BuildingComplex.AccessibilityInfo: APIResource {
     ///   - buildingID: building abbreviation, e.g. `APB`
     ///   - session: session to use, defaults to `.shared`
     ///   - completion: handler
+    /// - Throws: possible error on constructing the request
     public static func fetch(forBuilding buildingID: String,
                              session: URLSession = .shared,
-                             completion: @escaping (Result<BuildingComplex.AccessibilityInfo>) -> Void) {
-        BuildingComplex.AccessibilityInfo.fetch(resource: BuildingComplex.AccessibilityInfo.RequestResource(buildingID: buildingID), body: nil, session: session, completion: completion)
+                             completion: @escaping (Result<BuildingComplex.AccessibilityInfo>) -> Void) throws {
+        try BuildingComplex.AccessibilityInfo.fetch(resource: BuildingComplex.AccessibilityInfo.RequestResource(buildingID: buildingID), body: nil, session: session, completion: completion)
     }
 }
 
@@ -117,8 +120,9 @@ extension BuildingComplex {
     /// - Parameters:
     ///   - session: session to use, defaults to `.shared`
     ///   - completion: handler
+    /// - Throws: possible error on constructing the request
     public func fetchAccessibilityInfo(session: URLSession = .shared,
-                                              completion: @escaping (Result<BuildingComplex.AccessibilityInfo>) -> Void) {
-            BuildingComplex.AccessibilityInfo.fetch(forBuilding: self.abbrev, session: session, completion: completion)
+                                              completion: @escaping (Result<BuildingComplex.AccessibilityInfo>) -> Void) throws {
+            try BuildingComplex.AccessibilityInfo.fetch(forBuilding: self.abbrev, session: session, completion: completion)
     }
 }

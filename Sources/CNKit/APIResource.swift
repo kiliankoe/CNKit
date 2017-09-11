@@ -10,15 +10,15 @@ protocol APIResource {
     // A type containing the necessary information to request a specific member of this resource.
     associatedtype RequestResource
     // Build the request to fetching a specific member using `RequestResource`.
-    static func request(to resource: RequestResource) -> URLRequest
+    static func request(to resource: RequestResource) throws -> URLRequest
 }
 
 extension APIResource {
     static func fetch(resource: RequestResource,
                       body: [String: Any]?,
                       session: URLSession,
-                      completion: @escaping (Result<CollectionType>) -> Void) {
-        var request = self.request(to: resource)
+                      completion: @escaping (Result<CollectionType>) -> Void) throws {
+        var request = try self.request(to: resource)
         request.setValue("UTF-8", forHTTPHeaderField: "charset") // if only this were working 100% of the time :/
 //        request.setValue(L10n.LANGID.string, forHTTPHeaderField: "Accept-Language") // TODO
 
@@ -26,7 +26,7 @@ extension APIResource {
             assert(request.httpMethod != "GET", "GET requests shouldn't have a body specified")
 
             guard let bodyData = body.asURLParams.data(using: .utf8) else {
-                completion(.failure(Error.request(reason: ""))) // FIXME
+                completion(.failure(Error.request))
                 return
             }
             request.setValue("application/x-www-form-urlencoded", forHTTPHeaderField: "Content-Type")
@@ -39,7 +39,7 @@ extension APIResource {
                 let response = response as? HTTPURLResponse,
                 error == nil
             else {
-                completion(.failure(Error.request(reason: ""))) // FIXME
+                completion(.failure(Error.request))
                 return
             }
 
