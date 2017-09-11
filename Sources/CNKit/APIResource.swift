@@ -17,8 +17,16 @@ extension APIResource {
     static func fetch(resource: RequestResource,
                       body: [String: Any]?,
                       session: URLSession,
-                      completion: @escaping (Result<CollectionType>) -> Void) throws {
-        var request = try self.request(to: resource)
+                      completion: @escaping (Result<CollectionType>) -> Void) {
+
+        var request: URLRequest
+        do {
+            request = try self.request(to: resource)
+        } catch {
+            completion(.failure(error))
+            return
+        }
+
         request.setValue("UTF-8", forHTTPHeaderField: "charset") // if only this were working 100% of the time :/
 //        request.setValue(L10n.LANGID.string, forHTTPHeaderField: "Accept-Language") // TODO
 

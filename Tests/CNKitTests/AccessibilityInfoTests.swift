@@ -34,7 +34,7 @@ class AccessibilityInfoTests: XCTestCase {
     func testFetch() {
         let e = expectation(description: "get data")
 
-        try! BuildingComplex.AccessibilityInfo.fetch(forBuilding: "APB") { result in
+        BuildingComplex.AccessibilityInfo.fetch(forBuilding: "APB") { result in
             guard let acc = result.success else {
                 XCTFail("got error")
                 e.fulfill()

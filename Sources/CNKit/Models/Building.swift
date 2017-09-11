@@ -109,8 +109,8 @@ extension BuildingComplex.AccessibilityInfo: APIResource {
     /// - Throws: possible error on constructing the request
     public static func fetch(forBuilding buildingID: String,
                              session: URLSession = .shared,
-                             completion: @escaping (Result<BuildingComplex.AccessibilityInfo>) -> Void) throws {
-        try BuildingComplex.AccessibilityInfo.fetch(resource: BuildingComplex.AccessibilityInfo.RequestResource(buildingID: buildingID), body: nil, session: session, completion: completion)
+                             completion: @escaping (Result<BuildingComplex.AccessibilityInfo>) -> Void) {
+        BuildingComplex.AccessibilityInfo.fetch(resource: BuildingComplex.AccessibilityInfo.RequestResource(buildingID: buildingID), body: nil, session: session, completion: completion)
     }
 }
 
@@ -122,7 +122,7 @@ extension BuildingComplex {
     ///   - completion: handler
     /// - Throws: possible error on constructing the request
     public func fetchAccessibilityInfo(session: URLSession = .shared,
-                                              completion: @escaping (Result<BuildingComplex.AccessibilityInfo>) -> Void) throws {
-            try BuildingComplex.AccessibilityInfo.fetch(forBuilding: self.abbrev, session: session, completion: completion)
+                                              completion: @escaping (Result<BuildingComplex.AccessibilityInfo>) -> Void) {
+            BuildingComplex.AccessibilityInfo.fetch(forBuilding: self.abbrev, session: session, completion: completion)
     }
 }

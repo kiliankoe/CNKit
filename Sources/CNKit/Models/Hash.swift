@@ -26,7 +26,7 @@ extension Hash: APIResource {
     ///   - completion: handler
     /// - Throws: possible error on constructing the request (shouldn't happen in this case)
     public static func fetch(session: URLSession = .shared,
-                             completion: @escaping (Result<Hash>) -> Void) throws {
-        try Hash.fetch(resource: nil, body: nil, session: session, completion: completion)
+                             completion: @escaping (Result<Hash>) -> Void) {
+        Hash.fetch(resource: nil, body: nil, session: session, completion: completion)
     }
 }
