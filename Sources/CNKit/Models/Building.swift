@@ -4,6 +4,7 @@ import MapKit
 /// A building complex, possibly made up of more than one building.
 public struct BuildingComplex {
 
+        let abbrev: String
 }
 
 extension BuildingComplex {
@@ -97,8 +98,27 @@ extension BuildingComplex.AccessibilityInfo: APIResource {
         return URLRequest(url: url)
     }
 
+    /// Fetch accessibility information for a given building.
+    ///
+    /// - Parameters:
+    ///   - buildingID: building abbreviation, e.g. `APB`
+    ///   - session: session to use, defaults to `.shared`
+    ///   - completion: handler
     public static func fetch(forBuilding buildingID: String,
+                             session: URLSession = .shared,
                              completion: @escaping (Result<BuildingComplex.AccessibilityInfo>) -> Void) {
-        BuildingComplex.AccessibilityInfo.fetch(resource: BuildingComplex.AccessibilityInfo.RequestResource(buildingID: buildingID), body: nil, completion: completion)
+        BuildingComplex.AccessibilityInfo.fetch(resource: BuildingComplex.AccessibilityInfo.RequestResource(buildingID: buildingID), body: nil, session: session, completion: completion)
+    }
+}
+
+extension BuildingComplex {
+    /// Fetch accessibility information for this building.
+    ///
+    /// - Parameters:
+    ///   - session: session to use, defaults to `.shared`
+    ///   - completion: handler
+    public func fetchAccessibilityInfo(session: URLSession = .shared,
+                                              completion: @escaping (Result<BuildingComplex.AccessibilityInfo>) -> Void) {
+            BuildingComplex.AccessibilityInfo.fetch(forBuilding: self.abbrev, session: session, completion: completion)
     }
 }
