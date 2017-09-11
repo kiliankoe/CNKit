@@ -30,4 +30,21 @@ class AccessibilityInfoTests: XCTestCase {
         XCTAssertEqual(accessibilityInfo.hasDisabledRestrooms, .true)
         XCTAssertEqual(accessibilityInfo.elevatorDoorWidths, [120])
     }
+
+    func testFetch() {
+        let e = expectation(description: "get data")
+
+        BuildingComplex.AccessibilityInfo.fetch(forBuilding: "APB") { result in
+            guard let acc = result.success else {
+                XCTFail("got error")
+                e.fulfill()
+                return
+            }
+
+            XCTAssertEqual(acc.hasElevator, .true)
+            e.fulfill()
+        }
+
+        waitForExpectations(timeout: 5)
+    }
 }

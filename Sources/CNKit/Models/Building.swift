@@ -88,17 +88,17 @@ extension BuildingComplex.AccessibilityInfo: APIResource {
     static var expectedEncoding = String.Encoding.utf8
 
     struct RequestResource {
-        let roomID: String
+        let buildingID: String
     }
 
     static func request(to resource: BuildingComplex.AccessibilityInfo.RequestResource) -> URLRequest {
         // FIXME: This needs urlqueryallowed escapes and error handling
-        let url = URL(string: resource.roomID, relativeTo: Config.baseURL)!
+        let url = URL(string: "api/0.1/buildinginfo/\(resource.buildingID)?accessibility=true", relativeTo: Config.baseURL)!
         return URLRequest(url: url)
     }
 
-    public static func fetch(forID roomID: String,
+    public static func fetch(forBuilding buildingID: String,
                              completion: @escaping (Result<BuildingComplex.AccessibilityInfo>) -> Void) {
-        BuildingComplex.AccessibilityInfo.fetch(resource: BuildingComplex.AccessibilityInfo.RequestResource(roomID: roomID), body: nil, completion: completion)
+        BuildingComplex.AccessibilityInfo.fetch(resource: BuildingComplex.AccessibilityInfo.RequestResource(buildingID: buildingID), body: nil, completion: completion)
     }
 }
