@@ -24,7 +24,10 @@
 		39185D781F658E0A00003BDD /* Campus.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_18 /* Campus.swift */; };
 		39185D791F658E0E00003BDD /* Building.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_17 /* Building.swift */; };
 		39185D7C1F6608DF00003BDD /* AccessibilityInfoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39185D7B1F6608DF00003BDD /* AccessibilityInfoTests.swift */; };
+		393F6FC31F69778C004D9BCC /* FloorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 393F6FC21F69778C004D9BCC /* FloorTests.swift */; };
+		393F6FC51F69FA5F004D9BCC /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 393F6FC41F69FA5F004D9BCC /* Color.swift */; };
 		39B531601F66B031008EE183 /* BuildingComplexTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39B5315F1F66B031008EE183 /* BuildingComplexTests.swift */; };
+		39B531621F66C128008EE183 /* Floor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39B531611F66C128008EE183 /* Floor.swift */; };
 		OBJ_34 /* Package.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_6 /* Package.swift */; };
 		OBJ_41 /* HashTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_24 /* HashTests.swift */; };
 		OBJ_43 /* CNKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = "CNKit::CNKit::Product" /* CNKit.framework */; };
@@ -56,7 +59,10 @@
 /* Begin PBXFileReference section */
 		39185D771F641D3200003BDD /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		39185D7B1F6608DF00003BDD /* AccessibilityInfoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessibilityInfoTests.swift; sourceTree = "<group>"; };
+		393F6FC21F69778C004D9BCC /* FloorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FloorTests.swift; sourceTree = "<group>"; };
+		393F6FC41F69FA5F004D9BCC /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 		39B5315F1F66B031008EE183 /* BuildingComplexTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuildingComplexTests.swift; sourceTree = "<group>"; };
+		39B531611F66C128008EE183 /* Floor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Floor.swift; sourceTree = "<group>"; };
 		"CNKit::CNKit::Product" /* CNKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = CNKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		"CNKit::CNKitTests::Product" /* CNKitTests.xctest */ = {isa = PBXFileReference; lastKnownFileType = file; path = CNKitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		OBJ_11 /* Const.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Const.swift; sourceTree = "<group>"; };
@@ -94,6 +100,7 @@
 			isa = PBXGroup;
 			children = (
 				OBJ_14 /* MKMapRect.swift */,
+				393F6FC41F69FA5F004D9BCC /* Color.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -102,6 +109,7 @@
 			isa = PBXGroup;
 			children = (
 				OBJ_17 /* Building.swift */,
+				39B531611F66C128008EE183 /* Floor.swift */,
 				OBJ_18 /* Campus.swift */,
 				OBJ_19 /* Hash.swift */,
 			);
@@ -122,6 +130,7 @@
 				OBJ_24 /* HashTests.swift */,
 				39185D7B1F6608DF00003BDD /* AccessibilityInfoTests.swift */,
 				39B5315F1F66B031008EE183 /* BuildingComplexTests.swift */,
+				393F6FC21F69778C004D9BCC /* FloorTests.swift */,
 			);
 			name = CNKitTests;
 			path = Tests/CNKitTests;
@@ -260,6 +269,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 0;
 			files = (
+				393F6FC31F69778C004D9BCC /* FloorTests.swift in Sources */,
 				39185D7C1F6608DF00003BDD /* AccessibilityInfoTests.swift in Sources */,
 				OBJ_41 /* HashTests.swift in Sources */,
 				39B531601F66B031008EE183 /* BuildingComplexTests.swift in Sources */,
@@ -270,8 +280,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 0;
 			files = (
+				39B531621F66C128008EE183 /* Floor.swift in Sources */,
 				OBJ_50 /* APIResource.swift in Sources */,
 				OBJ_52 /* Const.swift in Sources */,
+				393F6FC51F69FA5F004D9BCC /* Color.swift in Sources */,
 				OBJ_53 /* Error.swift in Sources */,
 				39185D781F658E0A00003BDD /* Campus.swift in Sources */,
 				OBJ_54 /* MKMapRect.swift in Sources */,
