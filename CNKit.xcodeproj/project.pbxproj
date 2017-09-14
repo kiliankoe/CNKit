@@ -26,6 +26,8 @@
 		39185D7C1F6608DF00003BDD /* AccessibilityInfoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39185D7B1F6608DF00003BDD /* AccessibilityInfoTests.swift */; };
 		393F6FC31F69778C004D9BCC /* FloorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 393F6FC21F69778C004D9BCC /* FloorTests.swift */; };
 		393F6FC51F69FA5F004D9BCC /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 393F6FC41F69FA5F004D9BCC /* Color.swift */; };
+		398149301F6A048100C6B9E3 /* Timetable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3981492E1F6A047800C6B9E3 /* Timetable.swift */; };
+		398149321F6A068300C6B9E3 /* TimetableTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 398149311F6A068300C6B9E3 /* TimetableTests.swift */; };
 		39B531601F66B031008EE183 /* BuildingComplexTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39B5315F1F66B031008EE183 /* BuildingComplexTests.swift */; };
 		39B531621F66C128008EE183 /* Floor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39B531611F66C128008EE183 /* Floor.swift */; };
 		OBJ_34 /* Package.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_6 /* Package.swift */; };
@@ -61,6 +63,8 @@
 		39185D7B1F6608DF00003BDD /* AccessibilityInfoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessibilityInfoTests.swift; sourceTree = "<group>"; };
 		393F6FC21F69778C004D9BCC /* FloorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FloorTests.swift; sourceTree = "<group>"; };
 		393F6FC41F69FA5F004D9BCC /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
+		3981492E1F6A047800C6B9E3 /* Timetable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Timetable.swift; sourceTree = "<group>"; };
+		398149311F6A068300C6B9E3 /* TimetableTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimetableTests.swift; sourceTree = "<group>"; };
 		39B5315F1F66B031008EE183 /* BuildingComplexTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuildingComplexTests.swift; sourceTree = "<group>"; };
 		39B531611F66C128008EE183 /* Floor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Floor.swift; sourceTree = "<group>"; };
 		"CNKit::CNKit::Product" /* CNKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = CNKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -112,6 +116,7 @@
 				39B531611F66C128008EE183 /* Floor.swift */,
 				OBJ_18 /* Campus.swift */,
 				OBJ_19 /* Hash.swift */,
+				3981492E1F6A047800C6B9E3 /* Timetable.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -131,6 +136,7 @@
 				39185D7B1F6608DF00003BDD /* AccessibilityInfoTests.swift */,
 				39B5315F1F66B031008EE183 /* BuildingComplexTests.swift */,
 				393F6FC21F69778C004D9BCC /* FloorTests.swift */,
+				398149311F6A068300C6B9E3 /* TimetableTests.swift */,
 			);
 			name = CNKitTests;
 			path = Tests/CNKitTests;
@@ -269,6 +275,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 0;
 			files = (
+				398149321F6A068300C6B9E3 /* TimetableTests.swift in Sources */,
 				393F6FC31F69778C004D9BCC /* FloorTests.swift in Sources */,
 				39185D7C1F6608DF00003BDD /* AccessibilityInfoTests.swift in Sources */,
 				OBJ_41 /* HashTests.swift in Sources */,
@@ -286,6 +293,7 @@
 				393F6FC51F69FA5F004D9BCC /* Color.swift in Sources */,
 				OBJ_53 /* Error.swift in Sources */,
 				39185D781F658E0A00003BDD /* Campus.swift in Sources */,
+				398149301F6A048100C6B9E3 /* Timetable.swift in Sources */,
 				OBJ_54 /* MKMapRect.swift in Sources */,
 				OBJ_58 /* Hash.swift in Sources */,
 				OBJ_59 /* Result.swift in Sources */,
