@@ -37,6 +37,14 @@ extension Timetable {
             case day = "tag"
             case periods = "stunden"
         }
+
+        public enum Weekday: Int, Decodable {
+            case monday = 0
+            case tuesday
+            case wednesday
+            case thursday
+            case friday
+        }
     }
 }
 
@@ -53,12 +61,33 @@ extension Timetable.Day {
     }
 }
 
-extension Timetable.Day {
-    public enum Weekday: Int, Decodable {
-        case monday = 0
-        case tuesday
-        case wednesday
-        case thursday
-        case friday
+extension Timetable: APIResource {
+    typealias CollectionType = Timetable
+
+    static var expectedEncoding: String.Encoding = .isoLatin1
+
+    struct RequestResource {
+        let roomID: String
+    }
+
+    static func request(to resource: Timetable.RequestResource) throws -> URLRequest {
+        guard let roomID = resource.roomID.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) else {
+            throw Error.invalidQuery(reason: "failed to encode room id \(resource.roomID)")
+        }
+        let url = URL(string: "m/json_belegplan/\(roomID)", relativeTo: Config.baseURL)!
+        return URLRequest(url: url)
+    }
+
+    /// Fetch timetable for a given room.
+    ///
+    /// - Parameters:
+    ///   - roomID: a room's ID, e.g. `136101.0400`
+    ///   - session: session to use, defaults to `.shared`
+    ///   - completion: handler
+    public static func fetch(forRoom roomID: String,
+                             session: URLSession = .shared,
+                             completion: @escaping (Result<Timetable>) -> Void) {
+        let resource = Timetable.RequestResource(roomID: roomID)
+        Timetable.fetch(resource: resource, body: nil, session: session, completion: completion)
     }
 }

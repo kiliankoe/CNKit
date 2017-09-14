@@ -9,6 +9,24 @@ class TimetableTests: XCTestCase {
         XCTAssertEqual(decoded.week1Name, "11.09.2017 - 17.09.2017 37.KW")
         XCTAssertEqual(decoded.week2Name, "18.09.2017 - 24.09.2017 38.KW")
     }
+
+    func testFetch() {
+        let e = expectation(description: "get data")
+
+        let audimax = "136101.0400"
+        Timetable.fetch(forRoom: audimax) { result in
+            guard let timetable = result.success else {
+                XCTFail("got error: \(result)")
+                e.fulfill()
+                return
+            }
+
+            XCTAssertEqual(timetable.week1.count, 5)
+            e.fulfill()
+        }
+
+        waitForExpectations(timeout: 5)
+    }
 }
 
 let timetableJSON = """
