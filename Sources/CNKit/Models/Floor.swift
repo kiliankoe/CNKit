@@ -200,6 +200,12 @@ extension Floor: APIResource {
         return URLRequest(url: url)
     }
 
+    /// Fetch the floorplan layout for a given building.
+    ///
+    /// - Parameters:
+    ///   - buildingID: building abbreviation, e.g. `APB`
+    ///   - session: session to use, defaults to `.shared`
+    ///   - completion: handler
     public static func fetch(forBuilding buildingID: String,
                              session: URLSession = .shared,
                              completion: @escaping (Result<[Floor]>) -> Void) {
