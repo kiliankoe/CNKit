@@ -15,7 +15,7 @@ class LoginTests: XCTestCase {
         XCTAssertEqual(login.token, "Y0bXcorHzT_gbBsf261rM")
     }
 
-    func testFetchWithLogin() {
+    func testFetchWithLoginAndToken() {
         guard
             let login = ProcessInfo.processInfo.environment["ZIHLOGIN"],
             let password = ProcessInfo.processInfo.environment["ZIHPASSWORD"]
