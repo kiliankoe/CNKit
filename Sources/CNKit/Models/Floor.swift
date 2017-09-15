@@ -33,7 +33,6 @@ public struct Floor: Decodable {
 
         // Opting not to use the API's colors, but hardcoded values instead.
         // Unless these are for something different and I understand what that might be...
-        // See `RoomKind` below.
 
 //         Convert a string in the format `1:#575757|2:#dbd8db...` to type `[Int:String]`.
 //        let colorValues = try container.decode(String.self, forKey: .colors)
@@ -63,7 +62,7 @@ public struct Floor: Decodable {
         self.rooms = roomTypes.flatMap { roomType in
             return roomType.rooms.map { room -> Room in
                 var room = room
-                room.kind = Room.Kind(value: roomType.type)
+                room.type = RoomType(value: roomType.type)
                 return room
             }
         }
@@ -90,10 +89,10 @@ extension Floor {
         public let points: [(Double, Double)]
         public let isInList: Bool
 
-        public var kind: Kind
+        public var type: RoomType
 
         public var rawColor: Int {
-            return self.kind.color
+            return self.type.color
         }
 
         private enum CodingKeys: String, CodingKey {
@@ -133,52 +132,8 @@ extension Floor {
                 self.isInList = false
             }
 
-            // this is just a placeholder, the kind has to be set again after decoding all rooms
-            self.kind = .other
-        }
-    }
-}
-
-extension Floor.Room {
-    // List of types:
-    // https://fusionforge.zih.tu-dresden.de/plugins/mediawiki/wiki/campusnavigator/index.php/Raumtypen
-    // https://github.com/kiliankoe/campus-navigator/blob/master/CampusNavigator/CoreData/Room.m
-    public enum Kind: Int {
-        case stairwell = 11
-        case elevator = 12
-        case restroom = 13
-        case accessibleRestroom = 14
-        case babyChangingRoom = 15
-        case library = 21
-        case lecturehall = 22
-        case seminarroom = 23
-        case drawingroom = 24
-        case restingroom = 26
-        case coatroom = 27
-        case room = 29
-        case other = -1
-
-        init(value: Int) {
-            if let kind = Kind(rawValue: value) {
-                self = kind
-            } else {
-                self = .other
-            }
-        }
-
-        public var color: Int {
-            switch self {
-            case .stairwell: return 0xd4bfb4
-            case .elevator: return 0xbd927b
-            case .restroom,
-                 .accessibleRestroom,
-                 .babyChangingRoom: return 0xa3dbf0
-            case .lecturehall: return 0xffa35c
-            case .seminarroom: return 0xecf7aa
-            case .coatroom: return 0xa09cbd
-            case .room: return 0xf0f0f0
-            default: return 0xffffff // white
-            }
+            // this is just a placeholder, the type has to be set again after decoding all rooms
+            self.type = .other
         }
     }
 }
