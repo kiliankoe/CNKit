@@ -32,6 +32,9 @@
 		398149321F6A068300C6B9E3 /* TimetableTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 398149311F6A068300C6B9E3 /* TimetableTests.swift */; };
 		398149341F6A925A00C6B9E3 /* RoomInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 398149331F6A925A00C6B9E3 /* RoomInfo.swift */; };
 		398149361F6B233000C6B9E3 /* RoomType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 398149351F6B233000C6B9E3 /* RoomType.swift */; };
+		39A6657A1F6C5297000FA88B /* Login.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39A665791F6C5297000FA88B /* Login.swift */; };
+		39A6657C1F6C5442000FA88B /* URLRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39A6657B1F6C5442000FA88B /* URLRequest.swift */; };
+		39A6657E1F6C5CDF000FA88B /* LoginTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39A6657D1F6C5CDF000FA88B /* LoginTests.swift */; };
 		39B531601F66B031008EE183 /* BuildingComplexTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39B5315F1F66B031008EE183 /* BuildingComplexTests.swift */; };
 		39B531621F66C128008EE183 /* Floor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39B531611F66C128008EE183 /* Floor.swift */; };
 		OBJ_34 /* Package.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_6 /* Package.swift */; };
@@ -73,6 +76,9 @@
 		398149311F6A068300C6B9E3 /* TimetableTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimetableTests.swift; sourceTree = "<group>"; };
 		398149331F6A925A00C6B9E3 /* RoomInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomInfo.swift; sourceTree = "<group>"; };
 		398149351F6B233000C6B9E3 /* RoomType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomType.swift; sourceTree = "<group>"; };
+		39A665791F6C5297000FA88B /* Login.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Login.swift; sourceTree = "<group>"; };
+		39A6657B1F6C5442000FA88B /* URLRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLRequest.swift; sourceTree = "<group>"; };
+		39A6657D1F6C5CDF000FA88B /* LoginTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginTests.swift; sourceTree = "<group>"; };
 		39B5315F1F66B031008EE183 /* BuildingComplexTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuildingComplexTests.swift; sourceTree = "<group>"; };
 		39B531611F66C128008EE183 /* Floor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Floor.swift; sourceTree = "<group>"; };
 		"CNKit::CNKit::Product" /* CNKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = CNKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -113,6 +119,7 @@
 			children = (
 				OBJ_14 /* MKMapRect.swift */,
 				393F6FC41F69FA5F004D9BCC /* Color.swift */,
+				39A6657B1F6C5442000FA88B /* URLRequest.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -127,6 +134,7 @@
 				3981492E1F6A047800C6B9E3 /* Timetable.swift */,
 				398149331F6A925A00C6B9E3 /* RoomInfo.swift */,
 				398149351F6B233000C6B9E3 /* RoomType.swift */,
+				39A665791F6C5297000FA88B /* Login.swift */,
 			);
 			path = AModels;
 			sourceTree = "<group>";
@@ -148,6 +156,7 @@
 				393F6FC21F69778C004D9BCC /* FloorTests.swift */,
 				398149311F6A068300C6B9E3 /* TimetableTests.swift */,
 				3973A3611F6BFB7E00ECE236 /* RoomInfoTests.swift */,
+				39A6657D1F6C5CDF000FA88B /* LoginTests.swift */,
 			);
 			name = CNKitTests;
 			path = Tests/CNKitTests;
@@ -292,6 +301,7 @@
 				3973A3621F6BFB7E00ECE236 /* RoomInfoTests.swift in Sources */,
 				39185D7C1F6608DF00003BDD /* AccessibilityInfoTests.swift in Sources */,
 				OBJ_41 /* HashTests.swift in Sources */,
+				39A6657E1F6C5CDF000FA88B /* LoginTests.swift in Sources */,
 				39B531601F66B031008EE183 /* BuildingComplexTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -306,6 +316,8 @@
 				398149341F6A925A00C6B9E3 /* RoomInfo.swift in Sources */,
 				OBJ_52 /* Const.swift in Sources */,
 				393F6FC51F69FA5F004D9BCC /* Color.swift in Sources */,
+				39A6657A1F6C5297000FA88B /* Login.swift in Sources */,
+				39A6657C1F6C5442000FA88B /* URLRequest.swift in Sources */,
 				OBJ_53 /* Error.swift in Sources */,
 				39185D781F658E0A00003BDD /* Campus.swift in Sources */,
 				398149301F6A048100C6B9E3 /* Timetable.swift in Sources */,
