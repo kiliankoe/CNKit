@@ -42,6 +42,8 @@
 		39B71CCB1F6C89CC00342208 /* RouteTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39B71CCA1F6C89CC00342208 /* RouteTests.swift */; };
 		39B71CCD1F6C8F1D00342208 /* Search.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39B71CCC1F6C8F1D00342208 /* Search.swift */; };
 		39B71CCF1F6C90B600342208 /* SearchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39B71CCE1F6C90B600342208 /* SearchTests.swift */; };
+		39D25BCB1F6C94D900FAFDB6 /* CanteenMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39D25BCA1F6C94D900FAFDB6 /* CanteenMenu.swift */; };
+		39D25BCD1F6C967F00FAFDB6 /* CanteenMenuTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39D25BCC1F6C967F00FAFDB6 /* CanteenMenuTests.swift */; };
 		OBJ_34 /* Package.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_6 /* Package.swift */; };
 		OBJ_41 /* HashTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_24 /* HashTests.swift */; };
 		OBJ_43 /* CNKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = "CNKit::CNKit::Product" /* CNKit.framework */; };
@@ -91,6 +93,8 @@
 		39B71CCA1F6C89CC00342208 /* RouteTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouteTests.swift; sourceTree = "<group>"; };
 		39B71CCC1F6C8F1D00342208 /* Search.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Search.swift; sourceTree = "<group>"; };
 		39B71CCE1F6C90B600342208 /* SearchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTests.swift; sourceTree = "<group>"; };
+		39D25BCA1F6C94D900FAFDB6 /* CanteenMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CanteenMenu.swift; sourceTree = "<group>"; };
+		39D25BCC1F6C967F00FAFDB6 /* CanteenMenuTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CanteenMenuTests.swift; sourceTree = "<group>"; };
 		"CNKit::CNKit::Product" /* CNKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = CNKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		"CNKit::CNKitTests::Product" /* CNKitTests.xctest */ = {isa = PBXFileReference; lastKnownFileType = file; path = CNKitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		OBJ_11 /* Const.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Const.swift; sourceTree = "<group>"; };
@@ -148,6 +152,7 @@
 				39B71CC61F6C625F00342208 /* Route.swift */,
 				39B71CC81F6C671400342208 /* APIError.swift */,
 				39B71CCC1F6C8F1D00342208 /* Search.swift */,
+				39D25BCA1F6C94D900FAFDB6 /* CanteenMenu.swift */,
 			);
 			path = AModels;
 			sourceTree = "<group>";
@@ -172,6 +177,7 @@
 				39A6657D1F6C5CDF000FA88B /* LoginTests.swift */,
 				39B71CCA1F6C89CC00342208 /* RouteTests.swift */,
 				39B71CCE1F6C90B600342208 /* SearchTests.swift */,
+				39D25BCC1F6C967F00FAFDB6 /* CanteenMenuTests.swift */,
 			);
 			name = CNKitTests;
 			path = Tests/CNKitTests;
@@ -318,6 +324,7 @@
 				OBJ_41 /* HashTests.swift in Sources */,
 				39B71CCB1F6C89CC00342208 /* RouteTests.swift in Sources */,
 				39B71CCF1F6C90B600342208 /* SearchTests.swift in Sources */,
+				39D25BCD1F6C967F00FAFDB6 /* CanteenMenuTests.swift in Sources */,
 				39A6657E1F6C5CDF000FA88B /* LoginTests.swift in Sources */,
 				39B531601F66B031008EE183 /* BuildingComplexTests.swift in Sources */,
 			);
@@ -334,6 +341,7 @@
 				OBJ_52 /* Const.swift in Sources */,
 				393F6FC51F69FA5F004D9BCC /* Color.swift in Sources */,
 				39A6657A1F6C5297000FA88B /* Login.swift in Sources */,
+				39D25BCB1F6C94D900FAFDB6 /* CanteenMenu.swift in Sources */,
 				39A6657C1F6C5442000FA88B /* URLRequest.swift in Sources */,
 				OBJ_53 /* Error.swift in Sources */,
 				39B71CC71F6C625F00342208 /* Route.swift in Sources */,
