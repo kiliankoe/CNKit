@@ -165,6 +165,6 @@ extension Floor: APIResource {
                              session: URLSession = .shared,
                              completion: @escaping (Result<[Floor]>) -> Void) {
         let resource = Floor.RequestResource(buildingID: buildingID)
-        Floor.fetch(resource: resource, body: nil, session: session, completion: completion)
+        Floor.fetch(resource: resource, session: session, completion: completion)
     }
 }

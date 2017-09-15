@@ -15,7 +15,6 @@ protocol APIResource {
 
 extension APIResource {
     static func fetch(resource: RequestResource,
-                      body: [String: Any]?,
                       session: URLSession,
                       completion: @escaping (Result<CollectionType>) -> Void) {
 
@@ -29,17 +28,6 @@ extension APIResource {
 
         request.setValue("UTF-8", forHTTPHeaderField: "charset") // if only this were working 100% of the time :/
 //        request.setValue(L10n.LANGID.string, forHTTPHeaderField: "Accept-Language") // TODO
-
-        if let body = body {
-            assert(request.httpMethod != "GET", "GET requests shouldn't have a body specified")
-
-            guard let bodyData = body.asURLParams.data(using: .utf8) else {
-                completion(.failure(Error.request))
-                return
-            }
-            request.setValue("application/x-www-form-urlencoded", forHTTPHeaderField: "Content-Type")
-            request.httpBody = bodyData
-        }
 
         let session = session.dataTask(with: request) { data, response, error in
             guard

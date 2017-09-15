@@ -161,7 +161,7 @@ extension BuildingComplex: APIResource {
     ///   - completion: handler
     public static func fetchAll(session: URLSession = .shared,
                                 completion: @escaping (Result<[BuildingComplex]>) -> Void) {
-        BuildingComplex.fetch(resource: RequestResource(), body: nil, session: session, completion: completion)
+        BuildingComplex.fetch(resource: RequestResource(), session: session, completion: completion)
     }
 }
 
@@ -250,7 +250,7 @@ extension BuildingComplex.AccessibilityInfo: APIResource {
     public static func fetch(forBuilding buildingID: String,
                              session: URLSession = .shared,
                              completion: @escaping (Result<BuildingComplex.AccessibilityInfo>) -> Void) {
-        BuildingComplex.AccessibilityInfo.fetch(resource: BuildingComplex.AccessibilityInfo.RequestResource(buildingID: buildingID), body: nil, session: session, completion: completion)
+        BuildingComplex.AccessibilityInfo.fetch(resource: BuildingComplex.AccessibilityInfo.RequestResource(buildingID: buildingID), session: session, completion: completion)
     }
 }
 

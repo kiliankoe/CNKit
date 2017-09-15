@@ -88,6 +88,6 @@ extension Timetable: APIResource {
                              session: URLSession = .shared,
                              completion: @escaping (Result<Timetable>) -> Void) {
         let resource = Timetable.RequestResource(roomID: roomID)
-        Timetable.fetch(resource: resource, body: nil, session: session, completion: completion)
+        Timetable.fetch(resource: resource, session: session, completion: completion)
     }
 }

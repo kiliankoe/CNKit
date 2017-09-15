@@ -105,7 +105,7 @@ extension RoomInfo: APIResource {
                              session: URLSession = .shared,
                              completion: @escaping (Result<RoomInfo>) -> Void) {
         let resource = RequestResource(roomID: roomID)
-        RoomInfo.fetch(resource: resource, body: nil, session: session, completion: completion)
+        RoomInfo.fetch(resource: resource, session: session, completion: completion)
     }
 }
 
@@ -175,6 +175,6 @@ extension RoomInfo.AccessibilityInfo: APIResource {
                              session: URLSession = .shared,
                              completion: @escaping (Result<RoomInfo.AccessibilityInfo>) -> Void) {
         let resource = RequestResource(roomID: roomID)
-        RoomInfo.AccessibilityInfo.fetch(resource: resource, body: nil, session: session, completion: completion)
+        RoomInfo.AccessibilityInfo.fetch(resource: resource, session: session, completion: completion)
     }
 }

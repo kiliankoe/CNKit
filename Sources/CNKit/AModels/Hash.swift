@@ -23,6 +23,6 @@ extension Hash: APIResource {
     ///   - completion: handler
     public static func fetch(session: URLSession = .shared,
                              completion: @escaping (Result<Hash>) -> Void) {
-        Hash.fetch(resource: RequestResource(), body: nil, session: session, completion: completion)
+        Hash.fetch(resource: RequestResource(), session: session, completion: completion)
     }
 }
