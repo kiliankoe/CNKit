@@ -117,7 +117,7 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
-		OBJ_15 /* Models */ = {
+		OBJ_15 /* AModels */ = {
 			isa = PBXGroup;
 			children = (
 				OBJ_17 /* Building.swift */,
@@ -128,7 +128,7 @@
 				398149331F6A925A00C6B9E3 /* RoomInfo.swift */,
 				398149351F6B233000C6B9E3 /* RoomType.swift */,
 			);
-			path = Models;
+			path = AModels;
 			sourceTree = "<group>";
 		};
 		OBJ_21 /* Tests */ = {
@@ -188,7 +188,7 @@
 				OBJ_11 /* Const.swift */,
 				OBJ_12 /* Error.swift */,
 				OBJ_13 /* Extensions */,
-				OBJ_15 /* Models */,
+				OBJ_15 /* AModels */,
 				OBJ_20 /* Result.swift */,
 				3973A35F1F6BF2D300ECE236 /* Trillian.swift */,
 			);
