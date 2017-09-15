@@ -47,4 +47,9 @@ class AccessibilityInfoTests: XCTestCase {
 
         waitForExpectations(timeout: 5)
     }
+
+    static var allTests = [
+        ("testDecoding", testDecoding),
+        ("testFetch", testFetch),
+    ]
 }

@@ -30,7 +30,7 @@ class TimetableTests: XCTestCase {
 
     static var allTests = [
         ("testDecoding", testDecoding),
-        ("testFetch", testFetch)
+        ("testFetch", testFetch),
     ]
 }
 

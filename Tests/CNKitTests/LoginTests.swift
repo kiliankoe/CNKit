@@ -50,4 +50,9 @@ class LoginTests: XCTestCase {
 
         waitForExpectations(timeout: 5)
     }
+
+    static var allTests = [
+        ("testDecoding", testDecoding),
+        ("testFetchWithLoginAndToken", testFetchWithLoginAndToken),
+    ]
 }

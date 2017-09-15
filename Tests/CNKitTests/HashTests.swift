@@ -34,6 +34,6 @@ class HashTests: XCTestCase {
 
     static var allTests = [
         ("testDecoding", testDecoding),
-        ("testFetch", testFetch)
+        ("testFetch", testFetch),
     ]
 }

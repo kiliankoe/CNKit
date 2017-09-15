@@ -60,6 +60,11 @@ class BuildingComplexTests: XCTestCase {
 
         waitForExpectations(timeout: 5)
     }
+
+    static var allTests = [
+        ("testDecoding", testDecoding),
+        ("testFetch", testFetch),
+    ]
 }
 
 let buildingComplexJSON = """

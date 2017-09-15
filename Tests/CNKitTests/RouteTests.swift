@@ -63,4 +63,9 @@ class RouteTests: XCTestCase {
 
         waitForExpectations(timeout: 5)
     }
+
+    static var allTests = [
+        ("testDecoding", testDecoding),
+        ("testFetch", testFetch),
+    ]
 }
