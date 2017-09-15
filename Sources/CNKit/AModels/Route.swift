@@ -99,21 +99,34 @@ extension Route: APIResource {
         let origin: CLLocationCoordinate2D
         let destination: CLLocationCoordinate2D
         let mode: Route.Mode
+        let locale: Locale
     }
 
     static func request(to resource: Route.RequestResource) throws -> URLRequest {
         let (olat, olng) = (resource.origin.latitude, resource.origin.longitude)
         let (dlat, dlng) = (resource.destination.latitude, resource.destination.longitude)
         let url = URL(string: "routingservice/\(olat),\(olng)/\(dlat),\(dlng)/\(resource.mode.rawValue)/geocoordinates", relativeTo: Config.baseURL)!
-        return URLRequest(url: url)
+        var request = URLRequest(url: url)
+        request.addValue(resource.locale.languageCode ?? "de-DE", forHTTPHeaderField: "Accept-Language")
+        return request
     }
 
+    /// Fetch a route between two points.
+    ///
+    /// - Parameters:
+    ///   - origin: origin
+    ///   - destination: destination
+    ///   - mode: mode
+    ///   - locale: locale for descriptions, defaults to `.current`
+    ///   - session: session to use, defaults to `.shared`
+    ///   - completion: handler
     public static func fetch(from origin: CLLocationCoordinate2D,
                              to destination: CLLocationCoordinate2D,
                              using mode: Route.Mode,
+                             locale: Locale = .current,
                              session: URLSession = .shared,
                              completion: @escaping (Result<Route>) -> Void) {
-        let resource = RequestResource(origin: origin, destination: destination, mode: mode)
+        let resource = RequestResource(origin: origin, destination: destination, mode: mode, locale: locale)
         Route.fetch(resource: resource, session: session, completion: completion)
     }
 }

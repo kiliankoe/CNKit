@@ -46,7 +46,7 @@ class RouteTests: XCTestCase {
 
         let e = expectation(description: "get data")
 
-        Route.fetch(from: origin, to: destination, using: .foot) { result in
+        Route.fetch(from: origin, to: destination, using: .foot, locale: Locale(identifier: "de-DE")) { result in
             guard let route = result.success else {
                 XCTFail("got error: \(result)")
                 e.fulfill()
