@@ -13,18 +13,6 @@ class LoginTests: XCTestCase {
         let login = try! JSONDecoder().decode(Login.self, from: successJSON)
 
         XCTAssertEqual(login.token, "Y0bXcorHzT_gbBsf261rM")
-        XCTAssertNil(login.error)
-
-        let errorJSON = """
-        {
-          "error": "Login incorrect"
-        }
-        """.data(using: .utf8)!
-
-        let error = try! JSONDecoder().decode(Login.self, from: errorJSON)
-
-        XCTAssertEqual(error.error, "Login incorrect")
-        XCTAssertNil(error.token)
     }
 
     func testFetchWithLogin() {
@@ -45,29 +33,19 @@ class LoginTests: XCTestCase {
                 return
             }
 
-            XCTAssert(!login.token!.isEmpty)
-            XCTAssertNil(login.error)
+            XCTAssert(!login.token.isEmpty)
 
-            e.fulfill()
-        }
+            Login.authenticate(withToken: login.token) { result in
+                guard let login = result.success else {
+                    XCTFail("got error: \(result)")
+                    e.fulfill()
+                    return
+                }
 
-        waitForExpectations(timeout: 5)
-    }
+                XCTAssert(!login.token.isEmpty)
 
-    func testFetchWithToken() {
-        let e = expectation(description: "get data")
-
-        Login.authenticate(withToken: "krG0IyxqIu_DOrDLwXWQd") { result in
-            guard let login = result.success else {
-                XCTFail("got error: \(result)")
                 e.fulfill()
-                return
             }
-
-            XCTAssertNil(login.token)
-            XCTAssertEqual(login.error, "Token incorrect")
-
-            e.fulfill()
         }
 
         waitForExpectations(timeout: 5)

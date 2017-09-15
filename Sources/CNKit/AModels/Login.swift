@@ -1,11 +1,11 @@
 import Foundation
 
 public struct Login: Decodable {
-    public let token: String?
-    public let error: String?
+    public let token: String
 
     // the additional field `login: Bool` apparently serves no purpose since it's
-    // `true` if the login worked and doesn't exist otherwise.
+    // `true` if the login worked and doesn't exist otherwise. The error is caught
+    // before it even comes to decoding this.
 }
 
 extension Login: APIResource {
