@@ -108,3 +108,48 @@ extension RoomInfo: APIResource {
         RoomInfo.fetch(resource: resource, body: nil, session: session, completion: completion)
     }
 }
+
+extension RoomInfo {
+    public struct AccessibilityInfo: Decodable {
+        public let categories: [AccessibilityCategory]
+
+        public struct AccessibilityCategory {
+            public let title: String
+            public let entries: [(String, String)]
+
+            init(title: String, fullDict: [String: String]) {
+                self.title = title.capitalized
+                var entries: [(String, String)] = []
+                for (key, value) in fullDict {
+                    if key.hasPrefix(title) {
+                        let topic = key.components(separatedBy: "_").dropFirst().joined(separator: " ").capitalized
+                        entries.append((topic, value.capitalized))
+                    }
+                }
+                self.entries = entries
+            }
+        }
+
+        public init(from decoder: Decoder) throws {
+            let container = try decoder.singleValueContainer()
+            let dict = try container.decode([String: StringOrInt].self)
+                                    .mapValues { $0.stringValue }
+
+            self.categories = Set(dict.keys.flatMap { $0.components(separatedBy: "_").first }).map { AccessibilityCategory.init(title: $0, fullDict: dict) }
+        }
+
+        /// This is a stupid workaround...
+        struct StringOrInt: Decodable {
+            let stringValue: String
+
+            public init(from decoder: Decoder) throws {
+                let container = try decoder.singleValueContainer()
+                if let intValue = try? container.decode(Int.self) {
+                    self.stringValue = String(intValue)
+                } else {
+                    self.stringValue = try container.decode(String.self)
+                }
+            }
+        }
+    }
+}

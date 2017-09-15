@@ -73,6 +73,57 @@ class RoomInfoTests: XCTestCase {
         XCTAssertEqual(asbBuero.doorplate?.faculty, "Fakultät Bauingenieurwesen")
     }
 
+    func testAccessibilityInfoDecoding() {
+        let json = """
+        {
+          "rollstuhlplätze_vorhanden": "ja",
+          "rollstuhlplätze_position": "Vorne",
+          "hörschleife_vorhanden": "nein",
+          "treppen_im_gestühl": "Nein, die Treppe ist identisch mit den Gestühlstufen",
+          "hörschleife_induktiv": "nicht angegeben",
+          "erreichbarkeit_barfrei_eingang_ausschilderung_zutreffend": "ja",
+          "erreichbarkeit_kommentar": "Lange Umweg",
+          "rollstuhlplätze_schwenkbare_Tische_vorhanden": "nein",
+          "hörschleife_microport": "nicht angegeben",
+          "treppen_handlauf_vorhanden": "nicht angegeben",
+          "dozentenpult_fest": "ja",
+          "dozentenpult_gleiche_höhe_mit_erster_reihe": "ja",
+          "zugang_barrierefrei": "... über einen Hauptzugang",
+          "rollstuhlplätze_tischhöhe_verstellbar": "nein",
+          "steckdosenplätze_anzahl": 12,
+          "dozentenpult_verschiebbar": "nein",
+          "zugang_kommentar": "Die Tür ist leicht zu öffnen,genug Platz zum Bewegen.",
+          "erreichbarkeit_barfrei_eingang_ausschilderung_vorhanden": "ja",
+          "erreichbarkeit_eingang_barrierefrei": "nein",
+          "erreichbarkeit_barfrei_eingang_ausschilderung_durchgehend": "ja",
+          "zugang_tuer_bewegungsflaeche_breite": "200 cm",
+          "steckdosenplätze_lage": "gemischt oder in mehreren Raumbereichen",
+          "dozentenpult_höhenverstellbar": "nicht angegeben",
+          "hörschleife_qualität_schulnoten": 2,
+          "erreichbarkeit_barrierefrei": "Ja, aber auf einem Umweg, der normal nicht gewählt würde",
+          "zugang_tuer_bewegungsflaeche_tiefe": "200 cm",
+          "zugang_mittels": "kein",
+          "zugang_türbreite": "150 cm",
+          "dozentenpult_unterfahrbar": "nein",
+          "zugang_türklinke_höhe": "115 cm",
+          "rollstuhlplätze_anzahl": 2,
+          "treppen_antritts_endstufen_markiert": "nicht angegeben",
+          "dozentenzone_steuertafeln_rollstuhlgerecht": "ja",
+          "dozentenzone_barrierefrei": "ja",
+          "rollstuhlplätze_unterfahrbare_tische_vorhanden": "nein"
+        }
+        """.data(using: .utf8)!
+
+        let info = try! JSONDecoder().decode(RoomInfo.AccessibilityInfo.self, from: json)
+        XCTAssertEqual(info.categories.count, 8)
+
+        let zugang = info.categories.first { $0.title == "Zugang" }
+        XCTAssertEqual(zugang?.entries.count, 7)
+
+        let tuerbreite = zugang?.entries.first { $0.0 == "Türbreite" }
+        XCTAssertEqual(tuerbreite?.1, "150 Cm")
+    }
+
     func testFetchAccessibiltyBadges() {
         let e = expectation(description: "get data")
 
@@ -113,6 +164,7 @@ class RoomInfoTests: XCTestCase {
 
     static var allTests = [
         ("testDecoding", testDecoding),
+        ("testAccessibilityInfoDecoding", testAccessibilityInfoDecoding),
         ("testFetchAccessibiltyBadges", testFetchAccessibiltyBadges),
         ("testFetchDoorplate", testFetchDoorplate)
     ]
