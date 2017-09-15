@@ -153,3 +153,28 @@ extension RoomInfo {
         }
     }
 }
+
+extension RoomInfo.AccessibilityInfo: APIResource {
+    typealias CollectionType = RoomInfo.AccessibilityInfo
+
+    static var expectedEncoding: String.Encoding = .isoLatin1
+
+    struct RequestResource {
+        let roomID: String
+    }
+
+    static func request(to resource: RoomInfo.AccessibilityInfo.RequestResource) throws -> URLRequest {
+        guard let roomID = resource.roomID.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) else {
+            throw Error.invalidQuery(reason: "failed to encode room id \(resource.roomID)")
+        }
+        let url = URL(string: "m/json_barriereinfos/raum/\(roomID)", relativeTo: Config.baseURL)!
+        return URLRequest(url: url)
+    }
+
+    public static func fetch(forRoom roomID: String,
+                             session: URLSession = .shared,
+                             completion: @escaping (Result<RoomInfo.AccessibilityInfo>) -> Void) {
+        let resource = RequestResource(roomID: roomID)
+        RoomInfo.AccessibilityInfo.fetch(resource: resource, body: nil, session: session, completion: completion)
+    }
+}

@@ -162,10 +162,29 @@ class RoomInfoTests: XCTestCase {
         waitForExpectations(timeout: 5)
     }
 
+    func testFetchAccessibilityInfo() {
+        let e = expectation(description: "get data")
+
+        RoomInfo.AccessibilityInfo.fetch(forRoom: "118100.0220") { result in
+            guard let accInfo = result.success else {
+                XCTFail("got error: \(result)")
+                e.fulfill()
+                return
+            }
+
+            XCTAssertEqual(accInfo.categories.count, 8)
+
+            e.fulfill()
+        }
+
+        waitForExpectations(timeout: 5)
+    }
+
     static var allTests = [
         ("testDecoding", testDecoding),
         ("testAccessibilityInfoDecoding", testAccessibilityInfoDecoding),
         ("testFetchAccessibiltyBadges", testFetchAccessibiltyBadges),
-        ("testFetchDoorplate", testFetchDoorplate)
+        ("testFetchDoorplate", testFetchDoorplate),
+        ("testFetchAccessibilityInfo", testFetchAccessibilityInfo),
     ]
 }
