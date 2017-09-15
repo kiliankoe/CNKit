@@ -1,5 +1,5 @@
 /// Either `true`, `false` or `nodata`. Got a better name for this? Please refactor :)
-public enum Trillian {
+public enum Trillian: Decodable {
     case `true`
     case `false`
     case nodata
@@ -14,5 +14,11 @@ public enum Trillian {
         case "false": self = .false
         default: self = .nodata
         }
+    }
+
+    public init(from decoder: Decoder) throws {
+        let container = try decoder.singleValueContainer()
+        let rawValue = try container.decode(String.self)
+        self.init(stringValue: rawValue)
     }
 }
