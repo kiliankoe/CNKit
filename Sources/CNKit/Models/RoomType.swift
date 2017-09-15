@@ -3,7 +3,7 @@ import Foundation
 // List of types:
 // https://fusionforge.zih.tu-dresden.de/plugins/mediawiki/wiki/campusnavigator/index.php/Raumtypen
 // https://github.com/kiliankoe/campus-navigator/blob/master/CampusNavigator/CoreData/Room.m
-public enum RoomType: Int {
+public enum RoomType: Int, Decodable {
     case stairwell = 11
     case elevator = 12
     case restroom = 13
@@ -24,6 +24,12 @@ public enum RoomType: Int {
         } else {
             self = .other
         }
+    }
+
+    public init(from decoder: Decoder) throws {
+        let container = try decoder.singleValueContainer()
+        let rawValue = try container.decode(RoomType.RawValue.self)
+        self.init(value: rawValue)
     }
 
     public var color: Int {
