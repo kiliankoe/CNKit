@@ -27,7 +27,7 @@ extension APIResource {
         }
 
         request.setValue("UTF-8", forHTTPHeaderField: "charset") // if only this were working 100% of the time :/
-//        request.setValue(L10n.LANGID.string, forHTTPHeaderField: "Accept-Language") // TODO
+        request.setValue(Locale.current.languageCode ?? "de-DE", forHTTPHeaderField: "Accept-Language")
 
         let session = session.dataTask(with: request) { data, response, error in
             guard
