@@ -25,7 +25,7 @@ class FloorTests: XCTestCase {
         XCTAssertEqual(e023.points[0].0, 354, accuracy: 1)
         XCTAssertEqual(e023.points[0].1, 292, accuracy: 1)
         XCTAssert(e023.isInList)
-        XCTAssertEqual(e023.kind, .seminarroom) // this is factually wrong, but it's what the data says
+        XCTAssertEqual(e023.type, .seminarroom) // this is factually wrong, but it's what the data says
     }
 
     func testFetch() {
