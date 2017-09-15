@@ -40,7 +40,7 @@ extension APIResource {
             }
 
             guard 200...299 ~= response.statusCode else {
-                completion(.failure(Error.server(statusCode: response.statusCode)))
+                completion(.failure(Error.server(status: response.statusCode, error: "")))
                 return
             }
 
@@ -58,6 +58,11 @@ extension APIResource {
             else {
                 print("Maybe the wrong encoding was used to decode the data?")
                 completion(.failure(Error.unknownData(error: nil)))
+                return
+            }
+
+            if let error = try? JSONDecoder().decode(APIError.self, from: newlinestrippedData) {
+                completion(.failure(Error.server(status: 200, error: error.error)))
                 return
             }
 
