@@ -40,6 +40,8 @@
 		39B71CC71F6C625F00342208 /* Route.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39B71CC61F6C625F00342208 /* Route.swift */; };
 		39B71CC91F6C671400342208 /* APIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39B71CC81F6C671400342208 /* APIError.swift */; };
 		39B71CCB1F6C89CC00342208 /* RouteTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39B71CCA1F6C89CC00342208 /* RouteTests.swift */; };
+		39B71CCD1F6C8F1D00342208 /* Search.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39B71CCC1F6C8F1D00342208 /* Search.swift */; };
+		39B71CCF1F6C90B600342208 /* SearchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39B71CCE1F6C90B600342208 /* SearchTests.swift */; };
 		OBJ_34 /* Package.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_6 /* Package.swift */; };
 		OBJ_41 /* HashTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_24 /* HashTests.swift */; };
 		OBJ_43 /* CNKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = "CNKit::CNKit::Product" /* CNKit.framework */; };
@@ -87,6 +89,8 @@
 		39B71CC61F6C625F00342208 /* Route.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Route.swift; sourceTree = "<group>"; };
 		39B71CC81F6C671400342208 /* APIError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIError.swift; sourceTree = "<group>"; };
 		39B71CCA1F6C89CC00342208 /* RouteTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouteTests.swift; sourceTree = "<group>"; };
+		39B71CCC1F6C8F1D00342208 /* Search.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Search.swift; sourceTree = "<group>"; };
+		39B71CCE1F6C90B600342208 /* SearchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTests.swift; sourceTree = "<group>"; };
 		"CNKit::CNKit::Product" /* CNKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = CNKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		"CNKit::CNKitTests::Product" /* CNKitTests.xctest */ = {isa = PBXFileReference; lastKnownFileType = file; path = CNKitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		OBJ_11 /* Const.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Const.swift; sourceTree = "<group>"; };
@@ -143,6 +147,7 @@
 				39A665791F6C5297000FA88B /* Login.swift */,
 				39B71CC61F6C625F00342208 /* Route.swift */,
 				39B71CC81F6C671400342208 /* APIError.swift */,
+				39B71CCC1F6C8F1D00342208 /* Search.swift */,
 			);
 			path = AModels;
 			sourceTree = "<group>";
@@ -166,6 +171,7 @@
 				3973A3611F6BFB7E00ECE236 /* RoomInfoTests.swift */,
 				39A6657D1F6C5CDF000FA88B /* LoginTests.swift */,
 				39B71CCA1F6C89CC00342208 /* RouteTests.swift */,
+				39B71CCE1F6C90B600342208 /* SearchTests.swift */,
 			);
 			name = CNKitTests;
 			path = Tests/CNKitTests;
@@ -311,6 +317,7 @@
 				39185D7C1F6608DF00003BDD /* AccessibilityInfoTests.swift in Sources */,
 				OBJ_41 /* HashTests.swift in Sources */,
 				39B71CCB1F6C89CC00342208 /* RouteTests.swift in Sources */,
+				39B71CCF1F6C90B600342208 /* SearchTests.swift in Sources */,
 				39A6657E1F6C5CDF000FA88B /* LoginTests.swift in Sources */,
 				39B531601F66B031008EE183 /* BuildingComplexTests.swift in Sources */,
 			);
@@ -332,6 +339,7 @@
 				39B71CC71F6C625F00342208 /* Route.swift in Sources */,
 				39185D781F658E0A00003BDD /* Campus.swift in Sources */,
 				398149301F6A048100C6B9E3 /* Timetable.swift in Sources */,
+				39B71CCD1F6C8F1D00342208 /* Search.swift in Sources */,
 				OBJ_54 /* MKMapRect.swift in Sources */,
 				OBJ_58 /* Hash.swift in Sources */,
 				OBJ_59 /* Result.swift in Sources */,
