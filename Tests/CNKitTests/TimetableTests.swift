@@ -27,6 +27,11 @@ class TimetableTests: XCTestCase {
 
         waitForExpectations(timeout: 5)
     }
+
+    static var allTests = [
+        ("testDecoding", testDecoding),
+        ("testFetch", testFetch)
+    ]
 }
 
 let timetableJSON = """
