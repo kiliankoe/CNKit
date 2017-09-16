@@ -35,20 +35,26 @@ extension APIResource {
                 let response = response as? HTTPURLResponse,
                 error == nil
             else {
-                completion(.failure(Error.request))
+                completion(.failure(Error.response))
                 return
             }
 
             guard 200...299 ~= response.statusCode else {
-                completion(.failure(Error.server(status: response.statusCode, error: "")))
+                completion(.failure(Error.server(status: response.statusCode, error: nil)))
                 return
             }
 
             // The API is mostly giving back Latin1 encoded data, which isn't compatible with JSONSerialization below.
             // But on some endpoints we do get UTF8 data and then this fails. A default (preferably UTF8) would be fantastic...
             if expectedEncoding == .isoLatin1 {
-                let isoString = String(data: data, encoding: .isoLatin1)!
-                data = isoString.data(using: .utf8)!
+                guard
+                    let isoString = String(data: data, encoding: .isoLatin1),
+                    let newData = isoString.data(using: .utf8)
+                else {
+                    completion(.failure(Error.reEncoding))
+                    return
+                }
+                data = newData
             }
 
             // Unfortunately there are non-JSON-compliant newlines in the data, so we have to strip those as well
@@ -56,8 +62,8 @@ extension APIResource {
                 .replacingOccurrences(of: "\n", with: "")
                 .data(using: .utf8)
             else {
-                print("Maybe the wrong encoding was used to decode the data?")
-                completion(.failure(Error.unknownData(error: nil)))
+                // Maybe the wrong encoding was used to decode the data?
+                completion(.failure(Error.reEncoding))
                 return
             }
 
