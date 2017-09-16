@@ -60,7 +60,7 @@ extension CanteenMenu: APIResource {
         }
         let url = URL(string: "/diet/\(canteenID)", relativeTo: Config.baseURL)!
         var request = URLRequest(url: url)
-        request.httpMethod = "POST" // (┛ò__ó)┛彡┻━┻
+        request.httpMethod = "POST" // (╯°□°）╯︵ ┻━┻
         return request
     }
 
