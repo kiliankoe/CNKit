@@ -24,12 +24,17 @@ public struct CanteenMenu: Decodable {
 
 extension CanteenMenu {
     public struct Meal: Decodable {
-        public let name: String
+        public let description: String
         public let prices: String?
+
+        private enum CodingKeys: String, CodingKey {
+            case description = "name"
+            case prices
+        }
 
         public init(from decoder: Decoder) throws {
             var container = try decoder.unkeyedContainer()
-            self.name = try container.decode(String.self)
+            self.description = try container.decode(String.self)
             let prices = try container.decode(String.self)
             if !prices.isEmpty {
                 self.prices = prices
