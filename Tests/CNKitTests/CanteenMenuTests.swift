@@ -55,7 +55,7 @@ class CanteenMenuTests: XCTestCase {
 
         XCTAssertEqual(menu.menuName, "Speiseplan Alte Mensa von heute")
         XCTAssertEqual(menu.meals.count, 10)
-        XCTAssertEqual(menu.meals[0].name, "Pizza Fruity & Spicy mit Lauch, Kirschtomaten, Ananas und Chili")
+        XCTAssertEqual(menu.meals[0].description, "Pizza Fruity & Spicy mit Lauch, Kirschtomaten, Ananas und Chili")
         XCTAssertNil(menu.meals[0].prices)
         XCTAssertEqual(menu.meals[1].prices, "1.94 EUR / 3.01 EUR")
     }
