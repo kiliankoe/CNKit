@@ -135,7 +135,7 @@ extension RoomInfo {
             let dict = try container.decode([String: StringOrInt].self)
                                     .mapValues { $0.stringValue }
 
-            self.categories = Set(dict.keys.flatMap { $0.components(separatedBy: "_").first }).map { AccessibilityCategory.init(title: $0, fullDict: dict) }
+            self.categories = Set(dict.keys.flatMap { $0.components(separatedBy: "_").first }).map { AccessibilityCategory(title: $0, fullDict: dict) }
         }
 
         /// This is a stupid workaround...
