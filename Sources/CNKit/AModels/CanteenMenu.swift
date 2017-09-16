@@ -4,6 +4,18 @@ public struct CanteenMenu: Decodable {
     public let menuName: String
     public let meals: [Meal]
 
+    static let all = [
+        "m13": "Alte Mensa",
+        "nmen": "Zeltschlößchen",
+        "mjoh": "Mensa Johannstadt",
+        "mrei": "Mensa Reichenbachstraße",
+        "pot": "BioMensa U-Boot",
+        "web": "Mensa Blau",
+        "bzw": "Mensa Siedepunkt",
+        "ros": "Mensa TellerRandt",
+        "gcub": "GrillCube",
+    ]
+
     private enum CodingKeys: String, CodingKey {
         case menuName = "name"
         case meals = "diet"
