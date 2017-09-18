@@ -7,7 +7,20 @@ class SearchTests: XCTestCase {
         {
           "assist": "E017",
           "assist2": "E017",
-          "results_geb": [],
+          "results_geb": [
+            [
+              "Infopavillion",
+              "dresden/geb/m09"
+            ],
+            [
+              "Cafeteria Bib-Lounge",
+              "dresden/geb/slub"
+            ],
+            [
+              "Cafeteria Bergstraße",
+              "dresden/geb/nmen"
+            ]
+          ],
           "results_raum": [
             [
               "BIO E17",
@@ -32,10 +45,14 @@ class SearchTests: XCTestCase {
         let search = try! JSONDecoder().decode(Search.self, from: json)
 
         XCTAssertEqual(search.autocomplete, "E017")
-        XCTAssert(search.buildingResults.isEmpty)
+
+        XCTAssertEqual(search.buildingResults.count, 3)
+        XCTAssertEqual(search.buildingResults[2].title, "Cafeteria Bergstraße")
+        XCTAssertEqual(search.buildingResults[2].resource, .map(region: "dresden", building: "nmen"))
+
         XCTAssertEqual(search.roomResults.count, 3)
         XCTAssertEqual(search.roomResults[2].title, "APB E017")
-        XCTAssertEqual(search.roomResults[2].resource.absoluteString, "https://navigator.tu-dresden.de/apb/00/raum/542100.2230")
+        XCTAssertEqual(search.roomResults[2].resource, .room(building: "apb", floor: "00", room: "542100.2230"))
     }
 
     func testFetch() {

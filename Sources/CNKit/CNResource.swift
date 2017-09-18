@@ -1,0 +1,128 @@
+import Foundation
+
+public enum CNResource: Decodable {
+    case map(region: String, building: String) // Could any of this be optional?
+    case building(building: String)
+    case floor(building: String, floor: String)
+    case room(building: String, floor: String, room: String)
+
+    /// Create a CNResource from a given Campus Navigator URL.
+    ///
+    /// - Parameter url: url
+    /// - Throws: Error.cnresourceURL with the URL if unable to parse
+    /// - Warning: This only accepts valid CN URLs, not the search output. See [here](https://fusionforge.zih.tu-dresden.de/tracker/?aid=1976).
+    public init(withURL url: URL) throws {
+        self = try CNResource.parse(url: url, urlType: .actual)
+    }
+
+    /// - Warning: This only accepts search results, not actual CN URLs.
+    public init(from decoder: Decoder) throws {
+        let container = try decoder.singleValueContainer()
+        let rawURL = try container.decode(URL.self)
+        self = try CNResource.parse(url: rawURL, urlType: .search)
+    }
+
+    static func parse(url: URL, urlType: URLOrdering) throws -> CNResource {
+        var components: [String]
+        if url.pathComponents.first == "/" {
+            components = Array(url.pathComponents.dropFirst())
+        } else {
+            components = url.pathComponents
+        }
+
+        // this gets special handling, see
+        // https://fusionforge.zih.tu-dresden.de/tracker/?aid=1976
+        if urlType == .search {
+            // building URLs: `dresden/geb/apb`
+            // room URLs: `apb/00/raum/542100.2230`
+
+            switch components.count {
+            case 3:
+                return CNResource.map(region: components[0], building: components[2])
+            case 4:
+                return CNResource.room(building: components[0], floor: components[1], room: components[3])
+            default:
+                throw Error.cnresourceURL(url.absoluteString)
+            }
+        }
+
+        let type = components.removeFirst()
+
+        switch type {
+        case "karten":
+            // https://navigator.tu-dresden.de/karten/dresden/geb/apb
+            guard components.count >= 3 else { throw Error.cnresourceURL(url.absoluteString) }
+            return CNResource.map(region: components[0], building: components[1])
+        case "gebaeude":
+            // https://navigator.tu-dresden.de/gebaeude/apb
+            guard components.count >= 1 else { throw Error.cnresourceURL(url.absoluteString) }
+            return CNResource.building(building: components[0])
+        case "etplan":
+            // https://navigator.tu-dresden.de/etplan/apb/00
+            guard components.count >= 2 else { throw Error.cnresourceURL(url.absoluteString) }
+            return CNResource.floor(building: components[0], floor: components[1])
+        case "raum":
+            // https://navigator.tu-dresden.de/raum/apb/00/542100.2310
+            guard components.count >= 3 else { throw Error.cnresourceURL(url.absoluteString) }
+            return CNResource.room(building: components[0], floor: components[1], room: components[2])
+        default:
+            throw Error.cnresourceURL(url.absoluteString)
+        }
+    }
+
+    var buildingID: String {
+        switch self {
+        case .map(region: _, building: let b):
+            return b
+        case .building(building: let b):
+            return b
+        case .floor(building: let b, floor: _):
+            return b
+        case .room(building: let b, floor: _, room: _):
+            return b
+        }
+    }
+
+    var url: URL? {
+        switch self {
+        case .map(region: let region, building: let building):
+            guard let region = region.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) else { return nil }
+            guard let building = building.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) else { return nil }
+            return URL(string: "/karten/\(region)/geb/\(building)", relativeTo: Config.baseURL)
+        case .building(building: let building):
+            guard let building = building.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) else { return nil }
+            return URL(string: "/gebaeude/\(building)", relativeTo: Config.baseURL)
+        case .floor(building: let building, floor: let floor):
+            guard let building = building.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) else { return nil }
+            guard let floor = floor.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) else { return nil }
+            return URL(string: "/etplan/\(building)/\(floor)", relativeTo: Config.baseURL)
+        case .room(building: let building, floor: let floor, room: let room):
+            guard let building = building.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) else { return nil }
+            guard let floor = floor.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) else { return nil }
+            guard let room = room.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) else { return nil }
+            return URL(string: "/raum/\(building)/\(floor)/\(room)", relativeTo: Config.baseURL)
+        }
+    }
+
+    internal enum URLOrdering {
+        case actual
+        case search
+    }
+}
+
+extension CNResource: Equatable {
+    public static func ==(lhs: CNResource, rhs: CNResource) -> Bool {
+        switch (lhs, rhs) {
+        case (.map(region: let lhsRegion, building: let lhsBuilding), .map(region: let rhsRegion, building: let rhsBuilding)):
+            return lhsRegion == rhsRegion && lhsBuilding == rhsBuilding
+        case (.building(building: let lhsBuilding), .building(building: let rhsBuilding)):
+            return lhsBuilding == rhsBuilding
+        case (.floor(building: let lhsBuilding, floor: let lhsFloor), .floor(building: let rhsBuilding, floor: let rhsFloor)):
+            return lhsBuilding == rhsBuilding && lhsFloor == rhsFloor
+        case (.room(building: let lhsBuilding, floor: let lhsFloor, room: let lhsRoom), .room(building: let rhsBuilding, floor: let rhsFloor, room: let rhsRoom)):
+            return lhsBuilding == rhsBuilding && lhsFloor == rhsFloor && lhsRoom == rhsRoom
+        default:
+            return false
+        }
+    }
+}

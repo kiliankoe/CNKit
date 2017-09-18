@@ -22,17 +22,12 @@ public struct Search: Decodable {
 extension Search {
     public struct SearchResult: Decodable {
         public let title: String
-
-        // TODO: This should possibly be a URL instead, or maybe the parsed params to directly pass into deeplinking?
-        public let resource: URL
+        public let resource: CNResource
 
         public init(from decoder: Decoder) throws {
             var container = try decoder.unkeyedContainer()
             self.title = try container.decode(String.self)
-            guard let resourceURL = URL(string: try container.decode(String.self), relativeTo: Config.baseURL) else {
-                throw DecodingError.dataCorrupted(DecodingError.Context(codingPath: [], debugDescription: "resource URL was malformed"))
-            }
-            self.resource = resourceURL
+            self.resource = try container.decode(CNResource.self)
         }
     }
 }

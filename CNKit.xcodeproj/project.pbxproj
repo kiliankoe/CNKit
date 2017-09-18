@@ -28,6 +28,7 @@
 		393F6FC51F69FA5F004D9BCC /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 393F6FC41F69FA5F004D9BCC /* Color.swift */; };
 		3973A3601F6BF2D300ECE236 /* Trillian.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3973A35F1F6BF2D300ECE236 /* Trillian.swift */; };
 		3973A3621F6BFB7E00ECE236 /* RoomInfoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3973A3611F6BFB7E00ECE236 /* RoomInfoTests.swift */; };
+		397AB8121F6D3A4E00D402CC /* CNResource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 397AB8111F6D3A4E00D402CC /* CNResource.swift */; };
 		398149301F6A048100C6B9E3 /* Timetable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3981492E1F6A047800C6B9E3 /* Timetable.swift */; };
 		398149321F6A068300C6B9E3 /* TimetableTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 398149311F6A068300C6B9E3 /* TimetableTests.swift */; };
 		398149341F6A925A00C6B9E3 /* RoomInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 398149331F6A925A00C6B9E3 /* RoomInfo.swift */; };
@@ -79,6 +80,7 @@
 		393F6FC41F69FA5F004D9BCC /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 		3973A35F1F6BF2D300ECE236 /* Trillian.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Trillian.swift; sourceTree = "<group>"; };
 		3973A3611F6BFB7E00ECE236 /* RoomInfoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomInfoTests.swift; sourceTree = "<group>"; };
+		397AB8111F6D3A4E00D402CC /* CNResource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CNResource.swift; sourceTree = "<group>"; };
 		3981492E1F6A047800C6B9E3 /* Timetable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Timetable.swift; sourceTree = "<group>"; };
 		398149311F6A068300C6B9E3 /* TimetableTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimetableTests.swift; sourceTree = "<group>"; };
 		398149331F6A925A00C6B9E3 /* RoomInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomInfo.swift; sourceTree = "<group>"; };
@@ -221,6 +223,7 @@
 				OBJ_15 /* AModels */,
 				OBJ_20 /* Result.swift */,
 				3973A35F1F6BF2D300ECE236 /* Trillian.swift */,
+				397AB8111F6D3A4E00D402CC /* CNResource.swift */,
 			);
 			name = CNKit;
 			path = Sources/CNKit;
@@ -334,6 +337,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 0;
 			files = (
+				397AB8121F6D3A4E00D402CC /* CNResource.swift in Sources */,
 				3973A3601F6BF2D300ECE236 /* Trillian.swift in Sources */,
 				39B531621F66C128008EE183 /* Floor.swift in Sources */,
 				OBJ_50 /* APIResource.swift in Sources */,

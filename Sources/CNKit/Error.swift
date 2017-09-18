@@ -6,6 +6,7 @@ public enum Error: Swift.Error {
     case server(status: Int, error: String?)
     case decode(error: Swift.Error)
     case reEncoding
+    case cnresourceURL(String)
 }
 
 extension Error: LocalizedError {
@@ -25,6 +26,8 @@ extension Error: LocalizedError {
             return "The received data could not be decoded as JSON: \(error.localizedDescription)"
         case .reEncoding:
             return "The received data had to be re-encoded before parsing, which failed."
+        case .cnresourceURL(let resource):
+            return "The URL to this specific resource could not be read: \(resource)"
         }
     }
 }
