@@ -43,6 +43,8 @@
 		39B71CCB1F6C89CC00342208 /* RouteTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39B71CCA1F6C89CC00342208 /* RouteTests.swift */; };
 		39B71CCD1F6C8F1D00342208 /* Search.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39B71CCC1F6C8F1D00342208 /* Search.swift */; };
 		39B71CCF1F6C90B600342208 /* SearchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39B71CCE1F6C90B600342208 /* SearchTests.swift */; };
+		39B976D21F706A6400F6F0AD /* CNResourceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39B976D11F706A6400F6F0AD /* CNResourceTests.swift */; };
+		39B976D41F70795100F6F0AD /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39B976D31F70795100F6F0AD /* String.swift */; };
 		39D25BCB1F6C94D900FAFDB6 /* CanteenMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39D25BCA1F6C94D900FAFDB6 /* CanteenMenu.swift */; };
 		39D25BCD1F6C967F00FAFDB6 /* CanteenMenuTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39D25BCC1F6C967F00FAFDB6 /* CanteenMenuTests.swift */; };
 		OBJ_34 /* Package.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_6 /* Package.swift */; };
@@ -95,6 +97,8 @@
 		39B71CCA1F6C89CC00342208 /* RouteTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouteTests.swift; sourceTree = "<group>"; };
 		39B71CCC1F6C8F1D00342208 /* Search.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Search.swift; sourceTree = "<group>"; };
 		39B71CCE1F6C90B600342208 /* SearchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTests.swift; sourceTree = "<group>"; };
+		39B976D11F706A6400F6F0AD /* CNResourceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CNResourceTests.swift; sourceTree = "<group>"; };
+		39B976D31F70795100F6F0AD /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
 		39D25BCA1F6C94D900FAFDB6 /* CanteenMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CanteenMenu.swift; sourceTree = "<group>"; };
 		39D25BCC1F6C967F00FAFDB6 /* CanteenMenuTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CanteenMenuTests.swift; sourceTree = "<group>"; };
 		"CNKit::CNKit::Product" /* CNKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = CNKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -136,6 +140,7 @@
 				OBJ_14 /* MKMapRect.swift */,
 				393F6FC41F69FA5F004D9BCC /* Color.swift */,
 				39A6657B1F6C5442000FA88B /* URLRequest.swift */,
+				39B976D31F70795100F6F0AD /* String.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -180,6 +185,7 @@
 				39B71CCA1F6C89CC00342208 /* RouteTests.swift */,
 				39B71CCE1F6C90B600342208 /* SearchTests.swift */,
 				39D25BCC1F6C967F00FAFDB6 /* CanteenMenuTests.swift */,
+				39B976D11F706A6400F6F0AD /* CNResourceTests.swift */,
 			);
 			name = CNKitTests;
 			path = Tests/CNKitTests;
@@ -321,6 +327,7 @@
 			buildActionMask = 0;
 			files = (
 				398149321F6A068300C6B9E3 /* TimetableTests.swift in Sources */,
+				39B976D21F706A6400F6F0AD /* CNResourceTests.swift in Sources */,
 				393F6FC31F69778C004D9BCC /* FloorTests.swift in Sources */,
 				3973A3621F6BFB7E00ECE236 /* RoomInfoTests.swift in Sources */,
 				39185D7C1F6608DF00003BDD /* AccessibilityInfoTests.swift in Sources */,
@@ -349,6 +356,7 @@
 				39A6657C1F6C5442000FA88B /* URLRequest.swift in Sources */,
 				OBJ_53 /* Error.swift in Sources */,
 				39B71CC71F6C625F00342208 /* Route.swift in Sources */,
+				39B976D41F70795100F6F0AD /* String.swift in Sources */,
 				39185D781F658E0A00003BDD /* Campus.swift in Sources */,
 				398149301F6A048100C6B9E3 /* Timetable.swift in Sources */,
 				39B71CCD1F6C8F1D00342208 /* Search.swift in Sources */,
