@@ -23,7 +23,7 @@ class CNResourceTests: XCTestCase {
             "karten/dresden/geb/apb",
         ]
 
-        let validURLs = rawValidURLs.flatMap(URL.init)
+        let validURLs = rawValidURLs.flatMap(URL.init(string:))
         guard rawValidURLs.count == validURLs.count else { XCTFail(); return }
 
         for url in validURLs {
@@ -54,7 +54,7 @@ class CNResourceTests: XCTestCase {
             "https://navigator.tu-dresden.de/raum/02/062102.0020",
         ]
 
-        let invalidURLs = rawInvalidURLs.flatMap(URL.init)
+        let invalidURLs = rawInvalidURLs.flatMap(URL.init(string:))
         guard rawInvalidURLs.count == invalidURLs.count else { XCTFail(); return }
 
         for url in invalidURLs {
@@ -72,7 +72,7 @@ class CNResourceTests: XCTestCase {
             "apb/00/raum/542100.2230",
         ]
 
-        let validURLs = rawValidURLs.flatMap(URL.init)
+        let validURLs = rawValidURLs.flatMap(URL.init(string:))
         guard rawValidURLs.count == validURLs.count else { XCTFail(); return }
 
         for url in validURLs {
@@ -88,7 +88,7 @@ class CNResourceTests: XCTestCase {
             "apb/00",
         ]
 
-        let invalidURLs = rawInvalidURLs.flatMap(URL.init)
+        let invalidURLs = rawInvalidURLs.flatMap(URL.init(string:))
         guard rawInvalidURLs.count == invalidURLs.count else { XCTFail(); return }
 
         for url in invalidURLs {
