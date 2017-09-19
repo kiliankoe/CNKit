@@ -6,12 +6,9 @@ Access [Campus Navigator](https://navigator.tu-dresden.de) data through a swift 
 
 ## Installation
 
-CNKit is available through Cocoapods, Carthage/Punic and Swift Package Manager, whatever floats your boat.
+CNKit is available through Carthage/Punic and Swift Package Manager, whatever floats your boat.
 
 ```swift
-// Cocoapods
-pod 'CNKit'
-
 // Carthage
 github "kiliankoe/CNKit"
 
