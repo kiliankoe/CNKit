@@ -196,5 +196,13 @@ class CNResourceTests: XCTestCase {
         XCTAssertNotEqual(CNResource.map(region: "region", building: "building"),
                           CNResource.building(building: "building"))
     }
-    
+
+    static var allTests = [
+        ("testValidURLs", testValidURLs),
+        ("testInvalidURLs", testInvalidURLs),
+        ("testFromSearch", testFromSearch),
+        ("testBuildingID", testBuildingID),
+        ("testURL", testURL),
+        ("testEquatable", testEquatable),
+    ]
 }
