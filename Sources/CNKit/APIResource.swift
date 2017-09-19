@@ -86,18 +86,3 @@ extension APIResource {
         session.resume()
     }
 }
-
-extension Dictionary where Key == String {
-    var asURLParams: String {
-        return self
-            .reduce([]) { (params, param: (key: Key, value: Value)) -> [String] in
-                let _key = "\(param.key)".addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)
-                let _val = "\(param.value)".addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)
-                guard let key = _key, let val = _val else {
-                    return params
-                }
-                return params + ["\(key)=\(val)"]
-            }
-            .joined(separator: "&")
-    }
-}

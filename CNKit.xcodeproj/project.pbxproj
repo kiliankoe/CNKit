@@ -34,6 +34,7 @@
 		398149341F6A925A00C6B9E3 /* RoomInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 398149331F6A925A00C6B9E3 /* RoomInfo.swift */; };
 		398149361F6B233000C6B9E3 /* RoomType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 398149351F6B233000C6B9E3 /* RoomType.swift */; };
 		3990B5981F71332B00A58ACD /* URL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3990B5971F71332B00A58ACD /* URL.swift */; };
+		3990B59A1F71350100A58ACD /* Dictionary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3990B5991F71350100A58ACD /* Dictionary.swift */; };
 		39A6657A1F6C5297000FA88B /* Login.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39A665791F6C5297000FA88B /* Login.swift */; };
 		39A6657C1F6C5442000FA88B /* URLRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39A6657B1F6C5442000FA88B /* URLRequest.swift */; };
 		39A6657E1F6C5CDF000FA88B /* LoginTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39A6657D1F6C5CDF000FA88B /* LoginTests.swift */; };
@@ -89,6 +90,7 @@
 		398149331F6A925A00C6B9E3 /* RoomInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomInfo.swift; sourceTree = "<group>"; };
 		398149351F6B233000C6B9E3 /* RoomType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomType.swift; sourceTree = "<group>"; };
 		3990B5971F71332B00A58ACD /* URL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URL.swift; sourceTree = "<group>"; };
+		3990B5991F71350100A58ACD /* Dictionary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dictionary.swift; sourceTree = "<group>"; };
 		39A665791F6C5297000FA88B /* Login.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Login.swift; sourceTree = "<group>"; };
 		39A6657B1F6C5442000FA88B /* URLRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLRequest.swift; sourceTree = "<group>"; };
 		39A6657D1F6C5CDF000FA88B /* LoginTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginTests.swift; sourceTree = "<group>"; };
@@ -144,6 +146,7 @@
 				39A6657B1F6C5442000FA88B /* URLRequest.swift */,
 				39B976D31F70795100F6F0AD /* String.swift */,
 				3990B5971F71332B00A58ACD /* URL.swift */,
+				3990B5991F71350100A58ACD /* Dictionary.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -364,6 +367,7 @@
 				39185D781F658E0A00003BDD /* Campus.swift in Sources */,
 				398149301F6A048100C6B9E3 /* Timetable.swift in Sources */,
 				39B71CCD1F6C8F1D00342208 /* Search.swift in Sources */,
+				3990B59A1F71350100A58ACD /* Dictionary.swift in Sources */,
 				OBJ_54 /* MKMapRect.swift in Sources */,
 				OBJ_58 /* Hash.swift in Sources */,
 				OBJ_59 /* Result.swift in Sources */,
