@@ -27,10 +27,7 @@ class CNResourceTests: XCTestCase {
         guard rawValidURLs.count == validURLs.count else { XCTFail(); return }
 
         for url in validURLs {
-            let resource = try? CNResource(withURL: url)
-            if resource == nil {
-                XCTFail("\(url) should be valid")
-            }
+            XCTAssertNoThrow(try CNResource(withURL: url))
         }
     }
 
@@ -58,11 +55,7 @@ class CNResourceTests: XCTestCase {
         guard rawInvalidURLs.count == invalidURLs.count else { XCTFail(); return }
 
         for url in invalidURLs {
-            let resource = try? CNResource(withURL: url)
-            if let resource = resource {
-                print(resource)
-                XCTFail("\(url) should not be valid.")
-            }
+            XCTAssertThrowsError(try CNResource(withURL: url), url.absoluteString)
         }
     }
 
@@ -76,10 +69,7 @@ class CNResourceTests: XCTestCase {
         guard rawValidURLs.count == validURLs.count else { XCTFail(); return }
 
         for url in validURLs {
-            let resource = try? CNResource.parse(url: url, urlType: .search)
-            if resource == nil {
-                XCTFail("\(url) should be valid for search results")
-            }
+            XCTAssertNoThrow(try CNResource.parse(url: url, urlType: .search))
         }
 
         let rawInvalidURLs = [
@@ -92,11 +82,7 @@ class CNResourceTests: XCTestCase {
         guard rawInvalidURLs.count == invalidURLs.count else { XCTFail(); return }
 
         for url in invalidURLs {
-            let resource = try? CNResource.parse(url: url, urlType: .search)
-            if let resource = resource {
-                print(resource)
-                XCTFail("\(url) should not be valid for search results")
-            }
+            XCTAssertThrowsError(try CNResource.parse(url: url, urlType: .search), url.absoluteString)
         }
     }
 
