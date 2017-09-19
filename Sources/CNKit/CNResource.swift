@@ -1,6 +1,8 @@
 import Foundation
+import struct CoreLocation.CLLocationCoordinate2D
 
 public enum CNResource: Decodable {
+    case coordinate(coord: CLLocationCoordinate2D, zoom: Int)
     case map(region: String, building: String)
     case building(building: String)
     case buildingAccessibility(building: String)
@@ -48,6 +50,15 @@ public enum CNResource: Decodable {
             }
         }
 
+        if components.first?.contains("@") ?? false {
+            // https://navigator.tu-dresden.de/@13.732,51.02839999999999,15.z
+            components = components[0].split(separator: ",").map(String.init)
+            guard components.count == 3 else { throw Error.cnresourceURL(url.absoluteString) }
+            let (rawLat, rawLng, rawZoom) = (components[0].replacingOccurrences(of: "@", with: ""), components[1], components[2].replacingOccurrences(of: ".z", with: ""))
+            guard let lat = Double(rawLat), let lng = Double(rawLng), let zoom = Int(rawZoom) else { throw Error.cnresourceURL(url.absoluteString) }
+            return CNResource.coordinate(coord: CLLocationCoordinate2D(latitude: lat, longitude: lng), zoom: zoom)
+        }
+
         let urlType = components.removeFirst()
         switch urlType {
         case "karten":
@@ -84,8 +95,9 @@ public enum CNResource: Decodable {
         }
     }
 
-    var buildingID: String {
+    var buildingID: String? {
         switch self {
+        case .coordinate(coord: _, zoom: _): return nil
         case .map(region: _, building: let b): return b
         case .building(building: let b): return b
         case .buildingAccessibility(building: let b): return b
@@ -99,9 +111,10 @@ public enum CNResource: Decodable {
     var url: URL? {
         var path = "/"
         switch self {
+        case .coordinate(coord: let coord, zoom: let zoom):
+            path += "@\(coord.latitude),\(coord.longitude),\(zoom).z"
         case .map(region: let region, building: let building):
-            guard let region = region.urlPathEscaped else { return nil }
-            guard let building = building.urlPathEscaped else { return nil }
+            guard let region = region.urlPathEscaped, let building = building.urlPathEscaped else { return nil }
             path += "karten/\(region)/geb/\(building)"
         case .building(building: let building):
             guard let building = building.urlPathEscaped else { return nil }
@@ -113,18 +126,13 @@ public enum CNResource: Decodable {
             guard let building = building.urlPathEscaped else { return nil }
             path += "hoersaele/\(building)"
         case .floor(building: let building, floor: let floor):
-            guard let building = building.urlPathEscaped else { return nil }
-            guard let floor = floor.urlPathEscaped else { return nil }
+            guard let building = building.urlPathEscaped, let floor = floor.urlPathEscaped else { return nil }
             path += "etplan/\(building)/\(floor)"
         case .roomOnFloor(building: let building, floor: let floor, room: let room):
-            guard let building = building.urlPathEscaped else { return nil }
-            guard let floor = floor.urlPathEscaped else { return nil }
-            guard let room = room.urlPathEscaped else { return nil }
+            guard let building = building.urlPathEscaped, let floor = floor.urlPathEscaped, let room = room.urlPathEscaped else { return nil }
             path += "etplan/\(building)/\(floor)/raum/\(room)"
         case .room(building: let building, floor: let floor, room: let room):
-            guard let building = building.urlPathEscaped else { return nil }
-            guard let floor = floor.urlPathEscaped else { return nil }
-            guard let room = room.urlPathEscaped else { return nil }
+            guard let building = building.urlPathEscaped, let floor = floor.urlPathEscaped, let room = room.urlPathEscaped else { return nil }
             path += "raum/\(building)/\(floor)/\(room)"
         }
         return URL(string: path, relativeTo: Config.baseURL)
@@ -139,6 +147,8 @@ public enum CNResource: Decodable {
 extension CNResource: Equatable {
     public static func ==(lhs: CNResource, rhs: CNResource) -> Bool {
         switch (lhs, rhs) {
+        case (.coordinate(coord: let lhsCoord, zoom: let lhsZoom), .coordinate(coord: let rhsCoord, zoom: let rhsZoom)):
+            return lhsCoord.latitude == rhsCoord.latitude && lhsCoord.longitude == rhsCoord.longitude && lhsZoom == rhsZoom
         case (.map(region: let lhsRegion, building: let lhsBuilding), .map(region: let rhsRegion, building: let rhsBuilding)):
             return lhsRegion == rhsRegion && lhsBuilding == rhsBuilding
         case (.building(building: let lhsBuilding), .building(building: let rhsBuilding)):
