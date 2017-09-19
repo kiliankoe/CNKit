@@ -94,10 +94,7 @@ extension RoomInfo: APIResource {
     }
 
     static func request(to resource: RoomInfo.RequestResource) throws -> URLRequest {
-        guard let roomID = resource.roomID.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) else {
-            throw Error.invalidQuery(reason: "failed to encode room id \(resource.roomID)")
-        }
-        let url = URL(string: "api/0.1/roominfo/\(roomID)?accessibility=true&doorplate=true", relativeTo: Config.baseURL)!
+        let url = URL(string: "api/0.1/roominfo/\(resource.roomID.urlQueryEscaped)?accessibility=true&doorplate=true", relativeTo: Config.baseURL)!
         return URLRequest(url: url)
     }
 
@@ -164,10 +161,7 @@ extension RoomInfo.AccessibilityInfo: APIResource {
     }
 
     static func request(to resource: RoomInfo.AccessibilityInfo.RequestResource) throws -> URLRequest {
-        guard let roomID = resource.roomID.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) else {
-            throw Error.invalidQuery(reason: "failed to encode room id \(resource.roomID)")
-        }
-        let url = URL(string: "m/json_barriereinfos/raum/\(roomID)", relativeTo: Config.baseURL)!
+        let url = URL(string: "m/json_barriereinfos/raum/\(resource.roomID.urlQueryEscaped)", relativeTo: Config.baseURL)!
         return URLRequest(url: url)
     }
 

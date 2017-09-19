@@ -71,10 +71,7 @@ extension Timetable: APIResource {
     }
 
     static func request(to resource: Timetable.RequestResource) throws -> URLRequest {
-        guard let roomID = resource.roomID.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) else {
-            throw Error.invalidQuery(reason: "failed to encode room id \(resource.roomID)")
-        }
-        let url = URL(string: "m/json_belegplan/\(roomID)", relativeTo: Config.baseURL)!
+        let url = URL(string: "m/json_belegplan/\(resource.roomID.urlQueryEscaped)", relativeTo: Config.baseURL)!
         return URLRequest(url: url)
     }
 

@@ -237,10 +237,7 @@ extension BuildingComplex.AccessibilityInfo: APIResource {
     }
 
     static func request(to resource: BuildingComplex.AccessibilityInfo.RequestResource) throws -> URLRequest {
-        guard let buildingID = resource.buildingID.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) else {
-            throw Error.invalidQuery(reason: "failed to encode building id \(resource.buildingID)")
-        }
-        let url = URL(string: "api/0.1/buildinginfo/\(buildingID)?accessibility=true", relativeTo: Config.baseURL)!
+        let url = URL(string: "api/0.1/buildinginfo/\(resource.buildingID.urlQueryEscaped)?accessibility=true", relativeTo: Config.baseURL)!
         return URLRequest(url: url)
     }
 

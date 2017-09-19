@@ -55,10 +55,7 @@ extension CanteenMenu: APIResource {
     }
 
     static func request(to resource: CanteenMenu.RequestResource) throws -> URLRequest {
-        guard let canteenID = resource.canteenID.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) else {
-            throw Error.invalidQuery(reason: "failed to encode canteen id \(resource.canteenID)")
-        }
-        let url = URL(string: "/diet/\(canteenID)", relativeTo: Config.baseURL)!
+        let url = URL(string: "/diet/\(resource.canteenID.urlPathEscaped)", relativeTo: Config.baseURL)!
         var request = URLRequest(url: url)
         request.httpMethod = "POST" // (╯°□°）╯︵ ┻━┻
         return request

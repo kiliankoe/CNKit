@@ -148,10 +148,7 @@ extension Floor: APIResource {
     }
 
     static func request(to resource: Floor.RequestResource) throws -> URLRequest {
-        guard let buildingID = resource.buildingID.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) else {
-            throw Error.invalidQuery(reason: "failed to encode building id \(resource.buildingID)")
-        }
-        let url = URL(string: "m/json_etagen/\(buildingID)", relativeTo: Config.baseURL)!
+        let url = URL(string: "m/json_etagen/\(resource.buildingID.urlQueryEscaped)", relativeTo: Config.baseURL)!
         return URLRequest(url: url)
     }
 
