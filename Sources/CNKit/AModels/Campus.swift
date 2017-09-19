@@ -34,4 +34,16 @@ public enum Campus {
             BuildingComplex.fetchAll(session: session, completion: completion)
         }
     }
+
+    /// Decode a list of `BuildingComplex`'es from given data. This takes the data returned
+    /// by `m/json_gebaeude/all`, which is the same as `Campus.fetch()`. Use this to provide
+    /// initial data to be used if an internet connection is not present for the first start
+    /// or if persisting the API responses directly.
+    ///
+    /// - Parameter data: API response as data
+    /// - Returns: decoded API response
+    /// - Throws: any errors occurring during JSON decoding
+    public static func readFromLocal(data: Data) throws -> [BuildingComplex] {
+        return try JSONDecoder().decode([BuildingComplex].self, from: data)
+    }
 }
