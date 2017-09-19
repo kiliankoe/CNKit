@@ -110,6 +110,9 @@ extension BuildingComplex {
         let rawLon: Double?
 
         public var imageURL: URL? {
+            guard let image = image else {
+                return nil
+            }
             return URL(cn_path: image)
         }
 
