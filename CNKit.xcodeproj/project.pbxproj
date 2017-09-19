@@ -33,6 +33,7 @@
 		398149321F6A068300C6B9E3 /* TimetableTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 398149311F6A068300C6B9E3 /* TimetableTests.swift */; };
 		398149341F6A925A00C6B9E3 /* RoomInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 398149331F6A925A00C6B9E3 /* RoomInfo.swift */; };
 		398149361F6B233000C6B9E3 /* RoomType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 398149351F6B233000C6B9E3 /* RoomType.swift */; };
+		3990B5981F71332B00A58ACD /* URL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3990B5971F71332B00A58ACD /* URL.swift */; };
 		39A6657A1F6C5297000FA88B /* Login.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39A665791F6C5297000FA88B /* Login.swift */; };
 		39A6657C1F6C5442000FA88B /* URLRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39A6657B1F6C5442000FA88B /* URLRequest.swift */; };
 		39A6657E1F6C5CDF000FA88B /* LoginTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39A6657D1F6C5CDF000FA88B /* LoginTests.swift */; };
@@ -51,7 +52,7 @@
 		OBJ_41 /* HashTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_24 /* HashTests.swift */; };
 		OBJ_43 /* CNKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = "CNKit::CNKit::Product" /* CNKit.framework */; };
 		OBJ_50 /* APIResource.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_9 /* APIResource.swift */; };
-		OBJ_52 /* Const.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_11 /* Const.swift */; };
+		OBJ_52 /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_11 /* Config.swift */; };
 		OBJ_53 /* Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_12 /* Error.swift */; };
 		OBJ_54 /* MKMapRect.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_14 /* MKMapRect.swift */; };
 		OBJ_58 /* Hash.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_19 /* Hash.swift */; };
@@ -87,6 +88,7 @@
 		398149311F6A068300C6B9E3 /* TimetableTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimetableTests.swift; sourceTree = "<group>"; };
 		398149331F6A925A00C6B9E3 /* RoomInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomInfo.swift; sourceTree = "<group>"; };
 		398149351F6B233000C6B9E3 /* RoomType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomType.swift; sourceTree = "<group>"; };
+		3990B5971F71332B00A58ACD /* URL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URL.swift; sourceTree = "<group>"; };
 		39A665791F6C5297000FA88B /* Login.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Login.swift; sourceTree = "<group>"; };
 		39A6657B1F6C5442000FA88B /* URLRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLRequest.swift; sourceTree = "<group>"; };
 		39A6657D1F6C5CDF000FA88B /* LoginTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginTests.swift; sourceTree = "<group>"; };
@@ -103,7 +105,7 @@
 		39D25BCC1F6C967F00FAFDB6 /* CanteenMenuTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CanteenMenuTests.swift; sourceTree = "<group>"; };
 		"CNKit::CNKit::Product" /* CNKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = CNKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		"CNKit::CNKitTests::Product" /* CNKitTests.xctest */ = {isa = PBXFileReference; lastKnownFileType = file; path = CNKitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		OBJ_11 /* Const.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Const.swift; sourceTree = "<group>"; };
+		OBJ_11 /* Config.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
 		OBJ_12 /* Error.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Error.swift; sourceTree = "<group>"; };
 		OBJ_14 /* MKMapRect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MKMapRect.swift; sourceTree = "<group>"; };
 		OBJ_17 /* Building.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Building.swift; sourceTree = "<group>"; };
@@ -141,6 +143,7 @@
 				393F6FC41F69FA5F004D9BCC /* Color.swift */,
 				39A6657B1F6C5442000FA88B /* URLRequest.swift */,
 				39B976D31F70795100F6F0AD /* String.swift */,
+				3990B5971F71332B00A58ACD /* URL.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -223,7 +226,7 @@
 			isa = PBXGroup;
 			children = (
 				OBJ_9 /* APIResource.swift */,
-				OBJ_11 /* Const.swift */,
+				OBJ_11 /* Config.swift */,
 				OBJ_12 /* Error.swift */,
 				OBJ_13 /* Extensions */,
 				OBJ_15 /* AModels */,
@@ -349,11 +352,12 @@
 				39B531621F66C128008EE183 /* Floor.swift in Sources */,
 				OBJ_50 /* APIResource.swift in Sources */,
 				398149341F6A925A00C6B9E3 /* RoomInfo.swift in Sources */,
-				OBJ_52 /* Const.swift in Sources */,
+				OBJ_52 /* Config.swift in Sources */,
 				393F6FC51F69FA5F004D9BCC /* Color.swift in Sources */,
 				39A6657A1F6C5297000FA88B /* Login.swift in Sources */,
 				39D25BCB1F6C94D900FAFDB6 /* CanteenMenu.swift in Sources */,
 				39A6657C1F6C5442000FA88B /* URLRequest.swift in Sources */,
+				3990B5981F71332B00A58ACD /* URL.swift in Sources */,
 				OBJ_53 /* Error.swift in Sources */,
 				39B71CC71F6C625F00342208 /* Route.swift in Sources */,
 				39B976D41F70795100F6F0AD /* String.swift in Sources */,
