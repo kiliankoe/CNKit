@@ -1,6 +1,6 @@
 # 🗺 CNKit
 
-Access [Campus Navigator](https://navigator.tu-dresden.de) data through a schweet & schwifty API.
+Access [Campus Navigator](https://navigator.tu-dresden.de) data through a swift wrapper. 
 
 
 
@@ -32,6 +32,8 @@ Campus.fetch { result in
         print(building.abbrev)
     }
 }
+
+// P38, APB, ...
 ```
 
-All types returned by the API have a method call `fetch` (or very similar) to request either a specific resource or a list of them. Any necessary params are required by the method.
+All types returned by the API have a method called `fetch` (or very similar) to request either a specific resource or a list of them. Any necessary params are required by the method.
