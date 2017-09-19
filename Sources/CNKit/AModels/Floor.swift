@@ -87,7 +87,7 @@ extension Floor {
         public let name: String?
         public let nameLocation: (Double, Double)?
         public let points: [(Double, Double)]
-        public let isInList: Bool
+        public let isLectureHall: Bool
 
         public var type: RoomType
 
@@ -101,7 +101,7 @@ extension Floor {
             case namex
             case namey
             case points = "punkte"
-            case isInList = "list"
+            case isLectureHall = "list"
         }
 
         public init(from decoder: Decoder) throws {
@@ -126,10 +126,10 @@ extension Floor {
                 return (x, y)
             }
 
-            if let inList = try container.decodeIfPresent(Bool.self, forKey: .isInList) {
-                self.isInList = inList
+            if let inList = try container.decodeIfPresent(Bool.self, forKey: .isLectureHall) {
+                self.isLectureHall = inList
             } else {
-                self.isInList = false
+                self.isLectureHall = false
             }
 
             // this is just a placeholder, the type has to be set again after decoding all rooms
