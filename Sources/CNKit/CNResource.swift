@@ -114,26 +114,19 @@ public enum CNResource: Decodable {
         case .coordinate(coord: let coord, zoom: let zoom):
             path += "@\(coord.latitude),\(coord.longitude),\(zoom).z"
         case .map(region: let region, building: let building):
-            guard let region = region.urlPathEscaped, let building = building.urlPathEscaped else { return nil }
-            path += "karten/\(region)/geb/\(building)"
+            path += "karten/\(region.urlPathEscaped)/geb/\(building.urlPathEscaped)"
         case .building(building: let building):
-            guard let building = building.urlPathEscaped else { return nil }
-            path += "gebaeude/\(building)"
+            path += "gebaeude/\(building.urlPathEscaped)"
         case .buildingAccessibility(building: let building):
-            guard let building = building.urlPathEscaped else { return nil }
-            path += "barrierefrei/\(building)"
+            path += "barrierefrei/\(building.urlPathEscaped)"
         case .lectureHalls(building: let building):
-            guard let building = building.urlPathEscaped else { return nil }
-            path += "hoersaele/\(building)"
+            path += "hoersaele/\(building.urlPathEscaped)"
         case .floor(building: let building, floor: let floor):
-            guard let building = building.urlPathEscaped, let floor = floor.urlPathEscaped else { return nil }
-            path += "etplan/\(building)/\(floor)"
+            path += "etplan/\(building.urlPathEscaped)/\(floor.urlPathEscaped)"
         case .roomOnFloor(building: let building, floor: let floor, room: let room):
-            guard let building = building.urlPathEscaped, let floor = floor.urlPathEscaped, let room = room.urlPathEscaped else { return nil }
-            path += "etplan/\(building)/\(floor)/raum/\(room)"
+            path += "etplan/\(building.urlPathEscaped)/\(floor.urlPathEscaped)/raum/\(room.urlPathEscaped)"
         case .room(building: let building, floor: let floor, room: let room):
-            guard let building = building.urlPathEscaped, let floor = floor.urlPathEscaped, let room = room.urlPathEscaped else { return nil }
-            path += "raum/\(building)/\(floor)/\(room)"
+            path += "raum/\(building.urlPathEscaped)/\(floor.urlPathEscaped)/\(room.urlPathEscaped)"
         }
         return URL(string: path, relativeTo: Config.baseURL)
     }
