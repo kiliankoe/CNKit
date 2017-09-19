@@ -16,6 +16,7 @@ class CNResourceTests: XCTestCase {
             "http://navigator.tu-dresden.de/raum/biz/02/062102.0020",
             "https://www.navigator.tu-dresden.de/raum/biz/02/062102.0020",
             "https://navigator.tu-dresden.de/barrierefrei/apb",
+            "https://navigator.tu-dresden.de/hoersaele/apb",
         ].flatMap(URL.init)
 
         for url in validURLs {
@@ -38,6 +39,7 @@ class CNResourceTests: XCTestCase {
             "https://navigator.tu-dresden.de/gebaeude//",
             "https://navigator.tu-dresden.de/barrierefrei/apb/00",
             "https://navigator.tu-dresden.de/barrierefrei",
+            "https://navigator.tu-dresden.de/hoersaele/",
         ].flatMap(URL.init)
 
         for url in invalidURLs {

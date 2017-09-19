@@ -4,6 +4,7 @@ public enum CNResource: Decodable {
     case map(region: String, building: String)
     case building(building: String)
     case buildingAccessibility(building: String)
+    case lectureHalls(building: String)
     case floor(building: String, floor: String)
     case roomOnFloor(building: String, floor: String, room: String)
     case room(building: String, floor: String, room: String)
@@ -58,8 +59,13 @@ public enum CNResource: Decodable {
             guard components.count == 1 else { throw Error.cnresourceURL(url.absoluteString) }
             return CNResource.building(building: components[0])
         case "barrierefrei":
-            guard components.count == 1 else { throw  Error.cnresourceURL(url.absoluteString) }
+            // https://navigator.tu-dresden.de/barrierefrei/biz
+            guard components.count == 1 else { throw Error.cnresourceURL(url.absoluteString) }
             return CNResource.buildingAccessibility(building: components[0])
+        case "hoersaele":
+            // https://navigator.tu-dresden.de/hoersaele/apb
+            guard components.count == 1 else { throw Error.cnresourceURL(url.absoluteString) }
+            return CNResource.lectureHalls(building: components[0])
         case "etplan":
             if components.count == 2 {
                 // https://navigator.tu-dresden.de/etplan/apb/00
@@ -83,6 +89,7 @@ public enum CNResource: Decodable {
         case .map(region: _, building: let b): return b
         case .building(building: let b): return b
         case .buildingAccessibility(building: let b): return b
+        case .lectureHalls(building: let b): return b
         case .floor(building: let b, floor: _): return b
         case .roomOnFloor(building: let b, floor: _, room: _): return b
         case .room(building: let b, floor: _, room: _): return b
@@ -102,6 +109,9 @@ public enum CNResource: Decodable {
         case .buildingAccessibility(building: let building):
             guard let building = building.urlPathEscaped else { return nil }
             path += "barrierefrei/\(building)"
+        case .lectureHalls(building: let building):
+            guard let building = building.urlPathEscaped else { return nil }
+            path += "hoersaele/\(building)"
         case .floor(building: let building, floor: let floor):
             guard let building = building.urlPathEscaped else { return nil }
             guard let floor = floor.urlPathEscaped else { return nil }
@@ -134,6 +144,8 @@ extension CNResource: Equatable {
         case (.building(building: let lhsBuilding), .building(building: let rhsBuilding)):
             return lhsBuilding == rhsBuilding
         case (.buildingAccessibility(building: let lhsBuilding), .buildingAccessibility(building: let rhsBuilding)):
+            return lhsBuilding == rhsBuilding
+        case (.lectureHalls(building: let lhsBuilding), .lectureHalls(building: let rhsBuilding)):
             return lhsBuilding == rhsBuilding
         case (.floor(building: let lhsBuilding, floor: let lhsFloor), .floor(building: let rhsBuilding, floor: let rhsFloor)):
             return lhsBuilding == rhsBuilding && lhsFloor == rhsFloor
