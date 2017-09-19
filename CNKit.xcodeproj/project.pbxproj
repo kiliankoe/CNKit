@@ -35,6 +35,8 @@
 		398149361F6B233000C6B9E3 /* RoomType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 398149351F6B233000C6B9E3 /* RoomType.swift */; };
 		3990B5981F71332B00A58ACD /* URL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3990B5971F71332B00A58ACD /* URL.swift */; };
 		3990B59A1F71350100A58ACD /* Dictionary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3990B5991F71350100A58ACD /* Dictionary.swift */; };
+		3990B59C1F71538C00A58ACD /* Tiles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3990B59B1F71538C00A58ACD /* Tiles.swift */; };
+		3990B59E1F71561C00A58ACD /* TilesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3990B59D1F71561C00A58ACD /* TilesTests.swift */; };
 		39A6657A1F6C5297000FA88B /* Login.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39A665791F6C5297000FA88B /* Login.swift */; };
 		39A6657C1F6C5442000FA88B /* URLRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39A6657B1F6C5442000FA88B /* URLRequest.swift */; };
 		39A6657E1F6C5CDF000FA88B /* LoginTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39A6657D1F6C5CDF000FA88B /* LoginTests.swift */; };
@@ -91,6 +93,8 @@
 		398149351F6B233000C6B9E3 /* RoomType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomType.swift; sourceTree = "<group>"; };
 		3990B5971F71332B00A58ACD /* URL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URL.swift; sourceTree = "<group>"; };
 		3990B5991F71350100A58ACD /* Dictionary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dictionary.swift; sourceTree = "<group>"; };
+		3990B59B1F71538C00A58ACD /* Tiles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tiles.swift; sourceTree = "<group>"; };
+		3990B59D1F71561C00A58ACD /* TilesTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TilesTests.swift; sourceTree = "<group>"; };
 		39A665791F6C5297000FA88B /* Login.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Login.swift; sourceTree = "<group>"; };
 		39A6657B1F6C5442000FA88B /* URLRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLRequest.swift; sourceTree = "<group>"; };
 		39A6657D1F6C5CDF000FA88B /* LoginTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginTests.swift; sourceTree = "<group>"; };
@@ -192,6 +196,7 @@
 				39B71CCE1F6C90B600342208 /* SearchTests.swift */,
 				39D25BCC1F6C967F00FAFDB6 /* CanteenMenuTests.swift */,
 				39B976D11F706A6400F6F0AD /* CNResourceTests.swift */,
+				3990B59D1F71561C00A58ACD /* TilesTests.swift */,
 			);
 			name = CNKitTests;
 			path = Tests/CNKitTests;
@@ -236,6 +241,7 @@
 				OBJ_20 /* Result.swift */,
 				3973A35F1F6BF2D300ECE236 /* Trillian.swift */,
 				397AB8111F6D3A4E00D402CC /* CNResource.swift */,
+				3990B59B1F71538C00A58ACD /* Tiles.swift */,
 			);
 			name = CNKit;
 			path = Sources/CNKit;
@@ -339,6 +345,7 @@
 				39185D7C1F6608DF00003BDD /* AccessibilityInfoTests.swift in Sources */,
 				OBJ_41 /* HashTests.swift in Sources */,
 				39B71CCB1F6C89CC00342208 /* RouteTests.swift in Sources */,
+				3990B59E1F71561C00A58ACD /* TilesTests.swift in Sources */,
 				39B71CCF1F6C90B600342208 /* SearchTests.swift in Sources */,
 				39D25BCD1F6C967F00FAFDB6 /* CanteenMenuTests.swift in Sources */,
 				39A6657E1F6C5CDF000FA88B /* LoginTests.swift in Sources */,
@@ -368,6 +375,7 @@
 				398149301F6A048100C6B9E3 /* Timetable.swift in Sources */,
 				39B71CCD1F6C8F1D00342208 /* Search.swift in Sources */,
 				3990B59A1F71350100A58ACD /* Dictionary.swift in Sources */,
+				3990B59C1F71538C00A58ACD /* Tiles.swift in Sources */,
 				OBJ_54 /* MKMapRect.swift in Sources */,
 				OBJ_58 /* Hash.swift in Sources */,
 				OBJ_59 /* Result.swift in Sources */,
