@@ -65,7 +65,11 @@ class SearchTests: XCTestCase {
                 return
             }
 
-            // FIXME: This seems to be broken at the moment :/
+            XCTAssertEqual(search.autocomplete, "E017")
+            XCTAssertEqual(search.buildingResults.count, 0)
+            XCTAssertGreaterThanOrEqual(search.roomResults.count, 1)
+            XCTAssertEqual(search.roomResults[0].title, "BIO E17")
+            XCTAssertEqual(search.roomResults[0].resource, .room(building: "bio", floor: "00", room: "236600.0170"))
 
             e.fulfill()
         }

@@ -23,7 +23,10 @@ public enum CNResource: Decodable {
     /// - Warning: This only accepts search results, not actual CN URLs.
     public init(from decoder: Decoder) throws {
         let container = try decoder.singleValueContainer()
-        let rawURL = try container.decode(URL.self)
+        let rawURLString = try container.decode(String.self)
+        guard let rawURL = URL(string: rawURLString.urlPathEscaped) else {
+            throw DecodingError.dataCorrupted(DecodingError.Context(codingPath: [], debugDescription: "Failed to encode search URL fragment as URL"))
+        }
         self = try CNResource.parse(url: rawURL, urlType: .search)
     }
 
