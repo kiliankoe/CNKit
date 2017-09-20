@@ -16,6 +16,7 @@ protocol APIResource {
 extension APIResource {
     static func fetch(resource: RequestResource,
                       session: URLSession,
+                      rawDataHandler: ((Data) -> Void)? = nil,
                       completion: @escaping (Result<CollectionType>) -> Void) {
 
         var request: URLRequest
@@ -66,6 +67,9 @@ extension APIResource {
                 completion(.failure(Error.reEncoding))
                 return
             }
+
+            // To be used for storing raw responses elsewhere.
+            rawDataHandler?(data)
 
             if let error = try? JSONDecoder().decode(APIError.self, from: newlinestrippedData) {
                 completion(.failure(Error.server(status: 200, error: error.error)))

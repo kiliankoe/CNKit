@@ -7,8 +7,9 @@ public enum Campus {
     ///   - session: session to use, defaults to `.shared`
     ///   - completion: handler
     public static func fetch(session: URLSession = .shared,
+                             rawDataHandler: ((Data) -> Void)? = nil,
                              completion: @escaping (Result<[BuildingComplex]>) -> Void) {
-        BuildingComplex.fetchAll(session: session, completion: completion)
+        BuildingComplex.fetch(session: session, rawDataHandler: rawDataHandler, completion: completion)
     }
 
     /// Fetch all building complexes if the current data hash differs from the given one.
@@ -20,6 +21,7 @@ public enum Campus {
     /// - Warning: Completion handler is only called on error or if newer data was found.
     public static func fetch(ifNewerThanHash oldHash: String,
                              session: URLSession = .shared,
+                             rawDataHandler: ((Data) -> Void)? = nil,
                              completion: @escaping (Result<[BuildingComplex]>) -> Void) {
         Hash.fetch(session: session) { result in
             let hash: Hash
@@ -31,7 +33,7 @@ public enum Campus {
             }
             guard hash.hash != oldHash else { return }
 
-            BuildingComplex.fetchAll(session: session, completion: completion)
+            BuildingComplex.fetch(session: session, rawDataHandler: rawDataHandler, completion: completion)
         }
     }
 

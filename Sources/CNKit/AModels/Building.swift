@@ -138,7 +138,6 @@ extension BuildingComplex {
             case hasRamp = "rampe"
             case rawLat = "lat"
             case rawLon = "lon"
-
         }
 
         public var description: String {
@@ -162,9 +161,10 @@ extension BuildingComplex: APIResource {
     /// - Parameters:
     ///   - session: session to use, defaults to `.shared`
     ///   - completion: handler
-    public static func fetchAll(session: URLSession = .shared,
-                                completion: @escaping (Result<[BuildingComplex]>) -> Void) {
-        BuildingComplex.fetch(resource: RequestResource(), session: session, completion: completion)
+    public static func fetch(session: URLSession = .shared,
+                             rawDataHandler: ((Data) -> Void)? = nil,
+                             completion: @escaping (Result<[BuildingComplex]>) -> Void) {
+        BuildingComplex.fetch(resource: RequestResource(), session: session, rawDataHandler: rawDataHandler, completion: completion)
     }
 }
 
@@ -176,7 +176,6 @@ extension BuildingComplex {
         public let disabledEntrances: [Int]
         public let hasDisabledRestrooms: Trillian
         public let elevatorDoorWidths: [Int]
-
 
         private enum RootCodingKeys: String, CodingKey {
             case data = "accessibility"

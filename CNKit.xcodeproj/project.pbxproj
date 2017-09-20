@@ -53,6 +53,7 @@
 		39B71CCF1F6C90B600342208 /* SearchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39B71CCE1F6C90B600342208 /* SearchTests.swift */; };
 		39B976D21F706A6400F6F0AD /* CNResourceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39B976D11F706A6400F6F0AD /* CNResourceTests.swift */; };
 		39B976D41F70795100F6F0AD /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39B976D31F70795100F6F0AD /* String.swift */; };
+		39C8ED211F72949F00AD3DE2 /* CampusTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39C8ED201F72949F00AD3DE2 /* CampusTests.swift */; };
 		39D25BCB1F6C94D900FAFDB6 /* CanteenMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39D25BCA1F6C94D900FAFDB6 /* CanteenMenu.swift */; };
 		39D25BCD1F6C967F00FAFDB6 /* CanteenMenuTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39D25BCC1F6C967F00FAFDB6 /* CanteenMenuTests.swift */; };
 		OBJ_34 /* Package.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_6 /* Package.swift */; };
@@ -115,6 +116,7 @@
 		39B71CCE1F6C90B600342208 /* SearchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTests.swift; sourceTree = "<group>"; };
 		39B976D11F706A6400F6F0AD /* CNResourceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CNResourceTests.swift; sourceTree = "<group>"; };
 		39B976D31F70795100F6F0AD /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
+		39C8ED201F72949F00AD3DE2 /* CampusTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CampusTests.swift; sourceTree = "<group>"; };
 		39D25BCA1F6C94D900FAFDB6 /* CanteenMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CanteenMenu.swift; sourceTree = "<group>"; };
 		39D25BCC1F6C967F00FAFDB6 /* CanteenMenuTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CanteenMenuTests.swift; sourceTree = "<group>"; };
 		"CNKit::CNKit::Product" /* CNKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = CNKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -209,6 +211,7 @@
 				3990B5A11F72661800A58ACD /* ErrorTests.swift */,
 				3990B5A31F72687B00A58ACD /* ResultTests.swift */,
 				3990B5A51F726C6600A58ACD /* ColorTests.swift */,
+				39C8ED201F72949F00AD3DE2 /* CampusTests.swift */,
 			);
 			name = CNKitTests;
 			path = Tests/CNKitTests;
@@ -360,6 +363,7 @@
 				39185D7C1F6608DF00003BDD /* AccessibilityInfoTests.swift in Sources */,
 				OBJ_41 /* HashTests.swift in Sources */,
 				39B71CCB1F6C89CC00342208 /* RouteTests.swift in Sources */,
+				39C8ED211F72949F00AD3DE2 /* CampusTests.swift in Sources */,
 				3990B59E1F71561C00A58ACD /* TilesTests.swift in Sources */,
 				39B71CCF1F6C90B600342208 /* SearchTests.swift in Sources */,
 				39D25BCD1F6C967F00FAFDB6 /* CanteenMenuTests.swift in Sources */,

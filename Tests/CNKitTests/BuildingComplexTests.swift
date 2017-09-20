@@ -50,7 +50,7 @@ class BuildingComplexTests: XCTestCase {
     func testFetch() {
         let e = expectation(description: "get data")
 
-        BuildingComplex.fetchAll { result in
+        BuildingComplex.fetch { result in
             guard let buildings = result.success else {
                 XCTFail("got error: \(result)")
                 e.fulfill()
