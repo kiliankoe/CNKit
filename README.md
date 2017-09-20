@@ -1,6 +1,6 @@
 # 🗺 CNKit
 
-Access [Campus Navigator](https://navigator.tu-dresden.de) data through a swift wrapper. 
+Access [Campus Navigator](https://navigator.tu-dresden.de) data through a swift wrapper.
 
 
 
@@ -13,7 +13,7 @@ CNKit is available through Carthage/Punic and Swift Package Manager, whatever fl
 github "kiliankoe/CNKit"
 
 // Swift Package Manager
-.package(url: "https://github.com/kiliankoe/CNKit", from: "0.1.0")
+.package(url: "https://github.com/kiliankoe/CNKit", from: "latest version")
 ```
 
 
