@@ -30,7 +30,10 @@ class BuildingComplexTests: XCTestCase {
         let he = apb.entrances[0]
         XCTAssertEqual(he.id, 1)
         XCTAssertEqual(he.image, "eingaenge/APB_1.jpg")
+        XCTAssertEqual(he.imageURL?.absoluteString, "https://navigator.tu-dresden.de/eingaenge/APB_1.jpg")
         XCTAssertEqual(he.note, "Pförtnerloge  Besetzung 0 - 24 Uhr")
+        XCTAssertEqual(he.location!.latitude, 51.0, accuracy: 1) // XCTAssert can't cope with the types if CLLocationDegrees are optional here
+        XCTAssertEqual(he.location!.longitude, 13.7, accuracy: 1)
         XCTAssertEqual(he.isAccessible, true)
         XCTAssertEqual(he.hasSteps, nil)
         XCTAssertEqual(he.hasOpenButton, nil)
