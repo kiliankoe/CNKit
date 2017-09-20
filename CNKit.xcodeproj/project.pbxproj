@@ -37,6 +37,7 @@
 		3990B59A1F71350100A58ACD /* Dictionary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3990B5991F71350100A58ACD /* Dictionary.swift */; };
 		3990B59C1F71538C00A58ACD /* Tiles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3990B59B1F71538C00A58ACD /* Tiles.swift */; };
 		3990B59E1F71561C00A58ACD /* TilesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3990B59D1F71561C00A58ACD /* TilesTests.swift */; };
+		3990B5A01F7262E700A58ACD /* MKMapRectTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3990B59F1F7262E700A58ACD /* MKMapRectTests.swift */; };
 		39A6657A1F6C5297000FA88B /* Login.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39A665791F6C5297000FA88B /* Login.swift */; };
 		39A6657C1F6C5442000FA88B /* URLRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39A6657B1F6C5442000FA88B /* URLRequest.swift */; };
 		39A6657E1F6C5CDF000FA88B /* LoginTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39A6657D1F6C5CDF000FA88B /* LoginTests.swift */; };
@@ -95,6 +96,7 @@
 		3990B5991F71350100A58ACD /* Dictionary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dictionary.swift; sourceTree = "<group>"; };
 		3990B59B1F71538C00A58ACD /* Tiles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tiles.swift; sourceTree = "<group>"; };
 		3990B59D1F71561C00A58ACD /* TilesTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TilesTests.swift; sourceTree = "<group>"; };
+		3990B59F1F7262E700A58ACD /* MKMapRectTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MKMapRectTests.swift; sourceTree = "<group>"; };
 		39A665791F6C5297000FA88B /* Login.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Login.swift; sourceTree = "<group>"; };
 		39A6657B1F6C5442000FA88B /* URLRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLRequest.swift; sourceTree = "<group>"; };
 		39A6657D1F6C5CDF000FA88B /* LoginTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginTests.swift; sourceTree = "<group>"; };
@@ -197,6 +199,7 @@
 				39D25BCC1F6C967F00FAFDB6 /* CanteenMenuTests.swift */,
 				39B976D11F706A6400F6F0AD /* CNResourceTests.swift */,
 				3990B59D1F71561C00A58ACD /* TilesTests.swift */,
+				3990B59F1F7262E700A58ACD /* MKMapRectTests.swift */,
 			);
 			name = CNKitTests;
 			path = Tests/CNKitTests;
@@ -339,6 +342,7 @@
 			buildActionMask = 0;
 			files = (
 				398149321F6A068300C6B9E3 /* TimetableTests.swift in Sources */,
+				3990B5A01F7262E700A58ACD /* MKMapRectTests.swift in Sources */,
 				39B976D21F706A6400F6F0AD /* CNResourceTests.swift in Sources */,
 				393F6FC31F69778C004D9BCC /* FloorTests.swift in Sources */,
 				3973A3621F6BFB7E00ECE236 /* RoomInfoTests.swift in Sources */,
