@@ -34,3 +34,5 @@ Campus.fetch { result in
 ```
 
 All types returned by the API have a method called `fetch` (or very similar) to request either a specific resource or a list of them. Any necessary params are required by the method.
+
+Further documentation can be found here: https://kiliankoe.github.io/CNKit/
