@@ -1,9 +1,11 @@
 import Foundation
 
-// List of types:
-// https://fusionforge.zih.tu-dresden.de/plugins/mediawiki/wiki/campusnavigator/index.php/Raumtypen
-// https://github.com/kiliankoe/campus-navigator/blob/master/CampusNavigator/CoreData/Room.m
+/// A type of room.
 public enum RoomType: Int, Decodable {
+    // List of types:
+    // https://fusionforge.zih.tu-dresden.de/plugins/mediawiki/wiki/campusnavigator/index.php/Raumtypen
+    // https://github.com/kiliankoe/campus-navigator/blob/master/CampusNavigator/CoreData/Room.m
+
     case stairwell = 11
     case elevator = 12
     case restroom = 13
@@ -32,6 +34,7 @@ public enum RoomType: Int, Decodable {
         self.init(value: rawValue)
     }
 
+    /// The color this type should be displayed as.
     public var color: Int {
         switch self {
         case .stairwell: return 0xd4bfb4
