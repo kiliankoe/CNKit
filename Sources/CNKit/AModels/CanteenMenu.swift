@@ -1,10 +1,14 @@
 import Foundation
 
+/// Menu for a specific canteen.
 public struct CanteenMenu: Decodable {
+    /// Name
     public let menuName: String
+    /// List of meals.
     public let meals: [Meal]
 
-    static let all = [
+    /// List of all supported canteens.
+    public static let all = [
         "m13": "Alte Mensa",
         "nmen": "Zeltschlößchen",
         "mjoh": "Mensa Johannstadt",
@@ -23,8 +27,11 @@ public struct CanteenMenu: Decodable {
 }
 
 extension CanteenMenu {
+    /// A meal, omnomnom.
     public struct Meal: Decodable {
+        /// Description
         public let description: String
+        /// How much is it?
         public let prices: String?
 
         private enum CodingKeys: String, CodingKey {
