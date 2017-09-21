@@ -1,7 +1,10 @@
 import Foundation
 
+/// A hash used by the API to save data on requesting all building complexes.
 public struct Hash: Codable {
+    /// Current hash value.
     public let hash: String
+    /// ¯\_(ツ)_/¯
     public let encryption: Bool
 }
 
