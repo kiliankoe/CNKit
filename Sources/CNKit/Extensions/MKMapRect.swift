@@ -1,6 +1,6 @@
 import MapKit
 
-extension MKMapRect {
+internal extension MKMapRect {
 
     /// Resize the MKMapRect with a given factor by moving the origin and adjusting the width and height.
     ///

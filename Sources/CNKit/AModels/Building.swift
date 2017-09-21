@@ -14,7 +14,7 @@ public struct BuildingComplex: Codable, CustomStringConvertible {
 
     public var imageURLs: [URL] {
         guard let images = images else { return [] }
-        return images.flatMap { URL(cn_path: $0) }
+        return images.flatMap { URL(cnPath: $0) }
     }
 
     let rawPoints: [[[String: Double]]]
@@ -113,7 +113,7 @@ extension BuildingComplex {
             guard let image = image else {
                 return nil
             }
-            return URL(cn_path: image)
+            return URL(cnPath: image)
         }
 
         public var location: CLLocationCoordinate2D? {

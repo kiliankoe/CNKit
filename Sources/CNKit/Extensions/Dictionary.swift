@@ -1,6 +1,6 @@
 import Foundation
 
-extension Dictionary where Key == String {
+internal extension Dictionary where Key == String {
     var asURLParams: String {
         return self
             .reduce([]) { (params, param: (key: Key, value: Value)) -> [String] in

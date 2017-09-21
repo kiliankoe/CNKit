@@ -1,7 +1,7 @@
 import Foundation
 
-extension URL {
-    init?(cn_path path: String) {
+internal extension URL {
+    init?(cnPath path: String) {
         if let url = URL(string: path, relativeTo: Config.baseURL) {
             self = url
         } else {

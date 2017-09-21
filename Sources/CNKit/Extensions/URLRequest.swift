@@ -1,6 +1,6 @@
 import Foundation
 
-extension URLRequest {
+internal extension URLRequest {
     mutating func setBody(_ body: [String: Any]) {
         assert(self.httpMethod != "GET", "GET requests shouldn't have a body")
 
