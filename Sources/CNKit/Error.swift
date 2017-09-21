@@ -1,11 +1,18 @@
 import Foundation
 
+/// Any possible error occurring during the execution of CNKit.
 public enum Error: Swift.Error {
+    /// The query was invalid and not sent.
     case invalidQuery(reason: String)
+    /// The response data could not be read.
     case response
+    /// The server returned a status code != 2xx or an error message.
     case server(status: Int, error: String?)
+    /// The received data could not be decoded as JSON.
     case decode(error: Swift.Error)
+    /// The received data had to be re-encoded before parsing, which failed.
     case reEncoding
+    /// The URL to this specific resource could not be read.
     case cnresourceURL(String)
 }
 
