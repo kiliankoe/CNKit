@@ -1,0 +1,624 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>CNResource Enum Reference</title>
+    <link rel="stylesheet" type="text/css" href="../css/jazzy.css" />
+    <link rel="stylesheet" type="text/css" href="../css/highlight.css" />
+    <meta charset='utf-8'>
+    <script src="../js/jquery.min.js" defer></script>
+    <script src="../js/jazzy.js" defer></script>
+    
+  </head>
+  <body>
+    <a name="//apple_ref/swift/Enum/CNResource" class="dashAnchor"></a>
+    <a title="CNResource Enum Reference"></a>
+    <header>
+      <div class="content-wrapper">
+        <p><a href="../index.html">CNKit Docs</a> (83% documented)</p>
+      </div>
+    </header>
+    <div class="content-wrapper">
+      <p id="breadcrumbs">
+        <a href="../index.html">CNKit Reference</a>
+        <img id="carat" src="../img/carat.png" />
+        CNResource Enum Reference
+      </p>
+    </div>
+    <div class="content-wrapper">
+      <nav class="sidebar">
+        <ul class="nav-groups">
+          <li class="nav-group-name">
+            <a href="../Enums.html">Enums</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Enums/CNResource.html">CNResource</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/Campus.html">Campus</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/Error.html">Error</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/Result.html">Result</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/RoomType.html">RoomType</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/Tiles.html">Tiles</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/Trillian.html">Trillian</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Extensions.html">Extensions</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Extensions/NSColor.html">NSColor</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Extensions/UIColor.html">UIColor</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Functions.html">Functions</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Functions.html#/s:5CNKit2qqoixAA6ResultOyxG_xyXKtlF">??(_:_:)</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Structs.html">Structs</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Structs/BuildingComplex.html">BuildingComplex</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/BuildingComplex/BuildingStructure.html">– BuildingStructure</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/BuildingComplex/Entrance.html">– Entrance</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/BuildingComplex/AccessibilityInfo.html">– AccessibilityInfo</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/CanteenMenu.html">CanteenMenu</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/CanteenMenu/Meal.html">– Meal</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/Floor.html">Floor</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/Floor/Room.html">– Room</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/Hash.html">Hash</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/Login.html">Login</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/RoomInfo.html">RoomInfo</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/RoomInfo/AccessibilityBadge.html">– AccessibilityBadge</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/RoomInfo/Doorplate.html">– Doorplate</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/RoomInfo/AccessibilityInfo.html">– AccessibilityInfo</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/Route.html">Route</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/Route/Instruction.html">– Instruction</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/Route/Mode.html">– Mode</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/Search.html">Search</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/Search/SearchResult.html">– SearchResult</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/Timetable.html">Timetable</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/Timetable/Day.html">– Day</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+      <article class="main-content">
+        <section>
+          <section class="section">
+            <h1>CNResource</h1>
+              <div class="declaration">
+                <div class="language">
+                  <pre class="highlight"><code><span class="kd">public</span> <span class="kd">enum</span> <span class="kt">CNResource</span><span class="p">:</span> <span class="kt">Decodable</span></code></pre>
+
+                </div>
+              </div>
+            <p>A specific Campus Navigator resource, e.g. a room, a building&rsquo;s lecture halls, etc.
+This primarily maps to anything the webapp can display in a specific view.</p>
+
+          </section>
+          <section class="section task-group-section">
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:5CNKit10CNResourceO10coordinateACSC22CLLocationCoordinate2DV5coord_Si4zoomtcACmF"></a>
+                    <a name="//apple_ref/swift/Element/coordinate" class="dashAnchor"></a>
+                    <a class="token" href="#/s:5CNKit10CNResourceO10coordinateACSC22CLLocationCoordinate2DV5coord_Si4zoomtcACmF">coordinate</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>A coordinate on the map, e.g. <a href="https://navigator.tu-dresden.de/@13.732,51.02839999999999,15.z">https://navigator.tu-dresden.de/@13.732,51.02839999999999,15.z</a></p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="k">case</span> <span class="nf">coordinate</span><span class="p">(</span><span class="nv">coord</span><span class="p">:</span> <span class="kt">CLLocationCoordinate2D</span><span class="p">,</span> <span class="nv">zoom</span><span class="p">:</span> <span class="kt">Int</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:5CNKit10CNResourceO3mapACSS6region_SS8buildingtcACmF"></a>
+                    <a name="//apple_ref/swift/Element/map" class="dashAnchor"></a>
+                    <a class="token" href="#/s:5CNKit10CNResourceO3mapACSS6region_SS8buildingtcACmF">map</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>A specific region on the map, e.g. <a href="https://navigator.tu-dresden.de/karten/dresden/geb/apb">https://navigator.tu-dresden.de/karten/dresden/geb/apb</a></p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="k">case</span> <span class="nf">map</span><span class="p">(</span><span class="nv">region</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">building</span><span class="p">:</span> <span class="kt">String</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:5CNKit10CNResourceO8buildingACSSAD_tcACmF"></a>
+                    <a name="//apple_ref/swift/Element/building" class="dashAnchor"></a>
+                    <a class="token" href="#/s:5CNKit10CNResourceO8buildingACSSAD_tcACmF">building</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>A specific building, e.g. <a href="https://navigator.tu-dresden.de/gebaeude/apb">https://navigator.tu-dresden.de/gebaeude/apb</a></p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="k">case</span> <span class="nf">building</span><span class="p">(</span><span class="nv">building</span><span class="p">:</span> <span class="kt">String</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:5CNKit10CNResourceO21buildingAccessibilityACSS0C0_tcACmF"></a>
+                    <a name="//apple_ref/swift/Element/buildingAccessibility" class="dashAnchor"></a>
+                    <a class="token" href="#/s:5CNKit10CNResourceO21buildingAccessibilityACSS0C0_tcACmF">buildingAccessibility</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>A specific building&rsquo;s accessibility information, e.g. <a href="https://navigator.tu-dresden.de/barrierefrei/biz">https://navigator.tu-dresden.de/barrierefrei/biz</a></p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="k">case</span> <span class="nf">buildingAccessibility</span><span class="p">(</span><span class="nv">building</span><span class="p">:</span> <span class="kt">String</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:5CNKit10CNResourceO12lectureHallsACSS8building_tcACmF"></a>
+                    <a name="//apple_ref/swift/Element/lectureHalls" class="dashAnchor"></a>
+                    <a class="token" href="#/s:5CNKit10CNResourceO12lectureHallsACSS8building_tcACmF">lectureHalls</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>A specific building&rsquo;s lecture hall listing, e.g. <a href="https://navigator.tu-dresden.de/hoersaele/apb">https://navigator.tu-dresden.de/hoersaele/apb</a></p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="k">case</span> <span class="nf">lectureHalls</span><span class="p">(</span><span class="nv">building</span><span class="p">:</span> <span class="kt">String</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:5CNKit10CNResourceO5floorACSS8building_SSADtcACmF"></a>
+                    <a name="//apple_ref/swift/Element/floor" class="dashAnchor"></a>
+                    <a class="token" href="#/s:5CNKit10CNResourceO5floorACSS8building_SSADtcACmF">floor</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>A specific floor, e.g. <a href="https://navigator.tu-dresden.de/etplan/apb/00">https://navigator.tu-dresden.de/etplan/apb/00</a></p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="k">case</span> <span class="nf">floor</span><span class="p">(</span><span class="nv">building</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">floor</span><span class="p">:</span> <span class="kt">String</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:5CNKit10CNResourceO11roomOnFloorACSS8building_SS5floorSS0C0tcACmF"></a>
+                    <a name="//apple_ref/swift/Element/roomOnFloor" class="dashAnchor"></a>
+                    <a class="token" href="#/s:5CNKit10CNResourceO11roomOnFloorACSS8building_SS5floorSS0C0tcACmF">roomOnFloor</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>A single room highlighted on a specific floor, e.g. <a href="https://navigator.tu-dresden.de/etplan/biz/02/raum/062102.0020">https://navigator.tu-dresden.de/etplan/biz/02/raum/062102.0020</a></p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="k">case</span> <span class="nf">roomOnFloor</span><span class="p">(</span><span class="nv">building</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">floor</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">room</span><span class="p">:</span> <span class="kt">String</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:5CNKit10CNResourceO4roomACSS8building_SS5floorSSADtcACmF"></a>
+                    <a name="//apple_ref/swift/Element/room" class="dashAnchor"></a>
+                    <a class="token" href="#/s:5CNKit10CNResourceO4roomACSS8building_SS5floorSSADtcACmF">room</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>A specific room, e.g. <a href="https://navigator.tu-dresden.de/raum/apb/00/542100.2310">https://navigator.tu-dresden.de/raum/apb/00/542100.2310</a></p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="k">case</span> <span class="nf">room</span><span class="p">(</span><span class="nv">building</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">floor</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">room</span><span class="p">:</span> <span class="kt">String</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:5CNKit10CNResourceOAC10Foundation3URLV04withD0_tKcfc"></a>
+                    <a name="//apple_ref/swift/Method/init(withURL:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:5CNKit10CNResourceOAC10Foundation3URLV04withD0_tKcfc">init(withURL:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Create a CNResource from a given Campus Navigator URL.</p>
+<div class="aside aside-throws">
+    <p class="aside-title">Throws</p>
+    Error.cnresourceURL with the URL if unable to parse
+
+</div>
+<div class="aside aside-warning">
+    <p class="aside-title">Warning</p>
+    This only accepts valid CN URLs, not the search output. See <a href="https://fusionforge.zih.tu-dresden.de/tracker/?aid=1976">here</a>.
+
+</div>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="nf">init</span><span class="p">(</span><span class="n">withURL</span> <span class="nv">url</span><span class="p">:</span> <span class="kt">URL</span><span class="p">)</span> <span class="k">throws</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>url</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>url</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:5CNKit10CNResourceOACs7Decoder_p4from_tKcfc"></a>
+                    <a name="//apple_ref/swift/Method/init(from:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:5CNKit10CNResourceOACs7Decoder_p4from_tKcfc">init(from:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <div class="aside aside-warning">
+    <p class="aside-title">Warning</p>
+    This only accepts search results, not actual CN URLs.
+
+</div>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="nf">init</span><span class="p">(</span><span class="n">from</span> <span class="nv">decoder</span><span class="p">:</span> <span class="kt">Decoder</span><span class="p">)</span> <span class="k">throws</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:5CNKit10CNResourceO10buildingIDSSSgv"></a>
+                    <a name="//apple_ref/swift/Property/buildingID" class="dashAnchor"></a>
+                    <a class="token" href="#/s:5CNKit10CNResourceO10buildingIDSSSgv">buildingID</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>This resource&rsquo;s building ID, if any.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">buildingID</span><span class="p">:</span> <span class="kt">String</span><span class="p">?</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:5CNKit10CNResourceO3url10Foundation3URLVSgv"></a>
+                    <a name="//apple_ref/swift/Property/url" class="dashAnchor"></a>
+                    <a class="token" href="#/s:5CNKit10CNResourceO3url10Foundation3URLVSgv">url</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>The canonical user-accessible URL pointing to this resource.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">url</span><span class="p">:</span> <span class="kt">URL</span><span class="p">?</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:s9EquatableP2eeoiSbx_xtFZ"></a>
+                    <a name="//apple_ref/swift/Method/==(_:_:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:s9EquatableP2eeoiSbx_xtFZ">==(_:_:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">static</span> <span class="kd">func</span> <span class="o">==</span><span class="p">(</span><span class="nv">lhs</span><span class="p">:</span> <span class="kt">CNResource</span><span class="p">,</span> <span class="nv">rhs</span><span class="p">:</span> <span class="kt">CNResource</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Bool</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>lhs</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>rhs</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </section>
+        </section>
+        <section id="footer">
+          <p>&copy; 2017 <a class="link" href="https://github.com/kiliankoe/CNKit" target="_blank" rel="external">Kilian Koeltzsch</a>. All rights reserved. (Last updated: 2017-09-22)</p>
+          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.8.3</a>, a <a class="link" href="http://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+        </section>
+      </article>
+    </div>
+  </body>
+</div>
+</html>

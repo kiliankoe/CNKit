@@ -1,0 +1,824 @@
+{
+  "warnings": [
+    {
+      "file": "/Users/kilian/dev/Campus Navigator/CNKit/Sources/CNKit/AModels/CanteenMenu.swift",
+      "line": null,
+      "symbol": "CanteenMenu",
+      "symbol_kind": "source.lang.swift.decl.extension",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/kilian/dev/Campus Navigator/CNKit/Sources/CNKit/AModels/CanteenMenu.swift",
+      "line": null,
+      "symbol": "CanteenMenu",
+      "symbol_kind": "source.lang.swift.decl.extension",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/kilian/dev/Campus Navigator/CNKit/Sources/CNKit/AModels/CanteenMenu.swift",
+      "line": 3,
+      "symbol": "CanteenMenu",
+      "symbol_kind": "source.lang.swift.decl.struct",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/kilian/dev/Campus Navigator/CNKit/Sources/CNKit/AModels/CanteenMenu.swift",
+      "line": 4,
+      "symbol": "CanteenMenu.menuName",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/kilian/dev/Campus Navigator/CNKit/Sources/CNKit/AModels/CanteenMenu.swift",
+      "line": 5,
+      "symbol": "CanteenMenu.meals",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/kilian/dev/Campus Navigator/CNKit/Sources/CNKit/AModels/CanteenMenu.swift",
+      "line": 26,
+      "symbol": "CanteenMenu.Meal",
+      "symbol_kind": "source.lang.swift.decl.struct",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/kilian/dev/Campus Navigator/CNKit/Sources/CNKit/AModels/CanteenMenu.swift",
+      "line": 27,
+      "symbol": "CanteenMenu.Meal.description",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/kilian/dev/Campus Navigator/CNKit/Sources/CNKit/AModels/CanteenMenu.swift",
+      "line": 28,
+      "symbol": "CanteenMenu.Meal.prices",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/kilian/dev/Campus Navigator/CNKit/Sources/CNKit/AModels/Login.swift",
+      "line": null,
+      "symbol": "Login",
+      "symbol_kind": "source.lang.swift.decl.extension",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/kilian/dev/Campus Navigator/CNKit/Sources/CNKit/AModels/Login.swift",
+      "line": 3,
+      "symbol": "Login",
+      "symbol_kind": "source.lang.swift.decl.struct",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/kilian/dev/Campus Navigator/CNKit/Sources/CNKit/AModels/Login.swift",
+      "line": 4,
+      "symbol": "Login.token",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/kilian/dev/Campus Navigator/CNKit/Sources/CNKit/AModels/RoomInfo.swift",
+      "line": null,
+      "symbol": "RoomInfo",
+      "symbol_kind": "source.lang.swift.decl.extension",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/kilian/dev/Campus Navigator/CNKit/Sources/CNKit/AModels/RoomInfo.swift",
+      "line": null,
+      "symbol": "RoomInfo",
+      "symbol_kind": "source.lang.swift.decl.extension",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/kilian/dev/Campus Navigator/CNKit/Sources/CNKit/AModels/RoomInfo.swift",
+      "line": null,
+      "symbol": "RoomInfo",
+      "symbol_kind": "source.lang.swift.decl.extension",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/kilian/dev/Campus Navigator/CNKit/Sources/CNKit/AModels/RoomInfo.swift",
+      "line": null,
+      "symbol": "RoomInfo",
+      "symbol_kind": "source.lang.swift.decl.extension",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/kilian/dev/Campus Navigator/CNKit/Sources/CNKit/AModels/RoomInfo.swift",
+      "line": null,
+      "symbol": "RoomInfo.AccessibilityInfo",
+      "symbol_kind": "source.lang.swift.decl.extension",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/kilian/dev/Campus Navigator/CNKit/Sources/CNKit/AModels/RoomInfo.swift",
+      "line": 3,
+      "symbol": "RoomInfo",
+      "symbol_kind": "source.lang.swift.decl.struct",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/kilian/dev/Campus Navigator/CNKit/Sources/CNKit/AModels/RoomInfo.swift",
+      "line": 4,
+      "symbol": "RoomInfo.name",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/kilian/dev/Campus Navigator/CNKit/Sources/CNKit/AModels/RoomInfo.swift",
+      "line": 5,
+      "symbol": "RoomInfo.type",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/kilian/dev/Campus Navigator/CNKit/Sources/CNKit/AModels/RoomInfo.swift",
+      "line": 6,
+      "symbol": "RoomInfo.isRoutable",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/kilian/dev/Campus Navigator/CNKit/Sources/CNKit/AModels/RoomInfo.swift",
+      "line": 8,
+      "symbol": "RoomInfo.accessibilityBadge",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/kilian/dev/Campus Navigator/CNKit/Sources/CNKit/AModels/RoomInfo.swift",
+      "line": 9,
+      "symbol": "RoomInfo.doorplate",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/kilian/dev/Campus Navigator/CNKit/Sources/CNKit/AModels/RoomInfo.swift",
+      "line": 21,
+      "symbol": "RoomInfo.AccessibilityBadge",
+      "symbol_kind": "source.lang.swift.decl.struct",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/kilian/dev/Campus Navigator/CNKit/Sources/CNKit/AModels/RoomInfo.swift",
+      "line": 22,
+      "symbol": "RoomInfo.AccessibilityBadge.doorIsAccessible",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/kilian/dev/Campus Navigator/CNKit/Sources/CNKit/AModels/RoomInfo.swift",
+      "line": 23,
+      "symbol": "RoomInfo.AccessibilityBadge.doorwidth",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/kilian/dev/Campus Navigator/CNKit/Sources/CNKit/AModels/RoomInfo.swift",
+      "line": 24,
+      "symbol": "RoomInfo.AccessibilityBadge.stepsAreMarked",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/kilian/dev/Campus Navigator/CNKit/Sources/CNKit/AModels/RoomInfo.swift",
+      "line": 25,
+      "symbol": "RoomInfo.AccessibilityBadge.hearingloopMicroport",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/kilian/dev/Campus Navigator/CNKit/Sources/CNKit/AModels/RoomInfo.swift",
+      "line": 26,
+      "symbol": "RoomInfo.AccessibilityBadge.hearingloopInductive",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/kilian/dev/Campus Navigator/CNKit/Sources/CNKit/AModels/RoomInfo.swift",
+      "line": 27,
+      "symbol": "RoomInfo.AccessibilityBadge.wheelchairSpacesAvailable",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/kilian/dev/Campus Navigator/CNKit/Sources/CNKit/AModels/RoomInfo.swift",
+      "line": 28,
+      "symbol": "RoomInfo.AccessibilityBadge.wheelchairSpacesCount",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/kilian/dev/Campus Navigator/CNKit/Sources/CNKit/AModels/RoomInfo.swift",
+      "line": 29,
+      "symbol": "RoomInfo.AccessibilityBadge.lecturerZoneIsAccessible",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/kilian/dev/Campus Navigator/CNKit/Sources/CNKit/AModels/RoomInfo.swift",
+      "line": 45,
+      "symbol": "RoomInfo.Doorplate",
+      "symbol_kind": "source.lang.swift.decl.struct",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/kilian/dev/Campus Navigator/CNKit/Sources/CNKit/AModels/RoomInfo.swift",
+      "line": 46,
+      "symbol": "RoomInfo.Doorplate.people",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/kilian/dev/Campus Navigator/CNKit/Sources/CNKit/AModels/RoomInfo.swift",
+      "line": 47,
+      "symbol": "RoomInfo.Doorplate.chair",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/kilian/dev/Campus Navigator/CNKit/Sources/CNKit/AModels/RoomInfo.swift",
+      "line": 48,
+      "symbol": "RoomInfo.Doorplate.text",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/kilian/dev/Campus Navigator/CNKit/Sources/CNKit/AModels/RoomInfo.swift",
+      "line": 49,
+      "symbol": "RoomInfo.Doorplate.department",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/kilian/dev/Campus Navigator/CNKit/Sources/CNKit/AModels/RoomInfo.swift",
+      "line": 50,
+      "symbol": "RoomInfo.Doorplate.faculty",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/kilian/dev/Campus Navigator/CNKit/Sources/CNKit/AModels/RoomInfo.swift",
+      "line": 52,
+      "symbol": "RoomInfo.Doorplate.Person",
+      "symbol_kind": "source.lang.swift.decl.struct",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/kilian/dev/Campus Navigator/CNKit/Sources/CNKit/AModels/RoomInfo.swift",
+      "line": 53,
+      "symbol": "RoomInfo.Doorplate.Person.name",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/kilian/dev/Campus Navigator/CNKit/Sources/CNKit/AModels/RoomInfo.swift",
+      "line": 54,
+      "symbol": "RoomInfo.Doorplate.Person.function",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/kilian/dev/Campus Navigator/CNKit/Sources/CNKit/AModels/RoomInfo.swift",
+      "line": 101,
+      "symbol": "RoomInfo.fetch(forRoom:session:completion:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/kilian/dev/Campus Navigator/CNKit/Sources/CNKit/AModels/RoomInfo.swift",
+      "line": 110,
+      "symbol": "RoomInfo.AccessibilityInfo",
+      "symbol_kind": "source.lang.swift.decl.struct",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/kilian/dev/Campus Navigator/CNKit/Sources/CNKit/AModels/RoomInfo.swift",
+      "line": 111,
+      "symbol": "RoomInfo.AccessibilityInfo.categories",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/kilian/dev/Campus Navigator/CNKit/Sources/CNKit/AModels/RoomInfo.swift",
+      "line": 113,
+      "symbol": "RoomInfo.AccessibilityInfo.AccessibilityCategory",
+      "symbol_kind": "source.lang.swift.decl.struct",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/kilian/dev/Campus Navigator/CNKit/Sources/CNKit/AModels/RoomInfo.swift",
+      "line": 114,
+      "symbol": "RoomInfo.AccessibilityInfo.AccessibilityCategory.title",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/kilian/dev/Campus Navigator/CNKit/Sources/CNKit/AModels/RoomInfo.swift",
+      "line": 115,
+      "symbol": "RoomInfo.AccessibilityInfo.AccessibilityCategory.entries",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/kilian/dev/Campus Navigator/CNKit/Sources/CNKit/AModels/RoomInfo.swift",
+      "line": 168,
+      "symbol": "RoomInfo.AccessibilityInfo.fetch(forRoom:session:completion:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/kilian/dev/Campus Navigator/CNKit/Sources/CNKit/AModels/RoomType.swift",
+      "line": 6,
+      "symbol": "RoomType",
+      "symbol_kind": "source.lang.swift.decl.enum",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/kilian/dev/Campus Navigator/CNKit/Sources/CNKit/AModels/RoomType.swift",
+      "line": 7,
+      "symbol": "RoomType.stairwell",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/kilian/dev/Campus Navigator/CNKit/Sources/CNKit/AModels/RoomType.swift",
+      "line": 8,
+      "symbol": "RoomType.elevator",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/kilian/dev/Campus Navigator/CNKit/Sources/CNKit/AModels/RoomType.swift",
+      "line": 9,
+      "symbol": "RoomType.restroom",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/kilian/dev/Campus Navigator/CNKit/Sources/CNKit/AModels/RoomType.swift",
+      "line": 10,
+      "symbol": "RoomType.accessibleRestroom",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/kilian/dev/Campus Navigator/CNKit/Sources/CNKit/AModels/RoomType.swift",
+      "line": 11,
+      "symbol": "RoomType.babyChangingRoom",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/kilian/dev/Campus Navigator/CNKit/Sources/CNKit/AModels/RoomType.swift",
+      "line": 12,
+      "symbol": "RoomType.library",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/kilian/dev/Campus Navigator/CNKit/Sources/CNKit/AModels/RoomType.swift",
+      "line": 13,
+      "symbol": "RoomType.lecturehall",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/kilian/dev/Campus Navigator/CNKit/Sources/CNKit/AModels/RoomType.swift",
+      "line": 14,
+      "symbol": "RoomType.seminarroom",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/kilian/dev/Campus Navigator/CNKit/Sources/CNKit/AModels/RoomType.swift",
+      "line": 15,
+      "symbol": "RoomType.drawingroom",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/kilian/dev/Campus Navigator/CNKit/Sources/CNKit/AModels/RoomType.swift",
+      "line": 16,
+      "symbol": "RoomType.restingroom",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/kilian/dev/Campus Navigator/CNKit/Sources/CNKit/AModels/RoomType.swift",
+      "line": 17,
+      "symbol": "RoomType.coatroom",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/kilian/dev/Campus Navigator/CNKit/Sources/CNKit/AModels/RoomType.swift",
+      "line": 18,
+      "symbol": "RoomType.room",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/kilian/dev/Campus Navigator/CNKit/Sources/CNKit/AModels/RoomType.swift",
+      "line": 19,
+      "symbol": "RoomType.other",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/kilian/dev/Campus Navigator/CNKit/Sources/CNKit/AModels/RoomType.swift",
+      "line": 35,
+      "symbol": "RoomType.color",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/kilian/dev/Campus Navigator/CNKit/Sources/CNKit/AModels/Route.swift",
+      "line": null,
+      "symbol": "Route",
+      "symbol_kind": "source.lang.swift.decl.extension",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/kilian/dev/Campus Navigator/CNKit/Sources/CNKit/AModels/Route.swift",
+      "line": null,
+      "symbol": "Route",
+      "symbol_kind": "source.lang.swift.decl.extension",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/kilian/dev/Campus Navigator/CNKit/Sources/CNKit/AModels/Route.swift",
+      "line": null,
+      "symbol": "Route",
+      "symbol_kind": "source.lang.swift.decl.extension",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/kilian/dev/Campus Navigator/CNKit/Sources/CNKit/AModels/Route.swift",
+      "line": 4,
+      "symbol": "Route",
+      "symbol_kind": "source.lang.swift.decl.struct",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/kilian/dev/Campus Navigator/CNKit/Sources/CNKit/AModels/Route.swift",
+      "line": 5,
+      "symbol": "Route.length",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/kilian/dev/Campus Navigator/CNKit/Sources/CNKit/AModels/Route.swift",
+      "line": 6,
+      "symbol": "Route.duration",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/kilian/dev/Campus Navigator/CNKit/Sources/CNKit/AModels/Route.swift",
+      "line": 7,
+      "symbol": "Route.coords",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/kilian/dev/Campus Navigator/CNKit/Sources/CNKit/AModels/Route.swift",
+      "line": 8,
+      "symbol": "Route.instructions",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/kilian/dev/Campus Navigator/CNKit/Sources/CNKit/AModels/Route.swift",
+      "line": 59,
+      "symbol": "Route.Instruction",
+      "symbol_kind": "source.lang.swift.decl.struct",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/kilian/dev/Campus Navigator/CNKit/Sources/CNKit/AModels/Route.swift",
+      "line": 60,
+      "symbol": "Route.Instruction.distance",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/kilian/dev/Campus Navigator/CNKit/Sources/CNKit/AModels/Route.swift",
+      "line": 61,
+      "symbol": "Route.Instruction.indication",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/kilian/dev/Campus Navigator/CNKit/Sources/CNKit/AModels/Route.swift",
+      "line": 62,
+      "symbol": "Route.Instruction.duration",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/kilian/dev/Campus Navigator/CNKit/Sources/CNKit/AModels/Route.swift",
+      "line": 63,
+      "symbol": "Route.Instruction.description",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/kilian/dev/Campus Navigator/CNKit/Sources/CNKit/AModels/Route.swift",
+      "line": 65,
+      "symbol": "Route.Instruction.Indication",
+      "symbol_kind": "source.lang.swift.decl.enum",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/kilian/dev/Campus Navigator/CNKit/Sources/CNKit/AModels/Route.swift",
+      "line": 66,
+      "symbol": "Route.Instruction.Indication.sharpLeft",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/kilian/dev/Campus Navigator/CNKit/Sources/CNKit/AModels/Route.swift",
+      "line": 67,
+      "symbol": "Route.Instruction.Indication.left",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/kilian/dev/Campus Navigator/CNKit/Sources/CNKit/AModels/Route.swift",
+      "line": 68,
+      "symbol": "Route.Instruction.Indication.lightLeft",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/kilian/dev/Campus Navigator/CNKit/Sources/CNKit/AModels/Route.swift",
+      "line": 70,
+      "symbol": "Route.Instruction.Indication.continue",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/kilian/dev/Campus Navigator/CNKit/Sources/CNKit/AModels/Route.swift",
+      "line": 72,
+      "symbol": "Route.Instruction.Indication.lightRight",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/kilian/dev/Campus Navigator/CNKit/Sources/CNKit/AModels/Route.swift",
+      "line": 73,
+      "symbol": "Route.Instruction.Indication.right",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/kilian/dev/Campus Navigator/CNKit/Sources/CNKit/AModels/Route.swift",
+      "line": 74,
+      "symbol": "Route.Instruction.Indication.sharpRight",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/kilian/dev/Campus Navigator/CNKit/Sources/CNKit/AModels/Route.swift",
+      "line": 76,
+      "symbol": "Route.Instruction.Indication.intermediate",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/kilian/dev/Campus Navigator/CNKit/Sources/CNKit/AModels/Route.swift",
+      "line": 77,
+      "symbol": "Route.Instruction.Indication.roundabout",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/kilian/dev/Campus Navigator/CNKit/Sources/CNKit/AModels/Route.swift",
+      "line": 79,
+      "symbol": "Route.Instruction.Indication.destinationReached",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/kilian/dev/Campus Navigator/CNKit/Sources/CNKit/AModels/Route.swift",
+      "line": 85,
+      "symbol": "Route.Mode",
+      "symbol_kind": "source.lang.swift.decl.enum",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/kilian/dev/Campus Navigator/CNKit/Sources/CNKit/AModels/Route.swift",
+      "line": 86,
+      "symbol": "Route.Mode.foot",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/kilian/dev/Campus Navigator/CNKit/Sources/CNKit/AModels/Route.swift",
+      "line": 87,
+      "symbol": "Route.Mode.bike",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/kilian/dev/Campus Navigator/CNKit/Sources/CNKit/AModels/Route.swift",
+      "line": 88,
+      "symbol": "Route.Mode.wheelchair",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/kilian/dev/Campus Navigator/CNKit/Sources/CNKit/AModels/Route.swift",
+      "line": 89,
+      "symbol": "Route.Mode.car",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/kilian/dev/Campus Navigator/CNKit/Sources/CNKit/AModels/Search.swift",
+      "line": null,
+      "symbol": "Search",
+      "symbol_kind": "source.lang.swift.decl.extension",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/kilian/dev/Campus Navigator/CNKit/Sources/CNKit/AModels/Search.swift",
+      "line": null,
+      "symbol": "Search",
+      "symbol_kind": "source.lang.swift.decl.extension",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/kilian/dev/Campus Navigator/CNKit/Sources/CNKit/AModels/Search.swift",
+      "line": 3,
+      "symbol": "Search",
+      "symbol_kind": "source.lang.swift.decl.struct",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/kilian/dev/Campus Navigator/CNKit/Sources/CNKit/AModels/Search.swift",
+      "line": 4,
+      "symbol": "Search.autocomplete",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/kilian/dev/Campus Navigator/CNKit/Sources/CNKit/AModels/Search.swift",
+      "line": 5,
+      "symbol": "Search.buildingResults",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/kilian/dev/Campus Navigator/CNKit/Sources/CNKit/AModels/Search.swift",
+      "line": 6,
+      "symbol": "Search.roomResults",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/kilian/dev/Campus Navigator/CNKit/Sources/CNKit/AModels/Search.swift",
+      "line": 22,
+      "symbol": "Search.SearchResult",
+      "symbol_kind": "source.lang.swift.decl.struct",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/kilian/dev/Campus Navigator/CNKit/Sources/CNKit/AModels/Search.swift",
+      "line": 23,
+      "symbol": "Search.SearchResult.title",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/kilian/dev/Campus Navigator/CNKit/Sources/CNKit/AModels/Search.swift",
+      "line": 24,
+      "symbol": "Search.SearchResult.resource",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/kilian/dev/Campus Navigator/CNKit/Sources/CNKit/AModels/Timetable.swift",
+      "line": 52,
+      "symbol": "Timetable.Day.Weekday.monday",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/kilian/dev/Campus Navigator/CNKit/Sources/CNKit/AModels/Timetable.swift",
+      "line": 53,
+      "symbol": "Timetable.Day.Weekday.tuesday",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/kilian/dev/Campus Navigator/CNKit/Sources/CNKit/AModels/Timetable.swift",
+      "line": 54,
+      "symbol": "Timetable.Day.Weekday.wednesday",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/kilian/dev/Campus Navigator/CNKit/Sources/CNKit/AModels/Timetable.swift",
+      "line": 55,
+      "symbol": "Timetable.Day.Weekday.thursday",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/kilian/dev/Campus Navigator/CNKit/Sources/CNKit/AModels/Timetable.swift",
+      "line": 56,
+      "symbol": "Timetable.Day.Weekday.friday",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/kilian/dev/Campus Navigator/CNKit/Sources/CNKit/Result.swift",
+      "line": 3,
+      "symbol": "Result",
+      "symbol_kind": "source.lang.swift.decl.enum",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/kilian/dev/Campus Navigator/CNKit/Sources/CNKit/Result.swift",
+      "line": 4,
+      "symbol": "Result.success",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/kilian/dev/Campus Navigator/CNKit/Sources/CNKit/Result.swift",
+      "line": 5,
+      "symbol": "Result.failure",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/kilian/dev/Campus Navigator/CNKit/Sources/CNKit/Result.swift",
+      "line": 15,
+      "symbol": "Result.get()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/kilian/dev/Campus Navigator/CNKit/Sources/CNKit/Result.swift",
+      "line": 22,
+      "symbol": "Result.success",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/kilian/dev/Campus Navigator/CNKit/Sources/CNKit/Result.swift",
+      "line": 29,
+      "symbol": "Result.failure",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/kilian/dev/Campus Navigator/CNKit/Sources/CNKit/Result.swift",
+      "line": 37,
+      "symbol": "??(_:_:)",
+      "symbol_kind": "source.lang.swift.decl.function.free",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/kilian/dev/Campus Navigator/CNKit/Sources/CNKit/Trillian.swift",
+      "line": 3,
+      "symbol": "Trillian.true",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/kilian/dev/Campus Navigator/CNKit/Sources/CNKit/Trillian.swift",
+      "line": 4,
+      "symbol": "Trillian.false",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/kilian/dev/Campus Navigator/CNKit/Sources/CNKit/Trillian.swift",
+      "line": 5,
+      "symbol": "Trillian.nodata",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/kilian/dev/Campus Navigator/CNKit/Sources/CNKit/Trillian.swift",
+      "line": 7,
+      "symbol": "Trillian.init(boolValue:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/kilian/dev/Campus Navigator/CNKit/Sources/CNKit/Trillian.swift",
+      "line": 11,
+      "symbol": "Trillian.init(stringValue:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    }
+  ],
+  "source_directory": "/Users/kilian/dev/Campus Navigator/CNKit"
+}
