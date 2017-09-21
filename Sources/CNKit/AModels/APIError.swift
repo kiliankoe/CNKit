@@ -1,5 +1,5 @@
 import Foundation
 
-struct APIError: Decodable {
+internal struct APIError: Decodable {
     let error: String
 }
