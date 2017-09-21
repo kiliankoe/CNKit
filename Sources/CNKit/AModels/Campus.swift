@@ -6,6 +6,7 @@ public enum Campus {
     ///
     /// - Parameters:
     ///   - session: session to use, defaults to `.shared`
+    ///   - rawDataHandler: receives the raw data before being parsed
     ///   - completion: handler
     public static func fetch(session: URLSession = .shared,
                              rawDataHandler: ((Data) -> Void)? = nil,
@@ -18,6 +19,7 @@ public enum Campus {
     /// - Parameters:
     ///   - oldHash: given data hash
     ///   - session: session to use, defaults to `.shared`
+    ///   - rawDataHandler: receives the raw data before being parsed
     ///   - completion: handler
     /// - Warning: Completion handler is only called on error or if newer data was found.
     public static func fetch(ifNewerThanHash oldHash: String,

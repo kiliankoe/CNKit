@@ -196,6 +196,7 @@ extension BuildingComplex: APIResource {
     ///
     /// - Parameters:
     ///   - session: session to use, defaults to `.shared`
+    ///   - rawDataHandler: receives the raw data before being parsed
     ///   - completion: handler
     public static func fetch(session: URLSession = .shared,
                              rawDataHandler: ((Data) -> Void)? = nil,
