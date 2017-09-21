@@ -1,8 +1,12 @@
 import Foundation
 
+/// A list of search results.
 public struct Search: Decodable {
+    /// Text to help completing the user's input.
     public let autocomplete: String
+    /// A list of buildings matching the search query.
     public let buildingResults: [SearchResult]
+    /// A list of rooms matching the search query.
     public let roomResults: [SearchResult]
 
     // There's also `trenn`: Int, which shows where a divider line should be inserted (uninteresting here)
@@ -19,8 +23,11 @@ public struct Search: Decodable {
 }
 
 extension Search {
+    /// A single search result.
     public struct SearchResult: Decodable {
+        /// Title to display.
         public let title: String
+        /// Campus Navigator resource.
         public let resource: CNResource
 
         public init(from decoder: Decoder) throws {
