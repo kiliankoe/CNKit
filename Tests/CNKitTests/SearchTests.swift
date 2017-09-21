@@ -33,6 +33,10 @@ class SearchTests: XCTestCase {
             [
               "APB E017",
               "apb/00/raum/542100.2230"
+            ],
+            [
+              "APB E023 <span class='sml'>(APB/E023/U)</span>",
+              "apb/00/raum/542100.2310"
             ]
           ],
           "more_geb": false,
@@ -50,9 +54,10 @@ class SearchTests: XCTestCase {
         XCTAssertEqual(search.buildingResults[2].title, "Cafeteria Bergstraße")
         XCTAssertEqual(search.buildingResults[2].resource, .map(region: "dresden", building: "nmen"))
 
-        XCTAssertEqual(search.roomResults.count, 3)
+        XCTAssertEqual(search.roomResults.count, 4)
         XCTAssertEqual(search.roomResults[2].title, "APB E017")
         XCTAssertEqual(search.roomResults[2].resource, .room(building: "apb", floor: "00", room: "542100.2230"))
+        XCTAssertEqual(search.roomResults[3].title, "APB E023")
     }
 
     func testFetch() {

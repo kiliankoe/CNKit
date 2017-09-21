@@ -26,7 +26,13 @@ extension Search {
 
         public init(from decoder: Decoder) throws {
             var container = try decoder.unkeyedContainer()
-            self.title = try container.decode(String.self)
+
+            // The search results sometime contain HTML styling info 🙄 Let's strip that.
+            // Example result: `APB 3105 <span class='sml'>(APB/3105/P)</span>`
+            let rawTitle = try container.decode(String.self)
+            let titleRegex = try NSRegularExpression(pattern: "( <.*>)")
+            self.title = titleRegex.stringByReplacingMatches(in: rawTitle, range: NSMakeRange(0, rawTitle.count), withTemplate: "")
+
             self.resource = try container.decode(CNResource.self)
         }
     }
