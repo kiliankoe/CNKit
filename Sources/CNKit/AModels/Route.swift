@@ -1,10 +1,15 @@
 import Foundation
 import struct CoreLocation.CLLocationCoordinate2D
 
+/// A route from A to B.
 public struct Route: Decodable {
+    /// Length of the route in meters.
     public let length: Double
+    /// Duration of the route in minutes.
     public let duration: Double
+    /// List of coordinates.
     public let coords: [CLLocationCoordinate2D]
+    /// List of specific instructions.
     public let instructions: [Instruction]
 
     private enum CodingKeys: String, CodingKey {
@@ -56,12 +61,18 @@ public struct Route: Decodable {
 }
 
 extension Route {
+    /// A single route instruction.
     public struct Instruction {
+        /// The distance in meters.
         public let distance: Double
+        /// The indication to show.
         public let indication: Indication
+        /// The duration in minutes.
         public let duration: Int
+        /// A textual description.
         public let description: String
 
+        /// Route Instruction Indication
         public enum Indication: Int {
             case sharpLeft = -3
             case left = -2
@@ -82,6 +93,7 @@ extension Route {
 }
 
 extension Route {
+    /// Routing Mode
     public enum Mode: String {
         case foot
         case bike
