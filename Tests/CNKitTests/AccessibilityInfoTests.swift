@@ -24,10 +24,10 @@ class AccessibilityInfoTests: XCTestCase {
 
         let accessibilityInfo = try! JSONDecoder().decode(BuildingComplex.AccessibilityInfo.self, from: json)
 
-        XCTAssertEqual(accessibilityInfo.hasDisabledEntrance, .true)
+        XCTAssertEqual(accessibilityInfo.hasAccessibleEntrance, .true)
         XCTAssertEqual(accessibilityInfo.hasElevator, .true)
-        XCTAssertEqual(accessibilityInfo.disabledEntrances, [2])
-        XCTAssertEqual(accessibilityInfo.hasDisabledRestrooms, .true)
+        XCTAssertEqual(accessibilityInfo.accessibleEntrances, [2])
+        XCTAssertEqual(accessibilityInfo.hasAccessibleRestrooms, .true)
         XCTAssertEqual(accessibilityInfo.elevatorDoorWidths, [120])
     }
 
