@@ -54,6 +54,7 @@
 		39B976D21F706A6400F6F0AD /* CNResourceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39B976D11F706A6400F6F0AD /* CNResourceTests.swift */; };
 		39B976D41F70795100F6F0AD /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39B976D31F70795100F6F0AD /* String.swift */; };
 		39C8ED211F72949F00AD3DE2 /* CampusTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39C8ED201F72949F00AD3DE2 /* CampusTests.swift */; };
+		39C8ED241F745E2D00AD3DE2 /* Int.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39C8ED231F745E2D00AD3DE2 /* Int.swift */; };
 		39D25BCB1F6C94D900FAFDB6 /* CanteenMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39D25BCA1F6C94D900FAFDB6 /* CanteenMenu.swift */; };
 		39D25BCD1F6C967F00FAFDB6 /* CanteenMenuTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39D25BCC1F6C967F00FAFDB6 /* CanteenMenuTests.swift */; };
 		OBJ_34 /* Package.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_6 /* Package.swift */; };
@@ -117,6 +118,7 @@
 		39B976D11F706A6400F6F0AD /* CNResourceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CNResourceTests.swift; sourceTree = "<group>"; };
 		39B976D31F70795100F6F0AD /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
 		39C8ED201F72949F00AD3DE2 /* CampusTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CampusTests.swift; sourceTree = "<group>"; };
+		39C8ED231F745E2D00AD3DE2 /* Int.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Int.swift; sourceTree = "<group>"; };
 		39D25BCA1F6C94D900FAFDB6 /* CanteenMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CanteenMenu.swift; sourceTree = "<group>"; };
 		39D25BCC1F6C967F00FAFDB6 /* CanteenMenuTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CanteenMenuTests.swift; sourceTree = "<group>"; };
 		"CNKit::CNKit::Product" /* CNKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = CNKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -161,6 +163,7 @@
 				39B976D31F70795100F6F0AD /* String.swift */,
 				3990B5971F71332B00A58ACD /* URL.swift */,
 				3990B5991F71350100A58ACD /* Dictionary.swift */,
+				39C8ED231F745E2D00AD3DE2 /* Int.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -378,6 +381,7 @@
 			buildActionMask = 0;
 			files = (
 				397AB8121F6D3A4E00D402CC /* CNResource.swift in Sources */,
+				39C8ED241F745E2D00AD3DE2 /* Int.swift in Sources */,
 				3973A3601F6BF2D300ECE236 /* Trillian.swift in Sources */,
 				39B531621F66C128008EE183 /* Floor.swift in Sources */,
 				OBJ_50 /* APIResource.swift in Sources */,
