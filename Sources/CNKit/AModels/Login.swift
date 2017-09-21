@@ -1,6 +1,8 @@
 import Foundation
 
+/// A successful authentication result.
 public struct Login: Decodable {
+    /// Token to be used for further login requests.
     public let token: String
 
     // the additional field `login: Bool` apparently serves no purpose since it's
