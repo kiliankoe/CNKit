@@ -1,5 +1,6 @@
 import Foundation
 
+/// Helper type for accessing a list of all building complexes.
 public enum Campus {
     /// Fetch all building complexes.
     ///
