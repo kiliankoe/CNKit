@@ -1,14 +1,24 @@
 import Foundation
 import struct CoreLocation.CLLocationCoordinate2D
 
+/// A specific Campus Navigator resource, e.g. a room, a building's lecture halls, etc.
+/// This primarily maps to anything the webapp can display in a specific view.
 public enum CNResource: Decodable {
+    /// A coordinate on the map, e.g. https://navigator.tu-dresden.de/@13.732,51.02839999999999,15.z
     case coordinate(coord: CLLocationCoordinate2D, zoom: Int)
+    /// A specific region on the map, e.g. https://navigator.tu-dresden.de/karten/dresden/geb/apb
     case map(region: String, building: String)
+    /// A specific building, e.g. https://navigator.tu-dresden.de/gebaeude/apb
     case building(building: String)
+    /// A specific building's accessibility information, e.g. https://navigator.tu-dresden.de/barrierefrei/biz
     case buildingAccessibility(building: String)
+    /// A specific building's lecture hall listing, e.g. https://navigator.tu-dresden.de/hoersaele/apb
     case lectureHalls(building: String)
+    /// A specific floor, e.g. https://navigator.tu-dresden.de/etplan/apb/00
     case floor(building: String, floor: String)
+    /// A single room highlighted on a specific floor, e.g. https://navigator.tu-dresden.de/etplan/biz/02/raum/062102.0020
     case roomOnFloor(building: String, floor: String, room: String)
+    /// A specific room, e.g. https://navigator.tu-dresden.de/raum/apb/00/542100.2310
     case room(building: String, floor: String, room: String)
 
     /// Create a CNResource from a given Campus Navigator URL.
@@ -98,6 +108,7 @@ public enum CNResource: Decodable {
         }
     }
 
+    /// This resource's building ID, if any.
     public var buildingID: String? {
         switch self {
         case .coordinate(coord: _, zoom: _): return nil
@@ -111,6 +122,7 @@ public enum CNResource: Decodable {
         }
     }
 
+    /// The canonical user-accessible URL pointing to this resource.
     public var url: URL? {
         var path = "/"
         switch self {
