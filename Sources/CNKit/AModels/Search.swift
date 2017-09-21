@@ -6,11 +6,10 @@ public struct Search: Decodable {
     public let roomResults: [SearchResult]
 
     // There's also `trenn`: Int, which shows where a divider line should be inserted (uninteresting here)
-    // and `results_geo`: e.g.
-    // [{"geocoords":[13.7453834, 51.0625425], "name":"Albertplatz"}, ...]
-    // which only applies when search for route start- or endpoints, so also uninteresting here.
+    // and `results_geo`: e.g. `[{"geocoords":[13.7453834, 51.0625425], "name":"Albertplatz"}, ...]`
+    // which only applies when searching for route start- or endpoints, so also uninteresting here.
     // I'm also leaving away the second autocomplete field (`assist2`) and the flags for `moreBuildings`
-    // and `moreRooms`. Just listing for the sake of completeness.
+    // and `moreRooms`. Just listing them all here for the sake of completeness.
 
     private enum CodingKeys: String, CodingKey {
         case autocomplete = "assist"
