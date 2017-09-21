@@ -1,11 +1,17 @@
 import Foundation
 
+/// Additional information to be accessed for a room.
 public struct RoomInfo: Decodable {
+    /// The room's name
     public let name: String
+    /// The room's type
     public let type: RoomType
+    /// Is routing available for this room?
     public let isRoutable: Bool
 
+    /// Data for the room's accessibility badge.
     public let accessibilityBadge: AccessibilityBadge?
+    /// Data for the room's digital doorplate.
     public let doorplate: Doorplate?
 
     private enum CodingKeys: String, CodingKey {
@@ -18,14 +24,23 @@ public struct RoomInfo: Decodable {
 }
 
 extension RoomInfo {
+    /// Detailed accessibility information.
     public struct AccessibilityBadge: Decodable {
+        /// Is this room's door wheelchair accessible?
         public let doorIsAccessible: Trillian
+        /// The entrance door's width in cm.
         public let doorwidth: Int
+        /// Are possible steps marked?
         public let stepsAreMarked: Trillian
+        /// Is a hearingloop microport available?
         public let hearingloopMicroport: Trillian
+        /// Is an inductive hearingloop available?
         public let hearingloopInductive: Trillian
+        /// Are wheelchair spaces available?
         public let wheelchairSpacesAvailable: Trillian
+        /// How many wheelchair spaces are available?
         public let wheelchairSpacesCount: Int
+        /// Is the lecturer zone wheelchair accessible?
         public let lecturerZoneIsAccessible: Trillian
 
         private enum CodingKeys: String, CodingKey {
@@ -42,15 +57,24 @@ extension RoomInfo {
 }
 
 extension RoomInfo {
+    /// Digital doorplate information.
     public struct Doorplate: Decodable {
+        /// List of people listed to be in this room.
         public let people: [Person]
+        /// The chair this room belongs to.
         public let chair: String
+        /// Possible further information regarding this room.
         public let text: String
+        /// The department this room belongs to.
         public let department: String
+        /// The faculty this room belongs to.
         public let faculty: String
 
+        /// A room occupant.
         public struct Person {
+            /// Name
             public let name: String
+            /// Function
             public let function: String
         }
 
@@ -98,6 +122,12 @@ extension RoomInfo: APIResource {
         return URLRequest(url: url)
     }
 
+    /// Fetch additional room information for a given room.
+    ///
+    /// - Parameters:
+    ///   - roomID: a room's ID, e.g. `136101.0400`
+    ///   - session: session to use, defaults to `.shared`
+    ///   - completion: handler
     public static func fetch(forRoom roomID: String,
                              session: URLSession = .shared,
                              completion: @escaping (Result<RoomInfo>) -> Void) {
@@ -107,11 +137,16 @@ extension RoomInfo: APIResource {
 }
 
 extension RoomInfo {
+    /// Additional accessiblity information.
     public struct AccessibilityInfo: Decodable {
+        /// List of categories with additional information.
         public let categories: [AccessibilityCategory]
 
+        /// A category containing further accessiblity information.
         public struct AccessibilityCategory {
+            /// Title
             public let title: String
+            /// List of entries.
             public let entries: [(String, String)]
 
             init(title: String, fullDict: [String: String]) {
@@ -165,6 +200,12 @@ extension RoomInfo.AccessibilityInfo: APIResource {
         return URLRequest(url: url)
     }
 
+    /// Fetch additional accessiblity information for a given room.
+    ///
+    /// - Parameters:
+    ///   - roomID: a room's ID, e.g. `136101.0400`
+    ///   - session: session to use, defaults to `.shared`
+    ///   - completion: handler
     public static func fetch(forRoom roomID: String,
                              session: URLSession = .shared,
                              completion: @escaping (Result<RoomInfo.AccessibilityInfo>) -> Void) {
