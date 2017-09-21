@@ -1,10 +1,15 @@
 import Foundation
 
+/// A Room's timetable, when is what kind of lesson.
 public struct Timetable: Decodable {
+    /// Name and date for the current first week.
     public let week1Name: String
+    /// List of the first week's days.
     public let week1: [Day]
 
+    /// Name and date for the current second week.
     public let week2Name: String
+    /// List of the second week's days.
     public let week2: [Day]
 
     private enum CodingKeys: String, CodingKey {
@@ -16,10 +21,14 @@ public struct Timetable: Decodable {
 }
 
 extension Timetable {
+    /// A single day.
     public struct Day: Decodable {
+        /// Weekday
         public let day: Weekday
-        public let periods: [Period]
+        /// List of courses
+        public let courses: [Course]
 
+        /// List of all possible timeslots.
         public var slots: [String] {
             return [
                 "7:30 - 9:00",
@@ -35,9 +44,10 @@ extension Timetable {
 
         private enum CodingKeys: String, CodingKey {
             case day = "tag"
-            case periods = "stunden"
+            case courses = "stunden"
         }
 
+        /// Weekday
         public enum Weekday: Int, Decodable {
             case monday = 0
             case tuesday
@@ -49,14 +59,17 @@ extension Timetable {
 }
 
 extension Timetable.Day {
-    public struct Period: Decodable {
-        public let period: Int
-        public let course: String
+    /// A single course.
+    public struct Course: Decodable {
+        /// Timeslot
+        public let timeslot: Int
+        /// Name
+        public let name: String
         // TODO: Isn't there an optional lecturer field here?
 
         private enum CodingKeys: String, CodingKey {
-            case period = "ds"
-            case course = "fach"
+            case timeslot = "ds"
+            case name = "fach"
         }
     }
 }
