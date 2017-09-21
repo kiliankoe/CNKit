@@ -3,7 +3,7 @@ import MapKit
 
 /// A building complex, possibly made up of more than one building.
 public struct BuildingComplex: Codable, CustomStringConvertible {
-    public let abbrev: String
+    public let abbreviation: String
     public let name: String
     public let defaultLevel: String?
     public let accessibilityOverview: [String: String]?
@@ -49,7 +49,7 @@ public struct BuildingComplex: Codable, CustomStringConvertible {
     }
 
     private enum CodingKeys: String, CodingKey {
-        case abbrev = "krz"
+        case abbreviation = "krz"
         case name
         case defaultLevel = "stdetage"
         case accessibilityOverview = "barfrei_info"
@@ -60,7 +60,7 @@ public struct BuildingComplex: Codable, CustomStringConvertible {
     }
 
     public var description: String {
-        return "\(abbrev): \(name)"
+        return "\(abbreviation): \(name)"
     }
 }
 
@@ -262,6 +262,6 @@ extension BuildingComplex {
     /// - Throws: possible error on constructing the request
     public func fetchAccessibilityInfo(session: URLSession = .shared,
                                               completion: @escaping (Result<BuildingComplex.AccessibilityInfo>) -> Void) {
-            BuildingComplex.AccessibilityInfo.fetch(forBuilding: self.abbrev, session: session, completion: completion)
+            BuildingComplex.AccessibilityInfo.fetch(forBuilding: self.abbreviation, session: session, completion: completion)
     }
 }

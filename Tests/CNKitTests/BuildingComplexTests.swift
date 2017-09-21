@@ -9,7 +9,7 @@ class BuildingComplexTests: XCTestCase {
         XCTAssertEqual(decoded.count, 2)
 
         let apb = decoded[1]
-        XCTAssertEqual(apb.abbrev, "APB")
+        XCTAssertEqual(apb.abbreviation, "APB")
         XCTAssertEqual(apb.name, "Andreas-Pfitzmann-Bau")
         XCTAssertEqual(apb.defaultLevel, "00")
         XCTAssertEqual(apb.accessibilityOverview!["behindwc"], "EG030 beidseitig anfahrbar")
