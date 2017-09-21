@@ -1,11 +1,16 @@
 import Foundation
 
+/// A floor inside a building.
 public struct Floor: Decodable {
     let rawFloor: String
+    /// Maximum X coordinate.
     public let maxX: Double
+    /// Maximum Y coordinate.
     public let maxY: Double
+    /// All rooms on this floor.
     public let rooms: [Room]
 
+    /// Floor level
     public var floor: Int? {
         if self.rawFloor == "--" { return 0 }
         guard let intVal = Int(self.rawFloor) else { return nil }
@@ -82,15 +87,23 @@ private extension Floor {
 }
 
 extension Floor {
+    /// A single room.
     public struct Room: Decodable {
+        /// Identifier
         public let id: String
+        /// Name
         public let name: String?
+        /// Preferred location for rendering the name.
         public let nameLocation: (Double, Double)?
+        /// Points outlining the room.
         public let points: [(Double, Double)]
+        /// Is this room a lecture hall?
         public let isLectureHall: Bool
 
+        /// Type of the room
         public var type: RoomType
 
+        /// Raw color value.
         public var rawColor: Int {
             return self.type.color
         }
