@@ -98,7 +98,7 @@ public enum CNResource: Decodable {
         }
     }
 
-    var buildingID: String? {
+    public var buildingID: String? {
         switch self {
         case .coordinate(coord: _, zoom: _): return nil
         case .map(region: _, building: let b): return b
@@ -111,7 +111,7 @@ public enum CNResource: Decodable {
         }
     }
 
-    var url: URL? {
+    public var url: URL? {
         var path = "/"
         switch self {
         case .coordinate(coord: let coord, zoom: let zoom):
