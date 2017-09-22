@@ -1,5 +1,8 @@
 # 🗺 CNKit
 
+[![Travis](https://img.shields.io/travis/kiliankoe/CNKit.svg)](https://travis-ci.org/kiliankoe/CNKit)
+[![Documentation](https://kiliankoe.github.io/CNKit/badge.svg)](https://kiliankoe.github.io/CNKit/)
+
 Access [Campus Navigator](https://navigator.tu-dresden.de) data through a swift wrapper.
 
 
