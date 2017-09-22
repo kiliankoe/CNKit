@@ -45,6 +45,8 @@ class BuildingComplexTests: XCTestCase {
         XCTAssertEqual(he.hasRamp, nil)
 
         XCTAssertEqual(apb.entrances[1].hasOpenButton, true)
+
+        XCTAssertEqual(apb.resource?.url?.absoluteString, "https://navigator.tu-dresden.de/gebaeude/APB")
     }
 
     func testFetch() {
