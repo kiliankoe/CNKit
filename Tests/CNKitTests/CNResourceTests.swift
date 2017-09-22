@@ -21,6 +21,7 @@ class CNResourceTests: XCTestCase {
             "https://navigator.tu-dresden.de/hoersaele/apb",
             "/karten/dresden/geb/apb",
             "karten/dresden/geb/apb",
+            "https://navigator.tu-dresden.de/routing/APB/WEB/foot,shortest/@13.755,51.03800000000001,12.z",
         ]
 
         let validURLs = rawValidURLs.flatMap(URL.init(string:))
@@ -93,6 +94,9 @@ class CNResourceTests: XCTestCase {
         let map = CNResource.map(region: "dresden", building: "apb")
         XCTAssertEqual(map.buildingID, "apb")
 
+        let route = CNResource.route(origin: "APB", destination: "WEB", mode: .foot)
+        XCTAssertNil(route.buildingID)
+
         let building = CNResource.building(building: "apb")
         XCTAssertEqual(building.buildingID, "apb")
 
@@ -118,6 +122,9 @@ class CNResourceTests: XCTestCase {
 
         let map = CNResource.map(region: "dresden", building: "apb")
         XCTAssertEqual(map.url?.absoluteString, "https://navigator.tu-dresden.de/karten/dresden/geb/apb")
+
+        let route = CNResource.route(origin: "APB", destination: "WEB", mode: .foot)
+        XCTAssertEqual(route.url?.absoluteString, "https://navigator.tu-dresden.de/routing/APB/WEB/foot,shortest")
 
         let building = CNResource.building(building: "apb")
         XCTAssertEqual(building.url?.absoluteString, "https://navigator.tu-dresden.de/gebaeude/apb")
@@ -152,6 +159,15 @@ class CNResourceTests: XCTestCase {
                        CNResource.map(region: "region", building: "building"))
         XCTAssertNotEqual(CNResource.map(region: "region", building: "foo"),
                           CNResource.map(region: "region", building: "building"))
+
+        XCTAssertEqual(CNResource.route(origin: "APB", destination: "WEB", mode: .foot),
+                       CNResource.route(origin: "APB", destination: "WEB", mode: .foot))
+        XCTAssertNotEqual(CNResource.route(origin: "APB", destination: "WEB", mode: .foot),
+                          CNResource.route(origin: "FOO", destination: "WEB", mode: .foot))
+        XCTAssertNotEqual(CNResource.route(origin: "APB", destination: "WEB", mode: .foot),
+                          CNResource.route(origin: "APB", destination: "FOO", mode: .foot))
+        XCTAssertNotEqual(CNResource.route(origin: "APB", destination: "WEB", mode: .foot),
+                          CNResource.route(origin: "APB", destination: "WEB", mode: .car))
 
         XCTAssertEqual(CNResource.building(building: "building"),
                        CNResource.building(building: "building"))

@@ -8,6 +8,8 @@ public enum CNResource: Decodable {
     case coordinate(coord: CLLocationCoordinate2D, zoom: Int)
     /// A specific region on the map, e.g. https://navigator.tu-dresden.de/karten/dresden/geb/apb
     case map(region: String, building: String)
+    /// A route, e.g. https://navigator.tu-dresden.de/routing/APB/WEB/foot,shortest/@13.741269714355468,51.02893981618553,15.z
+    case route(origin: String, destination: String, mode: Route.Mode) // Include the coordinate info in the params here?
     /// A specific building, e.g. https://navigator.tu-dresden.de/gebaeude/apb
     case building(building: String)
     /// A specific building's accessibility information, e.g. https://navigator.tu-dresden.de/barrierefrei/biz
@@ -78,6 +80,13 @@ public enum CNResource: Decodable {
             // https://navigator.tu-dresden.de/karten/dresden/geb/apb
             guard components.count == 3 else { throw Error.cnresourceURL(url.absoluteString) }
             return CNResource.map(region: components[0], building: components[1])
+        case "routing":
+            // https://navigator.tu-dresden.de/routing/APB/WEB/foot,shortest/@13.741269714355468,51.02893981618553,15.z
+            guard components.count == 4 else { throw Error.cnresourceURL(url.absoluteString) }
+            let origin = components[0]
+            let destination = components[1]
+            let mode = Route.Mode(rawValue: components[2].split(separator: ",").map(String.init)[0]) ?? .foot
+            return CNResource.route(origin: origin, destination: destination, mode: mode)
         case "gebaeude":
             // https://navigator.tu-dresden.de/gebaeude/apb
             guard components.count == 1 else { throw Error.cnresourceURL(url.absoluteString) }
@@ -113,6 +122,7 @@ public enum CNResource: Decodable {
         switch self {
         case .coordinate(coord: _, zoom: _): return nil
         case .map(region: _, building: let b): return b
+        case .route(origin: _, destination: _, mode: _): return nil
         case .building(building: let b): return b
         case .buildingAccessibility(building: let b): return b
         case .lectureHalls(building: let b): return b
@@ -130,6 +140,8 @@ public enum CNResource: Decodable {
             path += "@\(coord.latitude),\(coord.longitude),\(zoom).z"
         case .map(region: let region, building: let building):
             path += "karten/\(region.urlPathEscaped)/geb/\(building.urlPathEscaped)"
+        case .route(origin: let origin, destination: let destination, mode: let mode):
+            path += "routing/\(origin)/\(destination)/\(mode.rawValue),shortest"
         case .building(building: let building):
             path += "gebaeude/\(building.urlPathEscaped)"
         case .buildingAccessibility(building: let building):
@@ -159,6 +171,8 @@ extension CNResource: Equatable {
             return lhsCoord.latitude == rhsCoord.latitude && lhsCoord.longitude == rhsCoord.longitude && lhsZoom == rhsZoom
         case (.map(region: let lhsRegion, building: let lhsBuilding), .map(region: let rhsRegion, building: let rhsBuilding)):
             return lhsRegion == rhsRegion && lhsBuilding == rhsBuilding
+        case (.route(origin: let lhsOrigin, destination: let lhsDestination, mode: let lhsMode), .route(origin: let rhsOrigin, destination: let rhsDestination, mode: let rhsMode)):
+            return lhsOrigin == rhsOrigin && lhsDestination == rhsDestination && lhsMode == rhsMode
         case (.building(building: let lhsBuilding), .building(building: let rhsBuilding)):
             return lhsBuilding == rhsBuilding
         case (.buildingAccessibility(building: let lhsBuilding), .buildingAccessibility(building: let rhsBuilding)):
