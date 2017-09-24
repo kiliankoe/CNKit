@@ -26,6 +26,7 @@
 		39185D7C1F6608DF00003BDD /* AccessibilityInfoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39185D7B1F6608DF00003BDD /* AccessibilityInfoTests.swift */; };
 		393F6FC31F69778C004D9BCC /* FloorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 393F6FC21F69778C004D9BCC /* FloorTests.swift */; };
 		393F6FC51F69FA5F004D9BCC /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 393F6FC41F69FA5F004D9BCC /* Color.swift */; };
+		395B61711F76C1A900B76DA6 /* ResourceDecodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 395B61701F76C1A900B76DA6 /* ResourceDecodable.swift */; };
 		3973A3601F6BF2D300ECE236 /* Trillian.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3973A35F1F6BF2D300ECE236 /* Trillian.swift */; };
 		3973A3621F6BFB7E00ECE236 /* RoomInfoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3973A3611F6BFB7E00ECE236 /* RoomInfoTests.swift */; };
 		397AB8121F6D3A4E00D402CC /* CNResource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 397AB8111F6D3A4E00D402CC /* CNResource.swift */; };
@@ -91,6 +92,7 @@
 		39185D7B1F6608DF00003BDD /* AccessibilityInfoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessibilityInfoTests.swift; sourceTree = "<group>"; };
 		393F6FC21F69778C004D9BCC /* FloorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FloorTests.swift; sourceTree = "<group>"; };
 		393F6FC41F69FA5F004D9BCC /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
+		395B61701F76C1A900B76DA6 /* ResourceDecodable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResourceDecodable.swift; sourceTree = "<group>"; };
 		3973A35F1F6BF2D300ECE236 /* Trillian.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Trillian.swift; sourceTree = "<group>"; };
 		3973A3611F6BFB7E00ECE236 /* RoomInfoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomInfoTests.swift; sourceTree = "<group>"; };
 		397AB8111F6D3A4E00D402CC /* CNResource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CNResource.swift; sourceTree = "<group>"; };
@@ -254,6 +256,7 @@
 			isa = PBXGroup;
 			children = (
 				OBJ_9 /* APIResource.swift */,
+				395B61701F76C1A900B76DA6 /* ResourceDecodable.swift */,
 				OBJ_11 /* Config.swift */,
 				OBJ_12 /* Error.swift */,
 				OBJ_13 /* Extensions */,
@@ -392,6 +395,7 @@
 				OBJ_52 /* Config.swift in Sources */,
 				393F6FC51F69FA5F004D9BCC /* Color.swift in Sources */,
 				39A6657A1F6C5297000FA88B /* Login.swift in Sources */,
+				395B61711F76C1A900B76DA6 /* ResourceDecodable.swift in Sources */,
 				39D25BCB1F6C94D900FAFDB6 /* CanteenMenu.swift in Sources */,
 				39A6657C1F6C5442000FA88B /* URLRequest.swift in Sources */,
 				3990B5981F71332B00A58ACD /* URL.swift in Sources */,

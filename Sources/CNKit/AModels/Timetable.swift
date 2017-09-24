@@ -1,7 +1,7 @@
 import Foundation
 
 /// A Room's timetable, when is what kind of lesson.
-public struct Timetable: Decodable {
+public struct Timetable: Decodable, ResourceDecodable {
     /// Name and date for the current first week.
     public let week1Name: String
     /// List of the first week's days.
@@ -11,6 +11,12 @@ public struct Timetable: Decodable {
     public let week2Name: String
     /// List of the second week's days.
     public let week2: [Day]
+
+    var requestResource: RequestResource? = nil
+    public var resource: CNResource? {
+        guard let requestResource = self.requestResource else { return nil }
+        return CNResource.room(building: "APB", floor: "00", room: requestResource.roomID)
+    }
 
     private enum CodingKeys: String, CodingKey {
         case week1Name = "woche1name"
