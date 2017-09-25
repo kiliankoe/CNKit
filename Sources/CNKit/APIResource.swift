@@ -15,9 +15,9 @@ protocol APIResource {
 
 extension APIResource {
     static func fetch(resource: RequestResource,
-                      session: URLSession,
-                      rawDataHandler: ((Data) -> Void)? = nil,
-                      completion: @escaping (Result<CollectionType>) -> Void) {
+                                session: URLSession,
+                                rawDataHandler: ((Data) -> Void)? = nil,
+                                completion: @escaping (Result<CollectionType>) -> Void) {
 
         var request: URLRequest
         do {
@@ -82,6 +82,11 @@ extension APIResource {
             } catch let error {
                 completion(.failure(Error.decode(error: error)))
                 return
+            }
+
+//            if let decoded = decoded as? ResourceDecodable {
+            if decoded is ResourceDecodable {
+                decoded.resource = resource
             }
 
             completion(.success(decoded))
