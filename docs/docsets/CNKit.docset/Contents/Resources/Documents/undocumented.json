@@ -225,6 +225,27 @@
       "warning": "undocumented"
     },
     {
+      "file": "/Users/kilian/dev/Campus Navigator/CNKit/Sources/CNKit/CNResourceRepresentable.swift",
+      "line": 3,
+      "symbol": "CNResourceRepresentable",
+      "symbol_kind": "source.lang.swift.decl.protocol",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/kilian/dev/Campus Navigator/CNKit/Sources/CNKit/CNResourceRepresentable.swift",
+      "line": 4,
+      "symbol": "CNResourceRepresentable.resource",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/kilian/dev/Campus Navigator/CNKit/Sources/CNKit/CNResourceRepresentable.swift",
+      "line": 8,
+      "symbol": "BuildingComplex.resource",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
       "file": "/Users/kilian/dev/Campus Navigator/CNKit/Sources/CNKit/Result.swift",
       "line": 3,
       "symbol": "Result",
