@@ -7,8 +7,14 @@ public struct BuildingComplex: Codable, CustomStringConvertible {
     public let abbreviation: String
     /// The building's name, e.g. "Andreas-Pfitzmann-Bau"
     public let name: String
-    /// The building's default level, usually the ground floor, e.g. "00"
-    public let defaultLevel: String?
+    /// The building's raw default level, usually the ground floor, e.g. "00".
+    /// Use `.defaultLevel` instead for a more sensible interpretation.
+    public let rawDefaultFloor: String?
+    /// The building's default level, usually the ground floor, e.g. 0.
+    public var defaultFloor: Int? {
+        guard let floor = rawDefaultFloor else { return nil }
+        return Int(fromFloorLevel: floor)
+    }
     /// Basic accessibility information.
     public let accessibilityOverview: [String: String]?
 
@@ -63,7 +69,7 @@ public struct BuildingComplex: Codable, CustomStringConvertible {
     private enum CodingKeys: String, CodingKey {
         case abbreviation = "krz"
         case name
-        case defaultLevel = "stdetage"
+        case rawDefaultFloor = "stdetage"
         case accessibilityOverview = "barfrei_info"
         case entrances = "eingänge"
         case images = "bilder"

@@ -10,7 +10,7 @@ class FloorTests: XCTestCase {
 
         let groundfloor = decoded[0]
 
-        XCTAssertEqual(groundfloor.floor, 0)
+        XCTAssertEqual(groundfloor.level, 0)
         XCTAssertEqual(groundfloor.maxX, 737, accuracy: 1)
         XCTAssertEqual(groundfloor.maxY, 479, accuracy: 1)
         XCTAssertEqual(groundfloor.rooms.count, 88)
