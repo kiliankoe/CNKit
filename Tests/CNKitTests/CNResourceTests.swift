@@ -6,7 +6,7 @@ class CNResourceTests: XCTestCase {
     func testValidURLs() {
         let rawValidURLs = [
             "https://navigator.tu-dresden.de/@13.732,51.02839999999999,15.z",
-            "https://navigator.tu-dresden.de/raum/apb/00/542100.2230",
+            "https://navigator.tu-dresden.de/raum/542100.2230",
             "https://navigator.tu-dresden.de/etplan/apb/00/raum/542100.2230",
             "https://navigator.tu-dresden.de/gebaeude/apb",
             "https://navigator.tu-dresden.de/karten/dresden/geb/apb",
@@ -14,9 +14,9 @@ class CNResourceTests: XCTestCase {
             "https://navigator.tu-dresden.de/gebaeude/biz",
             "https://navigator.tu-dresden.de/karten/johannstadt/geb/biz",
             "https://navigator.tu-dresden.de/etplan/biz/02/raum/062102.0020",
-            "https://navigator.tu-dresden.de/raum/biz/02/062102.0020",
-            "http://navigator.tu-dresden.de/raum/biz/02/062102.0020",
-            "https://www.navigator.tu-dresden.de/raum/biz/02/062102.0020",
+            "https://navigator.tu-dresden.de/raum/062102.0020",
+            "http://navigator.tu-dresden.de/raum/062102.0020",
+            "https://www.navigator.tu-dresden.de/raum/062102.0020",
             "https://navigator.tu-dresden.de/barrierefrei/apb",
             "https://navigator.tu-dresden.de/hoersaele/apb",
             "/karten/dresden/geb/apb",
@@ -112,8 +112,8 @@ class CNResourceTests: XCTestCase {
         let roomFloor = CNResource.roomOnFloor(building: "apb", floor: "00", room: "062102.0020")
         XCTAssertEqual(roomFloor.buildingID, "apb")
 
-        let room = CNResource.room(building: "apb", floor: "00", room: "062102.0020")
-        XCTAssertEqual(room.buildingID, "apb")
+        let room = CNResource.room(room: "062102.0020")
+        XCTAssertNil(room.buildingID)
     }
 
     func testURL() {
@@ -141,8 +141,8 @@ class CNResourceTests: XCTestCase {
         let roomFloor = CNResource.roomOnFloor(building: "apb", floor: "00", room: "542100.2220")
         XCTAssertEqual(roomFloor.url?.absoluteString, "https://navigator.tu-dresden.de/etplan/apb/00/raum/542100.2220")
 
-        let room = CNResource.room(building: "apb", floor: "00", room: "542100.2220")
-        XCTAssertEqual(room.url?.absoluteString, "https://navigator.tu-dresden.de/raum/apb/00/542100.2220")
+        let room = CNResource.room(room: "542100.2220")
+        XCTAssertEqual(room.url?.absoluteString, "https://navigator.tu-dresden.de/raum/542100.2220")
     }
 
     func testEquatable() {
@@ -200,14 +200,10 @@ class CNResourceTests: XCTestCase {
         XCTAssertNotEqual(CNResource.roomOnFloor(building: "building", floor: "floor", room: "foo"),
                           CNResource.roomOnFloor(building: "building", floor: "floor", room: "room"))
 
-        XCTAssertEqual(CNResource.room(building: "building", floor: "floor", room: "room"),
-                       CNResource.room(building: "building", floor: "floor", room: "room"))
-        XCTAssertNotEqual(CNResource.room(building: "foo", floor: "floor", room: "room"),
-                       CNResource.room(building: "building", floor: "floor", room: "room"))
-        XCTAssertNotEqual(CNResource.room(building: "building", floor: "foo", room: "room"),
-                          CNResource.room(building: "building", floor: "floor", room: "room"))
-        XCTAssertNotEqual(CNResource.room(building: "building", floor: "floor", room: "foo"),
-                          CNResource.room(building: "building", floor: "floor", room: "room"))
+        XCTAssertEqual(CNResource.room(room: "room"),
+                       CNResource.room(room: "room"))
+        XCTAssertNotEqual(CNResource.room(room: "room"),
+                       CNResource.room(room: "foo"))
 
         XCTAssertNotEqual(CNResource.map(region: "region", building: "building"),
                           CNResource.building(building: "building"))

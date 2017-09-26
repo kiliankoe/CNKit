@@ -26,6 +26,8 @@ class FloorTests: XCTestCase {
         XCTAssertEqual(e023.points[0].1, 292, accuracy: 1)
         XCTAssert(e023.isLectureHall)
         XCTAssertEqual(e023.type, .seminarroom) // this is factually wrong, but it's what the data says
+
+        XCTAssertEqual(e023.resource?.url?.absoluteString, "https://navigator.tu-dresden.de/raum/542100.2310")
     }
 
     func testFetch() {

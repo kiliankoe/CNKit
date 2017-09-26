@@ -56,7 +56,7 @@ class SearchTests: XCTestCase {
 
         XCTAssertEqual(search.roomResults.count, 4)
         XCTAssertEqual(search.roomResults[2].title, "APB E017")
-        XCTAssertEqual(search.roomResults[2].resource, .room(building: "apb", floor: "00", room: "542100.2230"))
+        XCTAssertEqual(search.roomResults[2].resource, .room(room: "542100.2230"))
         XCTAssertEqual(search.roomResults[3].title, "APB E023")
     }
 
@@ -74,7 +74,7 @@ class SearchTests: XCTestCase {
             XCTAssertEqual(search.buildingResults.count, 0)
             XCTAssertGreaterThanOrEqual(search.roomResults.count, 1)
             XCTAssertEqual(search.roomResults[0].title, "BIO E17")
-            XCTAssertEqual(search.roomResults[0].resource, .room(building: "bio", floor: "00", room: "236600.0170"))
+            XCTAssertEqual(search.roomResults[0].resource, .room(room: "236600.0170"))
 
             e.fulfill()
         }

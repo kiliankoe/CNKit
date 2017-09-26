@@ -20,8 +20,8 @@ public enum CNResource: Decodable {
     case floor(building: String, floor: String)
     /// A single room highlighted on a specific floor, e.g. https://navigator.tu-dresden.de/etplan/biz/02/raum/062102.0020
     case roomOnFloor(building: String, floor: String, room: String)
-    /// A specific room, e.g. https://navigator.tu-dresden.de/raum/apb/00/542100.2310
-    case room(building: String, floor: String, room: String)
+    /// A specific room, e.g. https://navigator.tu-dresden.de/raum/542100.2310
+    case room(room: String)
 
     /// Create a CNResource from a given Campus Navigator URL.
     ///
@@ -59,7 +59,7 @@ public enum CNResource: Decodable {
             case 3:
                 return CNResource.map(region: components[0], building: components[2])
             case 4:
-                return CNResource.room(building: components[0], floor: components[1], room: components[3])
+                return CNResource.room(room: components[3])
             default:
                 throw Error.cnresourceURL(url.absoluteString)
             }
@@ -109,9 +109,9 @@ public enum CNResource: Decodable {
             }
             throw Error.cnresourceURL(url.absoluteString)
         case "raum":
-            // https://navigator.tu-dresden.de/raum/apb/00/542100.2310
-            guard components.count == 3 else { throw Error.cnresourceURL(url.absoluteString) }
-            return CNResource.room(building: components[0], floor: components[1], room: components[2])
+            // https://navigator.tu-dresden.de/raum/542100.2310
+            guard components.count == 1 else { throw Error.cnresourceURL(url.absoluteString) }
+            return CNResource.room(room: components[0])
         default:
             throw Error.cnresourceURL(url.absoluteString)
         }
@@ -128,7 +128,7 @@ public enum CNResource: Decodable {
         case .lectureHalls(building: let b): return b
         case .floor(building: let b, floor: _): return b
         case .roomOnFloor(building: let b, floor: _, room: _): return b
-        case .room(building: let b, floor: _, room: _): return b
+        case .room(room: _): return nil
         }
     }
 
@@ -152,8 +152,8 @@ public enum CNResource: Decodable {
             path += "etplan/\(building.urlPathEscaped)/\(floor.urlPathEscaped)"
         case .roomOnFloor(building: let building, floor: let floor, room: let room):
             path += "etplan/\(building.urlPathEscaped)/\(floor.urlPathEscaped)/raum/\(room.urlPathEscaped)"
-        case .room(building: let building, floor: let floor, room: let room):
-            path += "raum/\(building.urlPathEscaped)/\(floor.urlPathEscaped)/\(room.urlPathEscaped)"
+        case .room(room: let room):
+            path += "raum/\(room.urlPathEscaped)"
         }
         return URL(string: path, relativeTo: Config.baseURL)
     }
@@ -183,8 +183,8 @@ extension CNResource: Equatable {
             return lhsBuilding == rhsBuilding && lhsFloor == rhsFloor
         case (.roomOnFloor(building: let lhsBuilding, floor: let lhsFloor, room: let lhsRoom), .roomOnFloor(building: let rhsBuilding, floor: let rhsFloor, room: let rhsRoom)):
             return lhsBuilding == rhsBuilding && lhsFloor == rhsFloor && lhsRoom == rhsRoom
-        case (.room(building: let lhsBuilding, floor: let lhsFloor, room: let lhsRoom), .room(building: let rhsBuilding, floor: let rhsFloor, room: let rhsRoom)):
-            return lhsBuilding == rhsBuilding && lhsFloor == rhsFloor && lhsRoom == rhsRoom
+        case (.room(room: let lhsRoom), .room(room: let rhsRoom)):
+            return lhsRoom == rhsRoom
         default:
             return false
         }
