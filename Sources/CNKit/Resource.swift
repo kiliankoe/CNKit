@@ -3,7 +3,7 @@ import struct CoreLocation.CLLocationCoordinate2D
 
 /// A specific Campus Navigator resource, e.g. a room, a building's lecture halls, etc.
 /// This primarily maps to anything the webapp can display in a specific view.
-public enum CNResource: Decodable {
+public enum Resource: Decodable {
     /// A coordinate on the map, e.g. https://navigator.tu-dresden.de/@13.732,51.02839999999999,15.z
     case coordinate(coord: CLLocationCoordinate2D, zoom: Int)
     /// A specific region on the map, e.g. https://navigator.tu-dresden.de/karten/dresden/geb/apb
@@ -23,13 +23,13 @@ public enum CNResource: Decodable {
     /// A specific room, e.g. https://navigator.tu-dresden.de/raum/542100.2310
     case room(room: String)
 
-    /// Create a CNResource from a given Campus Navigator URL.
+    /// Create a Resource from a given Campus Navigator URL.
     ///
     /// - Parameter url: url
-    /// - Throws: Error.cnresourceURL with the URL if unable to parse
+    /// - Throws: Error.resourceURL with the URL if unable to parse
     /// - Warning: This only accepts valid CN URLs, not the search output. See [here](https://fusionforge.zih.tu-dresden.de/tracker/?aid=1976).
     public init(withURL url: URL) throws {
-        self = try CNResource.parse(url: url, urlType: .actual)
+        self = try Resource.parse(url: url, urlType: .actual)
     }
 
     /// - Warning: This only accepts search results, not actual CN URLs.
@@ -39,10 +39,10 @@ public enum CNResource: Decodable {
         guard let rawURL = URL(string: rawURLString.urlPathEscaped) else {
             throw DecodingError.dataCorrupted(DecodingError.Context(codingPath: [], debugDescription: "Failed to encode search URL fragment as URL"))
         }
-        self = try CNResource.parse(url: rawURL, urlType: .search)
+        self = try Resource.parse(url: rawURL, urlType: .search)
     }
 
-    static func parse(url: URL, urlType: URLOrdering) throws -> CNResource {
+    static func parse(url: URL, urlType: URLOrdering) throws -> Resource {
         // Try and catch invalid URLs from correctly pointing to unexpected invalid resources.
         var components = url.pathComponents.filter {
             !$0.replacingOccurrences(of: "/", with: "")
@@ -57,63 +57,63 @@ public enum CNResource: Decodable {
 
             switch components.count {
             case 3:
-                return CNResource.map(region: components[0], building: components[2])
+                return Resource.map(region: components[0], building: components[2])
             case 4:
-                return CNResource.room(room: components[3])
+                return Resource.room(room: components[3])
             default:
-                throw Error.cnresourceURL(url.absoluteString)
+                throw Error.resourceURL(url.absoluteString)
             }
         }
 
         if components.first?.contains("@") ?? false {
             // https://navigator.tu-dresden.de/@13.732,51.02839999999999,15.z
             components = components[0].split(separator: ",").map(String.init)
-            guard components.count == 3 else { throw Error.cnresourceURL(url.absoluteString) }
+            guard components.count == 3 else { throw Error.resourceURL(url.absoluteString) }
             let (rawLat, rawLng, rawZoom) = (components[0].replacingOccurrences(of: "@", with: ""), components[1], components[2].replacingOccurrences(of: ".z", with: ""))
-            guard let lat = Double(rawLat), let lng = Double(rawLng), let zoom = Int(rawZoom) else { throw Error.cnresourceURL(url.absoluteString) }
-            return CNResource.coordinate(coord: CLLocationCoordinate2D(latitude: lat, longitude: lng), zoom: zoom)
+            guard let lat = Double(rawLat), let lng = Double(rawLng), let zoom = Int(rawZoom) else { throw Error.resourceURL(url.absoluteString) }
+            return Resource.coordinate(coord: CLLocationCoordinate2D(latitude: lat, longitude: lng), zoom: zoom)
         }
 
         let urlType = components.removeFirst()
         switch urlType {
         case "karten":
             // https://navigator.tu-dresden.de/karten/dresden/geb/apb
-            guard components.count == 3 else { throw Error.cnresourceURL(url.absoluteString) }
-            return CNResource.map(region: components[0], building: components[1])
+            guard components.count == 3 else { throw Error.resourceURL(url.absoluteString) }
+            return Resource.map(region: components[0], building: components[1])
         case "routing":
             // https://navigator.tu-dresden.de/routing/APB/WEB/foot,shortest/@13.741269714355468,51.02893981618553,15.z
-            guard components.count == 4 else { throw Error.cnresourceURL(url.absoluteString) }
+            guard components.count == 4 else { throw Error.resourceURL(url.absoluteString) }
             let origin = components[0]
             let destination = components[1]
             let mode = Route.Mode(rawValue: components[2].split(separator: ",").map(String.init)[0]) ?? .foot
-            return CNResource.route(origin: origin, destination: destination, mode: mode)
+            return Resource.route(origin: origin, destination: destination, mode: mode)
         case "gebaeude":
             // https://navigator.tu-dresden.de/gebaeude/apb
-            guard components.count == 1 else { throw Error.cnresourceURL(url.absoluteString) }
-            return CNResource.building(building: components[0])
+            guard components.count == 1 else { throw Error.resourceURL(url.absoluteString) }
+            return Resource.building(building: components[0])
         case "barrierefrei":
             // https://navigator.tu-dresden.de/barrierefrei/biz
-            guard components.count == 1 else { throw Error.cnresourceURL(url.absoluteString) }
-            return CNResource.buildingAccessibility(building: components[0])
+            guard components.count == 1 else { throw Error.resourceURL(url.absoluteString) }
+            return Resource.buildingAccessibility(building: components[0])
         case "hoersaele":
             // https://navigator.tu-dresden.de/hoersaele/apb
-            guard components.count == 1 else { throw Error.cnresourceURL(url.absoluteString) }
-            return CNResource.lectureHalls(building: components[0])
+            guard components.count == 1 else { throw Error.resourceURL(url.absoluteString) }
+            return Resource.lectureHalls(building: components[0])
         case "etplan":
             if components.count == 2 {
                 // https://navigator.tu-dresden.de/etplan/apb/00
-                return CNResource.floor(building: components[0], floor: components[1])
+                return Resource.floor(building: components[0], floor: components[1])
             } else if components.count == 4 {
                 // https://navigator.tu-dresden.de/etplan/biz/02/raum/062102.0020
-                return CNResource.roomOnFloor(building: components[0], floor: components[1], room: components[3])
+                return Resource.roomOnFloor(building: components[0], floor: components[1], room: components[3])
             }
-            throw Error.cnresourceURL(url.absoluteString)
+            throw Error.resourceURL(url.absoluteString)
         case "raum":
             // https://navigator.tu-dresden.de/raum/542100.2310
-            guard components.count == 1 else { throw Error.cnresourceURL(url.absoluteString) }
-            return CNResource.room(room: components[0])
+            guard components.count == 1 else { throw Error.resourceURL(url.absoluteString) }
+            return Resource.room(room: components[0])
         default:
-            throw Error.cnresourceURL(url.absoluteString)
+            throw Error.resourceURL(url.absoluteString)
         }
     }
 
@@ -164,8 +164,8 @@ public enum CNResource: Decodable {
     }
 }
 
-extension CNResource: Equatable {
-    public static func ==(lhs: CNResource, rhs: CNResource) -> Bool {
+extension Resource: Equatable {
+    public static func ==(lhs: Resource, rhs: Resource) -> Bool {
         switch (lhs, rhs) {
         case (.coordinate(coord: let lhsCoord, zoom: let lhsZoom), .coordinate(coord: let rhsCoord, zoom: let rhsZoom)):
             return lhsCoord.latitude == rhsCoord.latitude && lhsCoord.longitude == rhsCoord.longitude && lhsZoom == rhsZoom

@@ -23,8 +23,8 @@ class ErrorTests: XCTestCase {
         XCTAssertEqual(reEncoding.localizedDescription,
                        "The received data had to be re-encoded before parsing, which failed.")
 
-        let cnresourceURL = CNKit.Error.cnresourceURL("url")
-        XCTAssertEqual(cnresourceURL.localizedDescription,
+        let resourceURL = CNKit.Error.resourceURL("url")
+        XCTAssertEqual(resourceURL.localizedDescription,
                        "The URL to this specific resource could not be read: url")
     }
 }

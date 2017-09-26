@@ -1,18 +1,18 @@
 import Foundation
 
 public protocol ResourceRepresentable {
-    var resource: CNResource? { get }
+    var resource: Resource? { get }
 }
 
 extension BuildingComplex: ResourceRepresentable {
-    public var resource: CNResource? {
-        return CNResource.building(building: self.abbreviation)
+    public var resource: Resource? {
+        return Resource.building(building: self.abbreviation)
     }
 }
 
 extension Floor.Room: ResourceRepresentable {
-    public var resource: CNResource? {
-        return CNResource.room(room: self.id)
+    public var resource: Resource? {
+        return Resource.room(room: self.id)
     }
 
 }

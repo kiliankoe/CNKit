@@ -28,7 +28,7 @@ extension Search {
         /// Title to display.
         public let title: String
         /// Campus Navigator resource.
-        public let resource: CNResource
+        public let resource: Resource
 
         public init(from decoder: Decoder) throws {
             var container = try decoder.unkeyedContainer()
@@ -39,7 +39,7 @@ extension Search {
             let titleRegex = try NSRegularExpression(pattern: "( <.*>)")
             self.title = titleRegex.stringByReplacingMatches(in: rawTitle, range: NSMakeRange(0, rawTitle.count), withTemplate: "")
 
-            self.resource = try container.decode(CNResource.self)
+            self.resource = try container.decode(Resource.self)
         }
     }
 }
