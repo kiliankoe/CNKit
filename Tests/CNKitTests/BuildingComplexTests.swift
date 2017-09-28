@@ -19,6 +19,9 @@ class BuildingComplexTests: XCTestCase {
         XCTAssertEqual(apb.structures.count, 1)
         XCTAssertEqual(apb.points[0].count, 38)
 
+        XCTAssertTrue(apb.contains(roomWithID: "542100.2310"))
+        XCTAssertEqual(apb.resource?.url?.absoluteString, "https://navigator.tu-dresden.de/gebaeude/APB")
+
         let apbb = apb.structures[0]
         XCTAssertEqual(apbb.name, "APB Andreas-Pfitzmann-Bau, Nöthnitzer Str.46")
         XCTAssertEqual(apbb.constructionYear, "2006")
@@ -47,7 +50,7 @@ class BuildingComplexTests: XCTestCase {
 
         XCTAssertEqual(apb.entrances[1].hasOpenButton, true)
 
-        XCTAssertEqual(apb.resource?.url?.absoluteString, "https://navigator.tu-dresden.de/gebaeude/APB")
+
     }
 
     func testFetch() {

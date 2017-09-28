@@ -70,7 +70,7 @@ public struct BuildingComplex: Codable, CustomStringConvertible {
     ///
     /// - Parameters:
     ///   - roomID: room identifier
-    func contains(roomWithID roomID: RoomID) -> Bool {
+    public func contains(roomWithID roomID: RoomID) -> Bool {
         return self.structures
             .filter { return $0.id == roomID.buildingStructure }
             .count != 0
