@@ -8,8 +8,7 @@ public struct RoomID {
     /// Floor level string value, e.g. "-1", "00", etc.
     /// Use `.level` instead for a more sensible representation.
     public let rawLevel: String
-    /// A room's actual identifier, not actually used anywhere, see
-    /// `.rawValue` instead.
+    /// A room's actual identifier, not actually used anywhere, see `.fullID` instead.
     public let roomID: String
 
     /// Floor level
@@ -18,7 +17,7 @@ public struct RoomID {
     }
 
     /// The room's identifer, used by other endpoints and as a general identifier.
-    public let id: String
+    public let fullID: String
 
     public init(withString value: String) {
         let components = value.split(separator: ".").map(String.init)
@@ -26,7 +25,7 @@ public struct RoomID {
         self.rawLevel = String(components[0].suffix(2))
         self.roomID = components[1]
 
-        self.id = value
+        self.fullID = value
     }
 }
 

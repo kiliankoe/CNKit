@@ -17,7 +17,7 @@ class FloorTests: XCTestCase {
 
         let e023 = groundfloor.rooms.first { $0.name == "E023" }!
 
-        XCTAssertEqual(e023.id, "542100.2310")
+        XCTAssertEqual(e023.identifier.fullID, "542100.2310")
         XCTAssertEqual(e023.name, "E023") // not a really useful test...
         XCTAssertEqual(e023.nameLocation!.0, 398, accuracy: 1)
         XCTAssertEqual(e023.nameLocation!.1, 347, accuracy: 1)

@@ -12,7 +12,7 @@ extension BuildingComplex: ResourceRepresentable {
 
 extension Floor.Room: ResourceRepresentable {
     public var resource: Resource? {
-        return Resource.room(room: self.id)
+        return Resource.room(room: self.identifier.fullID)
     }
 
 }

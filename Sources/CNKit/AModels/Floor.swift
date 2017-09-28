@@ -90,7 +90,7 @@ extension Floor {
     /// A single room.
     public struct Room: Decodable {
         /// Identifier
-        public let id: String
+        public let identifier: RoomID
         /// Name
         public let name: String?
         /// Preferred location for rendering the name.
@@ -109,7 +109,7 @@ extension Floor {
         }
 
         private enum CodingKeys: String, CodingKey {
-            case id
+            case identifier
             case name
             case namex
             case namey
@@ -119,7 +119,8 @@ extension Floor {
 
         public init(from decoder: Decoder) throws {
             let container = try decoder.container(keyedBy: CodingKeys.self)
-            self.id = try container.decode(String.self, forKey: .id)
+            let rawID = try container.decode(String.self, forKey: .identifier)
+            self.identifier = RoomID(withString: rawID)
             self.name = try container.decodeIfPresent(String.self, forKey: .name)
 
             if
