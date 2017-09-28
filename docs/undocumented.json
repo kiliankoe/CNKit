@@ -1,6 +1,13 @@
 {
   "warnings": [
     {
+      "file": "/Users/kilian/dev/Campus Navigator/CNKit/Sources/CNKit/AModels/RoomID.swift",
+      "line": 23,
+      "symbol": "RoomID.init(withString:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
       "file": "/Users/kilian/dev/Campus Navigator/CNKit/Sources/CNKit/AModels/RoomType.swift",
       "line": 9,
       "symbol": "RoomType.stairwell",
@@ -225,23 +232,30 @@
       "warning": "undocumented"
     },
     {
-      "file": "/Users/kilian/dev/Campus Navigator/CNKit/Sources/CNKit/CNResourceRepresentable.swift",
+      "file": "/Users/kilian/dev/Campus Navigator/CNKit/Sources/CNKit/ResourceRepresentable.swift",
       "line": 3,
-      "symbol": "CNResourceRepresentable",
+      "symbol": "ResourceRepresentable",
       "symbol_kind": "source.lang.swift.decl.protocol",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/kilian/dev/Campus Navigator/CNKit/Sources/CNKit/CNResourceRepresentable.swift",
+      "file": "/Users/kilian/dev/Campus Navigator/CNKit/Sources/CNKit/ResourceRepresentable.swift",
       "line": 4,
-      "symbol": "CNResourceRepresentable.resource",
+      "symbol": "ResourceRepresentable.resource",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/kilian/dev/Campus Navigator/CNKit/Sources/CNKit/CNResourceRepresentable.swift",
+      "file": "/Users/kilian/dev/Campus Navigator/CNKit/Sources/CNKit/ResourceRepresentable.swift",
       "line": 8,
       "symbol": "BuildingComplex.resource",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/kilian/dev/Campus Navigator/CNKit/Sources/CNKit/ResourceRepresentable.swift",
+      "line": 14,
+      "symbol": "Floor.Room.resource",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },

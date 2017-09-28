@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>Campus Enum Reference</title>
+    <title>RoomID Struct Reference</title>
     <link rel="stylesheet" type="text/css" href="../css/jazzy.css" />
     <link rel="stylesheet" type="text/css" href="../css/highlight.css" />
     <meta charset="utf-8">
@@ -14,9 +14,9 @@
   </head>
   <body>
 
-    <a name="//apple_ref/swift/Enum/Campus" class="dashAnchor"></a>
+    <a name="//apple_ref/swift/Struct/RoomID" class="dashAnchor"></a>
 
-    <a title="Campus Enum Reference"></a>
+    <a title="RoomID Struct Reference"></a>
 
     <header class="header">
       <p class="header-col header-col--primary">
@@ -38,7 +38,7 @@
     <p class="breadcrumbs">
       <a class="breadcrumb" href="../index.html">CNKit Reference</a>
       <img class="carat" src="../img/carat.png" />
-      Campus Enum Reference
+      RoomID Struct Reference
     </p>
 
     <div class="content-wrapper">
@@ -174,14 +174,14 @@
 
         <section class="section">
           <div class="section-content">
-            <h1>Campus</h1>
+            <h1>RoomID</h1>
               <div class="declaration">
                 <div class="language">
-                  <pre class="highlight"><code><span class="kd">public</span> <span class="kd">enum</span> <span class="kt">Campus</span></code></pre>
+                  <pre class="highlight"><code><span class="kd">public</span> <span class="kd">struct</span> <span class="kt">RoomID</span></code></pre>
 
                 </div>
               </div>
-            <p>Helper type for accessing a list of all building complexes.</p>
+            <p>Room Identifier, e.g. 351601.0420</p>
 
           </div>
         </section>
@@ -193,9 +193,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:5CNKit6CampusO5fetchySo10URLSessionC7session_y10Foundation4DataVcSg03rawG7HandleryAA6ResultOySayAA15BuildingComplexVGGc10completiontFZ"></a>
-                    <a name="//apple_ref/swift/Method/fetch(session:rawDataHandler:completion:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:5CNKit6CampusO5fetchySo10URLSessionC7session_y10Foundation4DataVcSg03rawG7HandleryAA6ResultOySayAA15BuildingComplexVGGc10completiontFZ">fetch(session:rawDataHandler:completion:)</a>
+                    <a name="/s:5CNKit6RoomIDV17buildingStructureSSv"></a>
+                    <a name="//apple_ref/swift/Property/buildingStructure" class="dashAnchor"></a>
+                    <a class="token" href="#/s:5CNKit6RoomIDV17buildingStructureSSv">buildingStructure</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -203,61 +203,17 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Fetch all building complexes.</p>
+                        <p>Identifier of the building structure this room is located in.
+Use <code>BuildingComplex.contains(roomWithID:)</code> instead of manual lookup.</p>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">static</span> <span class="kd">func</span> <span class="nf">fetch</span><span class="p">(</span><span class="nv">session</span><span class="p">:</span> <span class="kt">URLSession</span> <span class="o">=</span> <span class="o">.</span><span class="n">shared</span><span class="p">,</span>
-                             <span class="nv">rawDataHandler</span><span class="p">:</span> <span class="p">((</span><span class="kt">Data</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Void</span><span class="p">)?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">,</span>
-                             <span class="nv">completion</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="p">(</span><span class="kt"><a href="../Enums/Result.html">Result</a></span><span class="o">&lt;</span><span class="p">[</span><span class="kt"><a href="../Structs/BuildingComplex.html">BuildingComplex</a></span><span class="p">]</span><span class="o">&gt;</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Void</span><span class="p">)</span></code></pre>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="k">let</span> <span class="nv">buildingStructure</span><span class="p">:</span> <span class="kt">String</span></code></pre>
 
                         </div>
-                      </div>
-                      <div>
-                        <h4>Parameters</h4>
-                        <table class="graybox">
-                          <tbody>
-                            <tr>
-                              <td>
-                                <code>
-                                <em>session</em>
-                                </code>
-                              </td>
-                              <td>
-                                <div>
-                                  <p>session to use, defaults to <code>.shared</code></p>
-                                </div>
-                              </td>
-                            </tr>
-                            <tr>
-                              <td>
-                                <code>
-                                <em>rawDataHandler</em>
-                                </code>
-                              </td>
-                              <td>
-                                <div>
-                                  <p>receives the raw data before being parsed</p>
-                                </div>
-                              </td>
-                            </tr>
-                            <tr>
-                              <td>
-                                <code>
-                                <em>completion</em>
-                                </code>
-                              </td>
-                              <td>
-                                <div>
-                                  <p>handler</p>
-                                </div>
-                              </td>
-                            </tr>
-                          </tbody>
-                        </table>
                       </div>
                     </section>
                   </div>
@@ -265,9 +221,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:5CNKit6CampusO5fetchySS15ifNewerThanHash_So10URLSessionC7sessiony10Foundation4DataVcSg03rawK7HandleryAA6ResultOySayAA15BuildingComplexVGGc10completiontFZ"></a>
-                    <a name="//apple_ref/swift/Method/fetch(ifNewerThanHash:session:rawDataHandler:completion:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:5CNKit6CampusO5fetchySS15ifNewerThanHash_So10URLSessionC7sessiony10Foundation4DataVcSg03rawK7HandleryAA6ResultOySayAA15BuildingComplexVGGc10completiontFZ">fetch(ifNewerThanHash:session:rawDataHandler:completion:)</a>
+                    <a name="/s:5CNKit6RoomIDV8rawLevelSSv"></a>
+                    <a name="//apple_ref/swift/Property/rawLevel" class="dashAnchor"></a>
+                    <a class="token" href="#/s:5CNKit6RoomIDV8rawLevelSSv">rawLevel</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -275,79 +231,17 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Fetch all building complexes if the current data hash differs from the given one.</p>
-<div class="aside aside-warning">
-    <p class="aside-title">Warning</p>
-    Completion handler is only called on error or if newer data was found.
-
-</div>
+                        <p>Floor level string value, e.g. <q>-1</q>, <q>00</q>, etc.
+Use <code><a href="../Structs/RoomID.html#/s:5CNKit6RoomIDV5levelSiSgv">.level</a></code> instead for a more sensible representation.</p>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">static</span> <span class="kd">func</span> <span class="nf">fetch</span><span class="p">(</span><span class="n">ifNewerThanHash</span> <span class="nv">oldHash</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span>
-                             <span class="nv">session</span><span class="p">:</span> <span class="kt">URLSession</span> <span class="o">=</span> <span class="o">.</span><span class="n">shared</span><span class="p">,</span>
-                             <span class="nv">rawDataHandler</span><span class="p">:</span> <span class="p">((</span><span class="kt">Data</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Void</span><span class="p">)?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">,</span>
-                             <span class="nv">completion</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="p">(</span><span class="kt"><a href="../Enums/Result.html">Result</a></span><span class="o">&lt;</span><span class="p">[</span><span class="kt"><a href="../Structs/BuildingComplex.html">BuildingComplex</a></span><span class="p">]</span><span class="o">&gt;</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Void</span><span class="p">)</span></code></pre>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="k">let</span> <span class="nv">rawLevel</span><span class="p">:</span> <span class="kt">String</span></code></pre>
 
                         </div>
-                      </div>
-                      <div>
-                        <h4>Parameters</h4>
-                        <table class="graybox">
-                          <tbody>
-                            <tr>
-                              <td>
-                                <code>
-                                <em>oldHash</em>
-                                </code>
-                              </td>
-                              <td>
-                                <div>
-                                  <p>given data hash</p>
-                                </div>
-                              </td>
-                            </tr>
-                            <tr>
-                              <td>
-                                <code>
-                                <em>session</em>
-                                </code>
-                              </td>
-                              <td>
-                                <div>
-                                  <p>session to use, defaults to <code>.shared</code></p>
-                                </div>
-                              </td>
-                            </tr>
-                            <tr>
-                              <td>
-                                <code>
-                                <em>rawDataHandler</em>
-                                </code>
-                              </td>
-                              <td>
-                                <div>
-                                  <p>receives the raw data before being parsed</p>
-                                </div>
-                              </td>
-                            </tr>
-                            <tr>
-                              <td>
-                                <code>
-                                <em>completion</em>
-                                </code>
-                              </td>
-                              <td>
-                                <div>
-                                  <p>handler</p>
-                                </div>
-                              </td>
-                            </tr>
-                          </tbody>
-                        </table>
                       </div>
                     </section>
                   </div>
@@ -355,9 +249,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:5CNKit6CampusO13readFromLocalSayAA15BuildingComplexVG10Foundation4DataV4data_tKFZ"></a>
-                    <a name="//apple_ref/swift/Method/readFromLocal(data:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:5CNKit6CampusO13readFromLocalSayAA15BuildingComplexVG10Foundation4DataV4data_tKFZ">readFromLocal(data:)</a>
+                    <a name="/s:5CNKit6RoomIDV04roomC0SSv"></a>
+                    <a name="//apple_ref/swift/Property/roomID" class="dashAnchor"></a>
+                    <a class="token" href="#/s:5CNKit6RoomIDV04roomC0SSv">roomID</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -365,22 +259,126 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Decode a list of <code><a href="../Structs/BuildingComplex.html">BuildingComplex</a></code>&lsquo;es from given data. This takes the data returned
-by <code>m/json_gebaeude/all</code>, which is the same as <code>Campus.fetch()</code>. Use this to provide
-initial data to be used if an internet connection is not present for the first start
-or if persisting the API responses directly.</p>
-<div class="aside aside-throws">
-    <p class="aside-title">Throws</p>
-    any errors occurring during JSON decoding
-
-</div>
+                        <p>A room&rsquo;s actual identifier, not actually used anywhere, see
+<code>.rawValue</code> instead.</p>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">static</span> <span class="kd">func</span> <span class="nf">readFromLocal</span><span class="p">(</span><span class="nv">data</span><span class="p">:</span> <span class="kt">Data</span><span class="p">)</span> <span class="k">throws</span> <span class="o">-&gt;</span> <span class="p">[</span><span class="kt"><a href="../Structs/BuildingComplex.html">BuildingComplex</a></span><span class="p">]</span></code></pre>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="k">let</span> <span class="nv">roomID</span><span class="p">:</span> <span class="kt">String</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:5CNKit6RoomIDV5levelSiSgv"></a>
+                    <a name="//apple_ref/swift/Property/level" class="dashAnchor"></a>
+                    <a class="token" href="#/s:5CNKit6RoomIDV5levelSiSgv">level</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Floor level</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">level</span><span class="p">:</span> <span class="kt">Int</span><span class="p">?</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:5CNKit6RoomIDV2idSSv"></a>
+                    <a name="//apple_ref/swift/Property/id" class="dashAnchor"></a>
+                    <a class="token" href="#/s:5CNKit6RoomIDV2idSSv">id</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>The room&rsquo;s identifer, used by other endpoints and as a general identifier.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="k">let</span> <span class="nv">id</span><span class="p">:</span> <span class="kt">String</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:5CNKit6RoomIDVACSS10withString_tcfc"></a>
+                    <a name="//apple_ref/swift/Method/init(withString:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:5CNKit6RoomIDVACSS10withString_tcfc">init(withString:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">struct</span> <span class="kt">RoomID</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <ul class="item-container">
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:s26ExpressibleByStringLiteralPx0cD4TypeQz06stringD0_tcfc"></a>
+                    <a name="//apple_ref/swift/Method/init(stringLiteral:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:s26ExpressibleByStringLiteralPx0cD4TypeQz06stringD0_tcfc">init(stringLiteral:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="nf">init</span><span class="p">(</span><span class="n">stringLiteral</span> <span class="nv">value</span><span class="p">:</span> <span class="kt">RoomID</span><span class="o">.</span><span class="kt">StringLiteralType</span><span class="p">)</span></code></pre>
 
                         </div>
                       </div>
@@ -391,21 +389,17 @@ or if persisting the API responses directly.</p>
                             <tr>
                               <td>
                                 <code>
-                                <em>data</em>
+                                <em>value</em>
                                 </code>
                               </td>
                               <td>
                                 <div>
-                                  <p>API response as data</p>
+                                  
                                 </div>
                               </td>
                             </tr>
                           </tbody>
                         </table>
-                      </div>
-                      <div>
-                        <h4>Return Value</h4>
-                        <p>decoded API response</p>
                       </div>
                     </section>
                   </div>

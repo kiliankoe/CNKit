@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>RoomType Enum Reference</title>
+    <title>Resource Enum Reference</title>
     <link rel="stylesheet" type="text/css" href="../css/jazzy.css" />
     <link rel="stylesheet" type="text/css" href="../css/highlight.css" />
     <meta charset="utf-8">
@@ -14,9 +14,9 @@
   </head>
   <body>
 
-    <a name="//apple_ref/swift/Enum/RoomType" class="dashAnchor"></a>
+    <a name="//apple_ref/swift/Enum/Resource" class="dashAnchor"></a>
 
-    <a title="RoomType Enum Reference"></a>
+    <a title="Resource Enum Reference"></a>
 
     <header class="header">
       <p class="header-col header-col--primary">
@@ -38,7 +38,7 @@
     <p class="breadcrumbs">
       <a class="breadcrumb" href="../index.html">CNKit Reference</a>
       <img class="carat" src="../img/carat.png" />
-      RoomType Enum Reference
+      Resource Enum Reference
     </p>
 
     <div class="content-wrapper">
@@ -174,14 +174,15 @@
 
         <section class="section">
           <div class="section-content">
-            <h1>RoomType</h1>
+            <h1>Resource</h1>
               <div class="declaration">
                 <div class="language">
-                  <pre class="highlight"><code><span class="kd">public</span> <span class="kd">enum</span> <span class="kt">RoomType</span><span class="p">:</span> <span class="kt">Int</span><span class="p">,</span> <span class="kt">Decodable</span></code></pre>
+                  <pre class="highlight"><code><span class="kd">public</span> <span class="kd">enum</span> <span class="kt">Resource</span><span class="p">:</span> <span class="kt">Decodable</span></code></pre>
 
                 </div>
               </div>
-            <p>A type of room.</p>
+            <p>A specific Campus Navigator resource, e.g. a room, a building&rsquo;s lecture halls, etc.
+This primarily maps to anything the webapp can display in a specific view.</p>
 
           </div>
         </section>
@@ -193,9 +194,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:5CNKit8RoomTypeO9stairwellA2CmF"></a>
-                    <a name="//apple_ref/swift/Element/stairwell" class="dashAnchor"></a>
-                    <a class="token" href="#/s:5CNKit8RoomTypeO9stairwellA2CmF">stairwell</a>
+                    <a name="/s:5CNKit8ResourceO10coordinateACSC22CLLocationCoordinate2DV5coord_Si4zoomtcACmF"></a>
+                    <a name="//apple_ref/swift/Element/coordinate" class="dashAnchor"></a>
+                    <a class="token" href="#/s:5CNKit8ResourceO10coordinateACSC22CLLocationCoordinate2DV5coord_Si4zoomtcACmF">coordinate</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -203,14 +204,14 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Undocumented</p>
+                        <p>A coordinate on the map, e.g. <a href="https://navigator.tu-dresden.de/@13.732,51.02839999999999,15.z">https://navigator.tu-dresden.de/@13.732,51.02839999999999,15.z</a></p>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">enum</span> <span class="kt">RoomType</span><span class="p">:</span> <span class="kt">Int</span><span class="p">,</span> <span class="kt">Decodable</span></code></pre>
+                          <pre class="highlight"><code><span class="k">case</span> <span class="nf">coordinate</span><span class="p">(</span><span class="nv">coord</span><span class="p">:</span> <span class="kt">CLLocationCoordinate2D</span><span class="p">,</span> <span class="nv">zoom</span><span class="p">:</span> <span class="kt">Int</span><span class="p">)</span></code></pre>
 
                         </div>
                       </div>
@@ -224,9 +225,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:5CNKit8RoomTypeO8elevatorA2CmF"></a>
-                    <a name="//apple_ref/swift/Element/elevator" class="dashAnchor"></a>
-                    <a class="token" href="#/s:5CNKit8RoomTypeO8elevatorA2CmF">elevator</a>
+                    <a name="/s:5CNKit8ResourceO3mapACSS6region_SS8buildingtcACmF"></a>
+                    <a name="//apple_ref/swift/Element/map" class="dashAnchor"></a>
+                    <a class="token" href="#/s:5CNKit8ResourceO3mapACSS6region_SS8buildingtcACmF">map</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -234,14 +235,14 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Undocumented</p>
+                        <p>A specific region on the map, e.g. <a href="https://navigator.tu-dresden.de/karten/dresden/geb/apb">https://navigator.tu-dresden.de/karten/dresden/geb/apb</a></p>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">enum</span> <span class="kt">RoomType</span><span class="p">:</span> <span class="kt">Int</span><span class="p">,</span> <span class="kt">Decodable</span></code></pre>
+                          <pre class="highlight"><code><span class="k">case</span> <span class="nf">map</span><span class="p">(</span><span class="nv">region</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">building</span><span class="p">:</span> <span class="kt">String</span><span class="p">)</span></code></pre>
 
                         </div>
                       </div>
@@ -255,9 +256,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:5CNKit8RoomTypeO8restroomA2CmF"></a>
-                    <a name="//apple_ref/swift/Element/restroom" class="dashAnchor"></a>
-                    <a class="token" href="#/s:5CNKit8RoomTypeO8restroomA2CmF">restroom</a>
+                    <a name="/s:5CNKit8ResourceO5routeACSS6origin_SS11destinationAA5RouteV4ModeO4modetcACmF"></a>
+                    <a name="//apple_ref/swift/Element/route" class="dashAnchor"></a>
+                    <a class="token" href="#/s:5CNKit8ResourceO5routeACSS6origin_SS11destinationAA5RouteV4ModeO4modetcACmF">route</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -265,14 +266,14 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Undocumented</p>
+                        <p>A route, e.g. <a href="https://navigator.tu-dresden.de/routing/APB/WEB/foot,shortest/@13.741269714355468,51.02893981618553,15.z">https://navigator.tu-dresden.de/routing/APB/WEB/foot,shortest/@13.741269714355468,51.02893981618553,15.z</a></p>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">enum</span> <span class="kt">RoomType</span><span class="p">:</span> <span class="kt">Int</span><span class="p">,</span> <span class="kt">Decodable</span></code></pre>
+                          <pre class="highlight"><code><span class="k">case</span> <span class="nf">route</span><span class="p">(</span><span class="nv">origin</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">destination</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">mode</span><span class="p">:</span> <span class="kt"><a href="../Structs/Route.html">Route</a></span><span class="o">.</span><span class="kt">Mode</span><span class="p">)</span> <span class="c1">// Include the coordinate info in the params here?</span></code></pre>
 
                         </div>
                       </div>
@@ -286,9 +287,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:5CNKit8RoomTypeO18accessibleRestroomA2CmF"></a>
-                    <a name="//apple_ref/swift/Element/accessibleRestroom" class="dashAnchor"></a>
-                    <a class="token" href="#/s:5CNKit8RoomTypeO18accessibleRestroomA2CmF">accessibleRestroom</a>
+                    <a name="/s:5CNKit8ResourceO8buildingACSSAD_tcACmF"></a>
+                    <a name="//apple_ref/swift/Element/building" class="dashAnchor"></a>
+                    <a class="token" href="#/s:5CNKit8ResourceO8buildingACSSAD_tcACmF">building</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -296,14 +297,14 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Undocumented</p>
+                        <p>A specific building, e.g. <a href="https://navigator.tu-dresden.de/gebaeude/apb">https://navigator.tu-dresden.de/gebaeude/apb</a></p>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">enum</span> <span class="kt">RoomType</span><span class="p">:</span> <span class="kt">Int</span><span class="p">,</span> <span class="kt">Decodable</span></code></pre>
+                          <pre class="highlight"><code><span class="k">case</span> <span class="nf">building</span><span class="p">(</span><span class="nv">building</span><span class="p">:</span> <span class="kt">String</span><span class="p">)</span></code></pre>
 
                         </div>
                       </div>
@@ -317,9 +318,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:5CNKit8RoomTypeO012babyChangingB0A2CmF"></a>
-                    <a name="//apple_ref/swift/Element/babyChangingRoom" class="dashAnchor"></a>
-                    <a class="token" href="#/s:5CNKit8RoomTypeO012babyChangingB0A2CmF">babyChangingRoom</a>
+                    <a name="/s:5CNKit8ResourceO21buildingAccessibilityACSS0C0_tcACmF"></a>
+                    <a name="//apple_ref/swift/Element/buildingAccessibility" class="dashAnchor"></a>
+                    <a class="token" href="#/s:5CNKit8ResourceO21buildingAccessibilityACSS0C0_tcACmF">buildingAccessibility</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -327,14 +328,14 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Undocumented</p>
+                        <p>A specific building&rsquo;s accessibility information, e.g. <a href="https://navigator.tu-dresden.de/barrierefrei/biz">https://navigator.tu-dresden.de/barrierefrei/biz</a></p>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">enum</span> <span class="kt">RoomType</span><span class="p">:</span> <span class="kt">Int</span><span class="p">,</span> <span class="kt">Decodable</span></code></pre>
+                          <pre class="highlight"><code><span class="k">case</span> <span class="nf">buildingAccessibility</span><span class="p">(</span><span class="nv">building</span><span class="p">:</span> <span class="kt">String</span><span class="p">)</span></code></pre>
 
                         </div>
                       </div>
@@ -348,9 +349,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:5CNKit8RoomTypeO7libraryA2CmF"></a>
-                    <a name="//apple_ref/swift/Element/library" class="dashAnchor"></a>
-                    <a class="token" href="#/s:5CNKit8RoomTypeO7libraryA2CmF">library</a>
+                    <a name="/s:5CNKit8ResourceO12lectureHallsACSS8building_tcACmF"></a>
+                    <a name="//apple_ref/swift/Element/lectureHalls" class="dashAnchor"></a>
+                    <a class="token" href="#/s:5CNKit8ResourceO12lectureHallsACSS8building_tcACmF">lectureHalls</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -358,14 +359,14 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Undocumented</p>
+                        <p>A specific building&rsquo;s lecture hall listing, e.g. <a href="https://navigator.tu-dresden.de/hoersaele/apb">https://navigator.tu-dresden.de/hoersaele/apb</a></p>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">enum</span> <span class="kt">RoomType</span><span class="p">:</span> <span class="kt">Int</span><span class="p">,</span> <span class="kt">Decodable</span></code></pre>
+                          <pre class="highlight"><code><span class="k">case</span> <span class="nf">lectureHalls</span><span class="p">(</span><span class="nv">building</span><span class="p">:</span> <span class="kt">String</span><span class="p">)</span></code></pre>
 
                         </div>
                       </div>
@@ -379,9 +380,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:5CNKit8RoomTypeO11lecturehallA2CmF"></a>
-                    <a name="//apple_ref/swift/Element/lecturehall" class="dashAnchor"></a>
-                    <a class="token" href="#/s:5CNKit8RoomTypeO11lecturehallA2CmF">lecturehall</a>
+                    <a name="/s:5CNKit8ResourceO5floorACSS8building_SSADtcACmF"></a>
+                    <a name="//apple_ref/swift/Element/floor" class="dashAnchor"></a>
+                    <a class="token" href="#/s:5CNKit8ResourceO5floorACSS8building_SSADtcACmF">floor</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -389,14 +390,14 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Undocumented</p>
+                        <p>A specific floor, e.g. <a href="https://navigator.tu-dresden.de/etplan/apb/00">https://navigator.tu-dresden.de/etplan/apb/00</a></p>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">enum</span> <span class="kt">RoomType</span><span class="p">:</span> <span class="kt">Int</span><span class="p">,</span> <span class="kt">Decodable</span></code></pre>
+                          <pre class="highlight"><code><span class="k">case</span> <span class="nf">floor</span><span class="p">(</span><span class="nv">building</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">floor</span><span class="p">:</span> <span class="kt">String</span><span class="p">)</span></code></pre>
 
                         </div>
                       </div>
@@ -410,9 +411,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:5CNKit8RoomTypeO11seminarroomA2CmF"></a>
-                    <a name="//apple_ref/swift/Element/seminarroom" class="dashAnchor"></a>
-                    <a class="token" href="#/s:5CNKit8RoomTypeO11seminarroomA2CmF">seminarroom</a>
+                    <a name="/s:5CNKit8ResourceO11roomOnFloorACSS8building_SS5floorSS0C0tcACmF"></a>
+                    <a name="//apple_ref/swift/Element/roomOnFloor" class="dashAnchor"></a>
+                    <a class="token" href="#/s:5CNKit8ResourceO11roomOnFloorACSS8building_SS5floorSS0C0tcACmF">roomOnFloor</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -420,14 +421,14 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Undocumented</p>
+                        <p>A single room highlighted on a specific floor, e.g. <a href="https://navigator.tu-dresden.de/etplan/biz/02/raum/062102.0020">https://navigator.tu-dresden.de/etplan/biz/02/raum/062102.0020</a></p>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">enum</span> <span class="kt">RoomType</span><span class="p">:</span> <span class="kt">Int</span><span class="p">,</span> <span class="kt">Decodable</span></code></pre>
+                          <pre class="highlight"><code><span class="k">case</span> <span class="nf">roomOnFloor</span><span class="p">(</span><span class="nv">building</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">floor</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">room</span><span class="p">:</span> <span class="kt">String</span><span class="p">)</span></code></pre>
 
                         </div>
                       </div>
@@ -441,102 +442,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:5CNKit8RoomTypeO11drawingroomA2CmF"></a>
-                    <a name="//apple_ref/swift/Element/drawingroom" class="dashAnchor"></a>
-                    <a class="token" href="#/s:5CNKit8RoomTypeO11drawingroomA2CmF">drawingroom</a>
-                    </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        <p>Undocumented</p>
-
-                      </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">enum</span> <span class="kt">RoomType</span><span class="p">:</span> <span class="kt">Int</span><span class="p">,</span> <span class="kt">Decodable</span></code></pre>
-
-                        </div>
-                      </div>
-                    </section>
-                  </div>
-                </li>
-              </ul>
-            </div>
-            <div class="task-group">
-              <ul class="item-container">
-                <li class="item">
-                  <div>
-                    <code>
-                    <a name="/s:5CNKit8RoomTypeO11restingroomA2CmF"></a>
-                    <a name="//apple_ref/swift/Element/restingroom" class="dashAnchor"></a>
-                    <a class="token" href="#/s:5CNKit8RoomTypeO11restingroomA2CmF">restingroom</a>
-                    </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        <p>Undocumented</p>
-
-                      </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">enum</span> <span class="kt">RoomType</span><span class="p">:</span> <span class="kt">Int</span><span class="p">,</span> <span class="kt">Decodable</span></code></pre>
-
-                        </div>
-                      </div>
-                    </section>
-                  </div>
-                </li>
-              </ul>
-            </div>
-            <div class="task-group">
-              <ul class="item-container">
-                <li class="item">
-                  <div>
-                    <code>
-                    <a name="/s:5CNKit8RoomTypeO8coatroomA2CmF"></a>
-                    <a name="//apple_ref/swift/Element/coatroom" class="dashAnchor"></a>
-                    <a class="token" href="#/s:5CNKit8RoomTypeO8coatroomA2CmF">coatroom</a>
-                    </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        <p>Undocumented</p>
-
-                      </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">enum</span> <span class="kt">RoomType</span><span class="p">:</span> <span class="kt">Int</span><span class="p">,</span> <span class="kt">Decodable</span></code></pre>
-
-                        </div>
-                      </div>
-                    </section>
-                  </div>
-                </li>
-              </ul>
-            </div>
-            <div class="task-group">
-              <ul class="item-container">
-                <li class="item">
-                  <div>
-                    <code>
-                    <a name="/s:5CNKit8RoomTypeO4roomA2CmF"></a>
+                    <a name="/s:5CNKit8ResourceO4roomACSSAD_tcACmF"></a>
                     <a name="//apple_ref/swift/Element/room" class="dashAnchor"></a>
-                    <a class="token" href="#/s:5CNKit8RoomTypeO4roomA2CmF">room</a>
+                    <a class="token" href="#/s:5CNKit8ResourceO4roomACSSAD_tcACmF">room</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -544,14 +452,14 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Undocumented</p>
+                        <p>A specific room, e.g. <a href="https://navigator.tu-dresden.de/raum/542100.2310">https://navigator.tu-dresden.de/raum/542100.2310</a></p>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">enum</span> <span class="kt">RoomType</span><span class="p">:</span> <span class="kt">Int</span><span class="p">,</span> <span class="kt">Decodable</span></code></pre>
+                          <pre class="highlight"><code><span class="k">case</span> <span class="nf">room</span><span class="p">(</span><span class="nv">room</span><span class="p">:</span> <span class="kt">String</span><span class="p">)</span></code></pre>
 
                         </div>
                       </div>
@@ -565,9 +473,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:5CNKit8RoomTypeO5otherA2CmF"></a>
-                    <a name="//apple_ref/swift/Element/other" class="dashAnchor"></a>
-                    <a class="token" href="#/s:5CNKit8RoomTypeO5otherA2CmF">other</a>
+                    <a name="/s:5CNKit8ResourceOAC10Foundation3URLV04withD0_tKcfc"></a>
+                    <a name="//apple_ref/swift/Method/init(withURL:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:5CNKit8ResourceOAC10Foundation3URLV04withD0_tKcfc">init(withURL:)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -575,30 +483,144 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Undocumented</p>
+                        <p>Create a Resource from a given Campus Navigator URL.</p>
+<div class="aside aside-throws">
+    <p class="aside-title">Throws</p>
+    Error.resourceURL with the URL if unable to parse
+
+</div>
+<div class="aside aside-warning">
+    <p class="aside-title">Warning</p>
+    This only accepts valid CN URLs, not the search output. See <a href="https://fusionforge.zih.tu-dresden.de/tracker/?aid=1976">here</a>.
+
+</div>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">enum</span> <span class="kt">RoomType</span><span class="p">:</span> <span class="kt">Int</span><span class="p">,</span> <span class="kt">Decodable</span></code></pre>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="nf">init</span><span class="p">(</span><span class="n">withURL</span> <span class="nv">url</span><span class="p">:</span> <span class="kt">URL</span><span class="p">)</span> <span class="k">throws</span></code></pre>
 
                         </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>url</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>url</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
                       </div>
                     </section>
                   </div>
                 </li>
-              </ul>
-            </div>
-            <div class="task-group">
-              <ul class="item-container">
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:s9DecodablePxs7Decoder_p4from_tKcfc"></a>
+                    <a name="/s:5CNKit8ResourceOACs7Decoder_p4from_tKcfc"></a>
                     <a name="//apple_ref/swift/Method/init(from:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:s9DecodablePxs7Decoder_p4from_tKcfc">init(from:)</a>
+                    <a class="token" href="#/s:5CNKit8ResourceOACs7Decoder_p4from_tKcfc">init(from:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <div class="aside aside-warning">
+    <p class="aside-title">Warning</p>
+    This only accepts search results, not actual CN URLs.
+
+</div>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="nf">init</span><span class="p">(</span><span class="n">from</span> <span class="nv">decoder</span><span class="p">:</span> <span class="kt">Decoder</span><span class="p">)</span> <span class="k">throws</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:5CNKit8ResourceO10buildingIDSSSgv"></a>
+                    <a name="//apple_ref/swift/Property/buildingID" class="dashAnchor"></a>
+                    <a class="token" href="#/s:5CNKit8ResourceO10buildingIDSSSgv">buildingID</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>This resource&rsquo;s building ID, if any.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">buildingID</span><span class="p">:</span> <span class="kt">String</span><span class="p">?</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:5CNKit8ResourceO3url10Foundation3URLVSgv"></a>
+                    <a name="//apple_ref/swift/Property/url" class="dashAnchor"></a>
+                    <a class="token" href="#/s:5CNKit8ResourceO3url10Foundation3URLVSgv">url</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>The canonical user-accessible URL pointing to this resource.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">url</span><span class="p">:</span> <span class="kt">URL</span><span class="p">?</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <ul class="item-container">
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:s9EquatableP2eeoiSbx_xtFZ"></a>
+                    <a name="//apple_ref/swift/Method/==(_:_:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:s9EquatableP2eeoiSbx_xtFZ">==(_:_:)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -612,7 +634,7 @@
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="nf">init</span><span class="p">(</span><span class="n">from</span> <span class="nv">decoder</span><span class="p">:</span> <span class="kt">Decoder</span><span class="p">)</span> <span class="k">throws</span></code></pre>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">static</span> <span class="kd">func</span> <span class="o">==</span><span class="p">(</span><span class="nv">lhs</span><span class="p">:</span> <span class="kt">Resource</span><span class="p">,</span> <span class="nv">rhs</span><span class="p">:</span> <span class="kt">Resource</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Bool</span></code></pre>
 
                         </div>
                       </div>
@@ -623,7 +645,19 @@
                             <tr>
                               <td>
                                 <code>
-                                <em>decoder</em>
+                                <em>lhs</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>rhs</em>
                                 </code>
                               </td>
                               <td>
@@ -634,33 +668,6 @@
                             </tr>
                           </tbody>
                         </table>
-                      </div>
-                    </section>
-                  </div>
-                </li>
-                <li class="item">
-                  <div>
-                    <code>
-                    <a name="/s:5CNKit8RoomTypeO5colorSiv"></a>
-                    <a name="//apple_ref/swift/Property/color" class="dashAnchor"></a>
-                    <a class="token" href="#/s:5CNKit8RoomTypeO5colorSiv">color</a>
-                    </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        <p>The color this type should be displayed as.</p>
-
-                      </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">color</span><span class="p">:</span> <span class="kt">Int</span></code></pre>
-
-                        </div>
                       </div>
                     </section>
                   </div>
