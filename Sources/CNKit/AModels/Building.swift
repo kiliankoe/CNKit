@@ -66,6 +66,10 @@ public struct BuildingComplex: Codable, CustomStringConvertible {
         return region.center
     }
 
+    /// Check if this BuildingComplex contains a given room.
+    ///
+    /// - Parameters:
+    ///   - roomID: room identifier
     func contains(roomWithID roomID: RoomID) -> Bool {
         return self.structures
             .filter { return $0.id == roomID.buildingStructure }

@@ -1,25 +1,32 @@
 import Foundation
 
+/// Room Identifier, e.g. 351601.0420
 public struct RoomID {
+    /// Identifier of the building structure this room is located in.
+    /// Use `BuildingComplex.contains(roomWithID:)` instead of manual lookup.
     public let buildingStructure: String
-    public let rawFloor: String
+    /// Floor level string value, e.g. "-1", "00", etc.
+    /// Use `.level` instead for a more sensible representation.
+    public let rawLevel: String
+    /// A room's actual identifier, not actually used anywhere, see
+    /// `.rawValue` instead.
     public let roomID: String
 
-    public var floor: Int? {
-        if self.rawFloor == "--" { return 0 }
-        guard let intVal = Int(self.rawFloor) else { return nil }
-        return intVal
+    /// Floor level
+    public var level: Int? {
+        return Int(fromFloorLevel: self.rawLevel)
     }
 
-    public let rawValue: String
+    /// The room's identifer, used by other endpoints and as a general identifier.
+    public let id: String
 
     public init(withString value: String) {
         let components = value.split(separator: ".").map(String.init)
         self.buildingStructure = String(components[0].prefix(4))
-        self.rawFloor = String(components[0].suffix(2))
+        self.rawLevel = String(components[0].suffix(2))
         self.roomID = components[1]
 
-        self.rawValue = value
+        self.id = value
     }
 }
 
