@@ -14,5 +14,4 @@ extension Floor.Room: ResourceRepresentable {
     public var resource: Resource? {
         return Resource.room(room: self.identifier.fullID)
     }
-
 }
