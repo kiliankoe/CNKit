@@ -109,9 +109,15 @@ public enum Resource: Decodable {
             }
             throw Error.resourceURL(url.absoluteString)
         case "raum":
-            // https://navigator.tu-dresden.de/raum/542100.2310
-            guard components.count == 1 else { throw Error.resourceURL(url.absoluteString) }
-            return Resource.room(room: components[0])
+            if components.count == 1 {
+                // https://navigator.tu-dresden.de/raum/542100.2310
+                return Resource.room(room: components[0])
+            } else if components.count == 3 {
+                // https://navigator.tu-dresden.de/raum/apb/00/542100.2310
+                // keeping this for legacy reasons
+                return Resource.room(room: components[2])
+            }
+            throw Error.resourceURL(url.absoluteString)
         default:
             throw Error.resourceURL(url.absoluteString)
         }

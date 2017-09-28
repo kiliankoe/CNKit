@@ -6,7 +6,7 @@ class ResourceTests: XCTestCase {
     func testValidURLs() {
         let rawValidURLs = [
             "https://navigator.tu-dresden.de/@13.732,51.02839999999999,15.z",
-            "https://navigator.tu-dresden.de/raum/542100.2230",
+            "https://navigator.tu-dresden.de/raum/apb/00/542100.2230",
             "https://navigator.tu-dresden.de/etplan/apb/00/raum/542100.2230",
             "https://navigator.tu-dresden.de/gebaeude/apb",
             "https://navigator.tu-dresden.de/karten/dresden/geb/apb",
