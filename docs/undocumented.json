@@ -2,7 +2,7 @@
   "warnings": [
     {
       "file": "/Users/kilian/dev/Campus Navigator/CNKit/Sources/CNKit/AModels/RoomID.swift",
-      "line": 23,
+      "line": 22,
       "symbol": "RoomID.init(withString:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
