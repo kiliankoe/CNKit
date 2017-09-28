@@ -24,6 +24,8 @@
 		39185D781F658E0A00003BDD /* Campus.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_18 /* Campus.swift */; };
 		39185D791F658E0E00003BDD /* Building.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_17 /* Building.swift */; };
 		39185D7C1F6608DF00003BDD /* AccessibilityInfoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39185D7B1F6608DF00003BDD /* AccessibilityInfoTests.swift */; };
+		393652611F7D387B0059D85E /* RoomID.swift in Sources */ = {isa = PBXBuildFile; fileRef = 393652601F7D387B0059D85E /* RoomID.swift */; };
+		393652631F7D41500059D85E /* RoomIDTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 393652621F7D41500059D85E /* RoomIDTests.swift */; };
 		393F6FC31F69778C004D9BCC /* FloorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 393F6FC21F69778C004D9BCC /* FloorTests.swift */; };
 		393F6FC51F69FA5F004D9BCC /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 393F6FC41F69FA5F004D9BCC /* Color.swift */; };
 		3973A3601F6BF2D300ECE236 /* Trillian.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3973A35F1F6BF2D300ECE236 /* Trillian.swift */; };
@@ -89,6 +91,8 @@
 /* Begin PBXFileReference section */
 		39185D771F641D3200003BDD /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		39185D7B1F6608DF00003BDD /* AccessibilityInfoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessibilityInfoTests.swift; sourceTree = "<group>"; };
+		393652601F7D387B0059D85E /* RoomID.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomID.swift; sourceTree = "<group>"; };
+		393652621F7D41500059D85E /* RoomIDTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomIDTests.swift; sourceTree = "<group>"; };
 		393F6FC21F69778C004D9BCC /* FloorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FloorTests.swift; sourceTree = "<group>"; };
 		393F6FC41F69FA5F004D9BCC /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 		3973A35F1F6BF2D300ECE236 /* Trillian.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Trillian.swift; sourceTree = "<group>"; };
@@ -185,6 +189,7 @@
 				39B71CC81F6C671400342208 /* APIError.swift */,
 				39B71CCC1F6C8F1D00342208 /* Search.swift */,
 				39D25BCA1F6C94D900FAFDB6 /* CanteenMenu.swift */,
+				393652601F7D387B0059D85E /* RoomID.swift */,
 			);
 			path = AModels;
 			sourceTree = "<group>";
@@ -217,6 +222,7 @@
 				3990B5A31F72687B00A58ACD /* ResultTests.swift */,
 				3990B5A51F726C6600A58ACD /* ColorTests.swift */,
 				39C8ED201F72949F00AD3DE2 /* CampusTests.swift */,
+				393652621F7D41500059D85E /* RoomIDTests.swift */,
 			);
 			name = CNKitTests;
 			path = Tests/CNKitTests;
@@ -368,6 +374,7 @@
 				3973A3621F6BFB7E00ECE236 /* RoomInfoTests.swift in Sources */,
 				39185D7C1F6608DF00003BDD /* AccessibilityInfoTests.swift in Sources */,
 				OBJ_41 /* HashTests.swift in Sources */,
+				393652631F7D41500059D85E /* RoomIDTests.swift in Sources */,
 				39B71CCB1F6C89CC00342208 /* RouteTests.swift in Sources */,
 				39C8ED211F72949F00AD3DE2 /* CampusTests.swift in Sources */,
 				3990B59E1F71561C00A58ACD /* TilesTests.swift in Sources */,
@@ -392,6 +399,7 @@
 				OBJ_52 /* Config.swift in Sources */,
 				393F6FC51F69FA5F004D9BCC /* Color.swift in Sources */,
 				39A6657A1F6C5297000FA88B /* Login.swift in Sources */,
+				393652611F7D387B0059D85E /* RoomID.swift in Sources */,
 				39D25BCB1F6C94D900FAFDB6 /* CanteenMenu.swift in Sources */,
 				39A6657C1F6C5442000FA88B /* URLRequest.swift in Sources */,
 				3990B5981F71332B00A58ACD /* URL.swift in Sources */,
