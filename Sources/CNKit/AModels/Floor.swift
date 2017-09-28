@@ -2,7 +2,9 @@ import Foundation
 
 /// A floor inside a building.
 public struct Floor: Decodable {
-    let rawFloor: String
+    /// Floor level string value, e.g. "-1", "--", "00", etc.
+    /// Use `.level` instead for a more sensible interpretation.
+    public let rawLevel: String
     /// Maximum X coordinate.
     public let maxX: Double
     /// Maximum Y coordinate.
@@ -11,14 +13,12 @@ public struct Floor: Decodable {
     public let rooms: [Room]
 
     /// Floor level
-    public var floor: Int? {
-        if self.rawFloor == "--" { return 0 }
-        guard let intVal = Int(self.rawFloor) else { return nil }
-        return intVal
+    public var level: Int? {
+        return Int(fromFloorLevel: self.rawLevel)
     }
 
     private enum CodingKeys: String, CodingKey {
-        case rawFloor = "etage"
+        case rawLevel = "etage"
         case maxX
         case maxY
         case colors = "raumf"
@@ -32,7 +32,7 @@ public struct Floor: Decodable {
 
     public init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
-        self.rawFloor = try container.decode(String.self, forKey: .rawFloor)
+        self.rawLevel = try container.decode(String.self, forKey: .rawLevel)
         self.maxX = try container.decode(Double.self, forKey: .maxX)
         self.maxY = try container.decode(Double.self, forKey: .maxY)
 

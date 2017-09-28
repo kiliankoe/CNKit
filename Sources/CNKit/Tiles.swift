@@ -24,6 +24,6 @@ public enum Tiles {
     /// - Returns: URL for the specified tile.
     public static func floorplanURL(building: String, floor: Int, x: Int, y: Int, z: Int) -> URL {
         let buildingID = building.uppercased().urlPathEscaped
-        return URL(string: "/images/etplan_cache/\(buildingID)\(floor.asFloorID)_\(z)/\(x)_\(y).png/nobase64", relativeTo: Config.baseURL)!
+        return URL(string: "/images/etplan_cache/\(buildingID)\(floor.floorLevel)_\(z)/\(x)_\(y).png/nobase64", relativeTo: Config.baseURL)!
     }
 }
