@@ -60,6 +60,12 @@ public struct BuildingComplex: Codable, CustomStringConvertible {
         return region.center
     }
 
+    func contains(roomWithID roomID: RoomID) -> Bool {
+        return self.structures
+            .filter { return $0.id == roomID.buildingStructure }
+            .count != 0
+    }
+
     private enum CodingKeys: String, CodingKey {
         case abbreviation = "krz"
         case name
