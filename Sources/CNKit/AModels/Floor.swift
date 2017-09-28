@@ -109,7 +109,7 @@ extension Floor {
         }
 
         private enum CodingKeys: String, CodingKey {
-            case identifier
+            case identifier = "id"
             case name
             case namex
             case namey
