@@ -15,12 +15,46 @@ class LoginTests: XCTestCase {
         XCTAssertEqual(login.token, "Y0bXcorHzT_gbBsf261rM")
     }
 
+    func testFetchWithFailingLogin() {
+        let e = expectation(description: "get error")
+
+        Login.authenticate(withLogin: "foobar", andPassword: "hunter2") { result in
+            guard let error = result.failure else {
+                XCTFail("Got success: \(result)")
+                e.fulfill()
+                return
+            }
+
+            XCTAssertEqual(error.localizedDescription, "Server returned status code 200 and error: Login incorrect")
+            e.fulfill()
+        }
+
+        waitForExpectations(timeout: 5)
+    }
+
+    func testFetchWithFailingToken() {
+        let e = expectation(description: "get error")
+
+        Login.authenticate(withToken: "foobar") { result in
+            guard let error = result.failure else {
+                XCTFail("Got success: \(result)")
+                e.fulfill()
+                return
+            }
+
+            XCTAssertEqual(error.localizedDescription, "Server returned status code 200 and error: Token has wrong format.")
+            e.fulfill()
+        }
+
+        waitForExpectations(timeout: 5)
+    }
+
     func testFetchWithLoginAndToken() {
         guard
             let login = ProcessInfo.processInfo.environment["ZIHLOGIN"],
             let password = ProcessInfo.processInfo.environment["ZIHPASSWORD"]
         else {
-            print("\n\nExpected to find login details in environment (ZIHLOGIN and ZIHPASSWORD). Skipping LoginTests.\(#function)\n\n")
+            XCTFail("Expected to find login details in environment (ZIHLOGIN and ZIHPASSWORD).")
             return
         }
 
@@ -53,6 +87,8 @@ class LoginTests: XCTestCase {
 
     static var allTests = [
         ("testDecoding", testDecoding),
+        ("testFetchWithFailingLogin", testFetchWithFailingLogin),
+        ("testFetchWithFailingToken", testFetchWithFailingToken),
         ("testFetchWithLoginAndToken", testFetchWithLoginAndToken),
     ]
 }
