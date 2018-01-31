@@ -4,7 +4,7 @@ import Foundation
 public struct Hash: Codable {
     /// Current hash value.
     public let hash: String
-    /// ¯\_(ツ)_/¯
+    /// ¯\\_(ツ)\_/¯
     public let encryption: Bool
 }
 
