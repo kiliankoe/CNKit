@@ -15,22 +15,23 @@ extension Login: APIResource {
 
     static var expectedEncoding: String.Encoding = .isoLatin1
 
-    struct RequestResource {
-        let login: (zihLogin: String, password: String)?
-        let token: String?
+    enum RequestResource {
+        case login(zihLogin: String, password: String)
+        case token(String)
     }
 
     static func request(to resource: Login.RequestResource) throws -> URLRequest {
-        if let login = resource.login {
+        switch resource {
+        case let .login(zihLogin: zihLogin, password: password):
             let url = URL(string: "m/json_login/user", relativeTo: Config.baseURL)!
             var request = URLRequest(url: url)
             request.httpMethod = "POST"
             request.setBody([
-                "zihlogin": login.zihLogin,
-                "passwort": login.password
+                "zihlogin": zihLogin,
+                "passwort": password
             ])
             return request
-        } else if let token = resource.token {
+        case let .token(token):
             let url = URL(string: "m/json_login/token", relativeTo: Config.baseURL)!
             var request = URLRequest(url: url)
             request.httpMethod = "POST"
@@ -39,7 +40,6 @@ extension Login: APIResource {
             ])
             return request
         }
-        throw Error.invalidQuery(reason: "Either login/password or token has to be specified for a login request.")
     }
 
     /// Authenticate via login/password combination.
@@ -53,7 +53,7 @@ extension Login: APIResource {
                                     andPassword password: String,
                                     session: URLSession = .shared,
                                     completion: @escaping (Result<Login>) -> Void) {
-        let resource = RequestResource(login: (zihLogin: login, password: password), token: nil)
+        let resource = RequestResource.login(zihLogin: login, password: password)
         Login.fetch(resource: resource, session: session, completion: completion)
     }
 
@@ -66,7 +66,7 @@ extension Login: APIResource {
     public static func authenticate(withToken token: String,
                                     session: URLSession = .shared,
                                     completion: @escaping (Result<Login>) -> Void) {
-        let resource = RequestResource(login: nil, token: token)
+        let resource = RequestResource.token(token)
         Login.fetch(resource: resource, session: session, completion: completion)
     }
 }
