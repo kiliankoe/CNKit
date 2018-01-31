@@ -1,5 +1,5 @@
 /// Either `true`, `false` or `nodata`. Got a better name for this? Please refactor :)
-public enum Trillian: Decodable {
+public enum Ternary: Decodable {
     case `true`
     case `false`
     case nodata

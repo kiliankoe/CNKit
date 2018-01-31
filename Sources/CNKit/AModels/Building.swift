@@ -226,13 +226,13 @@ extension BuildingComplex {
     public struct AccessibilityInfo: Decodable {
 
         /// Does the building have any wheelchair accessible entrances?
-        public let hasAccessibleEntrance: Trillian
+        public let hasAccessibleEntrance: Ternary
         /// Does the building have an elevator?
-        public let hasElevator: Trillian
+        public let hasElevator: Ternary
         /// List of entrance identifiers that are wheelchair accessible.
         public let accessibleEntrances: [Int]
         /// Does the building have any accessible restrooms?
-        public let hasAccessibleRestrooms: Trillian
+        public let hasAccessibleRestrooms: Ternary
         /// List of elevator door widths in cm.
         public let elevatorDoorWidths: [Int]
 
@@ -253,13 +253,13 @@ extension BuildingComplex {
             let container = try accContainer.nestedContainer(keyedBy: CodingKeys.self, forKey: .data)
 
             if let hasAccessibleEntrance = try? container.decode(String.self, forKey: .hasAccessibleEntrance) {
-                self.hasAccessibleEntrance = Trillian(stringValue: hasAccessibleEntrance)
+                self.hasAccessibleEntrance = Ternary(stringValue: hasAccessibleEntrance)
             } else {
                 self.hasAccessibleEntrance = .nodata
             }
 
             if let hasElevator = try? container.decode(String.self, forKey: .hasElevator) {
-                self.hasElevator = Trillian(stringValue: hasElevator)
+                self.hasElevator = Ternary(stringValue: hasElevator)
             } else {
                 self.hasElevator = .nodata
             }
@@ -271,7 +271,7 @@ extension BuildingComplex {
             }
 
             if let hasAccessibleRestrooms = try? container.decode(String.self, forKey: .hasAccessibleRestrooms) {
-                self.hasAccessibleRestrooms = Trillian(stringValue: hasAccessibleRestrooms)
+                self.hasAccessibleRestrooms = Ternary(stringValue: hasAccessibleRestrooms)
             } else {
                 self.hasAccessibleRestrooms = .nodata
             }

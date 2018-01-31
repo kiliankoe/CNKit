@@ -27,21 +27,21 @@ extension RoomInfo {
     /// Detailed accessibility information.
     public struct AccessibilityBadge: Decodable {
         /// Is this room's door wheelchair accessible?
-        public let doorIsAccessible: Trillian
+        public let doorIsAccessible: Ternary
         /// The entrance door's width in cm.
         public let doorwidth: Int
         /// Are possible steps marked?
-        public let stepsAreMarked: Trillian
+        public let stepsAreMarked: Ternary
         /// Is a hearingloop microport available?
-        public let hearingloopMicroport: Trillian
+        public let hearingloopMicroport: Ternary
         /// Is an inductive hearingloop available?
-        public let hearingloopInductive: Trillian
+        public let hearingloopInductive: Ternary
         /// Are wheelchair spaces available?
-        public let wheelchairSpacesAvailable: Trillian
+        public let wheelchairSpacesAvailable: Ternary
         /// How many wheelchair spaces are available?
         public let wheelchairSpacesCount: Int
         /// Is the lecturer zone wheelchair accessible?
-        public let lecturerZoneIsAccessible: Trillian
+        public let lecturerZoneIsAccessible: Ternary
 
         private enum CodingKeys: String, CodingKey {
             case doorIsAccessible = "door"
