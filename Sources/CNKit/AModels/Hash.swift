@@ -11,7 +11,7 @@ public struct Hash: Codable {
 extension Hash: APIResource {
     typealias CollectionType = Hash
 
-    static var expectedEncoding: String.Encoding = .isoLatin1
+    static let expectedEncoding: String.Encoding = .isoLatin1
 
     struct RequestResource { }
     static func request(to resource: RequestResource) -> URLRequest {

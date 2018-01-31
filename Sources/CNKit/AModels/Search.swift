@@ -47,7 +47,7 @@ extension Search {
 extension Search: APIResource {
     typealias CollectionType = Search
 
-    static var expectedEncoding: String.Encoding = .utf8
+    static let expectedEncoding: String.Encoding = .utf8
 
     struct RequestResource {
         let query: String

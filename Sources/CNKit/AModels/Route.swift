@@ -105,7 +105,7 @@ extension Route {
 extension Route: APIResource {
     typealias CollectionType = Route
 
-    static var expectedEncoding: String.Encoding = .utf8
+    static let expectedEncoding: String.Encoding = .utf8
 
     struct RequestResource {
         let origin: CLLocationCoordinate2D

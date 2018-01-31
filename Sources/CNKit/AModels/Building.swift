@@ -200,7 +200,7 @@ extension BuildingComplex {
 
 extension BuildingComplex: APIResource {
     typealias CollectionType = [BuildingComplex]
-    static var expectedEncoding: String.Encoding = .isoLatin1
+    static let expectedEncoding: String.Encoding = .isoLatin1
 
     struct RequestResource { }
     static func request(to resource: BuildingComplex.RequestResource) -> URLRequest {
@@ -288,7 +288,7 @@ extension BuildingComplex {
 extension BuildingComplex.AccessibilityInfo: APIResource {
     typealias CollectionType = BuildingComplex.AccessibilityInfo
 
-    static var expectedEncoding = String.Encoding.utf8
+    static let expectedEncoding: String.Encoding = .utf8
 
     struct RequestResource {
         let buildingID: String

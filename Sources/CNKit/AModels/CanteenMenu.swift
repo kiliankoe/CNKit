@@ -55,7 +55,7 @@ extension CanteenMenu {
 extension CanteenMenu: APIResource {
     typealias CollectionType = CanteenMenu
 
-    static var expectedEncoding: String.Encoding = .utf8
+    static let expectedEncoding: String.Encoding = .utf8
 
     struct RequestResource {
         let canteenID: String

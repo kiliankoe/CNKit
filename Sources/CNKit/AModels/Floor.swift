@@ -155,7 +155,7 @@ extension Floor {
 extension Floor: APIResource {
     typealias CollectionType = [Floor]
 
-    static var expectedEncoding: String.Encoding = .isoLatin1
+    static let expectedEncoding: String.Encoding = .isoLatin1
 
     struct RequestResource {
         let buildingID: String

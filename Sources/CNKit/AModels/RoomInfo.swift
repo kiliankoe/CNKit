@@ -111,7 +111,7 @@ extension RoomInfo {
 extension RoomInfo: APIResource {
     typealias CollectionType = RoomInfo
 
-    static var expectedEncoding: String.Encoding = .utf8
+    static let expectedEncoding: String.Encoding = .utf8
 
     struct RequestResource {
         let roomID: String
@@ -189,7 +189,7 @@ extension RoomInfo {
 extension RoomInfo.AccessibilityInfo: APIResource {
     typealias CollectionType = RoomInfo.AccessibilityInfo
 
-    static var expectedEncoding: String.Encoding = .isoLatin1
+    static let expectedEncoding: String.Encoding = .isoLatin1
 
     struct RequestResource {
         let roomID: String

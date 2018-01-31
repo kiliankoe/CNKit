@@ -13,7 +13,7 @@ public struct Login: Decodable {
 extension Login: APIResource {
     typealias CollectionType = Login
 
-    static var expectedEncoding: String.Encoding = .isoLatin1
+    static let expectedEncoding: String.Encoding = .isoLatin1
 
     enum RequestResource {
         case login(zihLogin: String, password: String)
