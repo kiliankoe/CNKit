@@ -16,7 +16,7 @@ class ResourceTests: XCTestCase {
             "https://navigator.tu-dresden.de/etplan/biz/02/raum/062102.0020",
             "https://navigator.tu-dresden.de/raum/062102.0020",
             "http://navigator.tu-dresden.de/raum/062102.0020",
-            "https://www.navigator.tu-dresden.de/raum/062102.0020",
+            "https://www.navigator.tu-dresden.de/raum/062102.0020?d=00.80",
             "https://navigator.tu-dresden.de/barrierefrei/apb",
             "https://navigator.tu-dresden.de/hoersaele/apb",
             "/karten/dresden/geb/apb",
@@ -58,6 +58,16 @@ class ResourceTests: XCTestCase {
         for url in invalidURLs {
             XCTAssertThrowsError(try Resource(withURL: url), url.absoluteString)
         }
+    }
+
+    func testParse() {
+        let roomWithoutDoor = URL(string: "http://navigator.tu-dresden.de/raum/062102.0020")!
+        XCTAssertEqual(try! Resource(withURL: roomWithoutDoor),
+                       .room(room: "062102.0020", door: nil))
+
+        let roomWithDoor = URL(string: "http://navigator.tu-dresden.de/raum/062102.0020?d=00.80")!
+        XCTAssertEqual(try! Resource(withURL: roomWithDoor),
+                       .room(room: "062102.0020", door: "00.80"))
     }
 
     func testFromSearch() {
@@ -112,7 +122,7 @@ class ResourceTests: XCTestCase {
         let roomFloor = Resource.roomOnFloor(building: "apb", floor: "00", room: "062102.0020")
         XCTAssertEqual(roomFloor.buildingID, "apb")
 
-        let room = Resource.room(room: "062102.0020")
+        let room = Resource.room(room: "062102.0020", door: nil)
         XCTAssertNil(room.buildingID)
     }
 
@@ -141,8 +151,11 @@ class ResourceTests: XCTestCase {
         let roomFloor = Resource.roomOnFloor(building: "apb", floor: "00", room: "542100.2220")
         XCTAssertEqual(roomFloor.url?.absoluteString, "https://navigator.tu-dresden.de/etplan/apb/00/raum/542100.2220")
 
-        let room = Resource.room(room: "542100.2220")
-        XCTAssertEqual(room.url?.absoluteString, "https://navigator.tu-dresden.de/raum/542100.2220")
+        let roomWithoutDoor = Resource.room(room: "542100.2220", door: nil)
+        XCTAssertEqual(roomWithoutDoor.url?.absoluteString, "https://navigator.tu-dresden.de/raum/542100.2220")
+
+        let roomWithDoor = Resource.room(room: "542100.2220", door: "00.80")
+        XCTAssertEqual(roomWithDoor.url?.absoluteString, "https://navigator.tu-dresden.de/raum/542100.2220?d=00.80")
     }
 
     func testEquatable() {
@@ -200,10 +213,10 @@ class ResourceTests: XCTestCase {
         XCTAssertNotEqual(Resource.roomOnFloor(building: "building", floor: "floor", room: "foo"),
                           Resource.roomOnFloor(building: "building", floor: "floor", room: "room"))
 
-        XCTAssertEqual(Resource.room(room: "room"),
-                       Resource.room(room: "room"))
-        XCTAssertNotEqual(Resource.room(room: "room"),
-                       Resource.room(room: "foo"))
+        XCTAssertEqual(Resource.room(room: "room", door: "00.80"),
+                       Resource.room(room: "room", door: "00.80"))
+        XCTAssertNotEqual(Resource.room(room: "room", door: nil),
+                          Resource.room(room: "foo", door: nil))
 
         XCTAssertNotEqual(Resource.map(region: "region", building: "building"),
                           Resource.building(building: "building"))
@@ -212,6 +225,7 @@ class ResourceTests: XCTestCase {
     static var allTests = [
         ("testValidURLs", testValidURLs),
         ("testInvalidURLs", testInvalidURLs),
+        ("testParse", testParse),
         ("testFromSearch", testFromSearch),
         ("testBuildingID", testBuildingID),
         ("testURL", testURL),

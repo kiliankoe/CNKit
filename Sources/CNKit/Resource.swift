@@ -20,8 +20,8 @@ public enum Resource: Decodable {
     case floor(building: String, floor: String)
     /// A single room highlighted on a specific floor, e.g. https://navigator.tu-dresden.de/etplan/biz/02/raum/062102.0020
     case roomOnFloor(building: String, floor: String, room: String)
-    /// A specific room, e.g. https://navigator.tu-dresden.de/raum/542100.2310
-    case room(room: String)
+    /// A specific room, with an optional door e.g. https://navigator.tu-dresden.de/raum/542100.2310?d=00.80
+    case room(room: String, door: String?)
 
     /// Create a Resource from a given Campus Navigator URL.
     ///
@@ -59,7 +59,7 @@ public enum Resource: Decodable {
             case 3:
                 return Resource.map(region: components[0], building: components[2])
             case 4:
-                return Resource.room(room: components[3])
+                return Resource.room(room: components[3], door: nil)
             default:
                 throw Error.resourceURL(url.absoluteString)
             }
@@ -110,12 +110,17 @@ public enum Resource: Decodable {
             throw Error.resourceURL(url.absoluteString)
         case "raum":
             if components.count == 1 {
+                if let query = url.query, query.queryParams.keys.contains("d") {
+                    // https://navigator.tu-dresden.de/raum/542100.2310?d=00.80
+                    let doorID = query.queryParams["d"]
+                    return Resource.room(room: components[0], door: doorID)
+                }
                 // https://navigator.tu-dresden.de/raum/542100.2310
-                return Resource.room(room: components[0])
+                return Resource.room(room: components[0], door: nil)
             } else if components.count == 3 {
                 // https://navigator.tu-dresden.de/raum/apb/00/542100.2310
                 // keeping this for legacy reasons
-                return Resource.room(room: components[2])
+                return Resource.room(room: components[2], door: nil)
             }
             throw Error.resourceURL(url.absoluteString)
         default:
@@ -158,8 +163,12 @@ public enum Resource: Decodable {
             path += "etplan/\(building.urlPathEscaped)/\(floor.urlPathEscaped)"
         case .roomOnFloor(building: let building, floor: let floor, room: let room):
             path += "etplan/\(building.urlPathEscaped)/\(floor.urlPathEscaped)/raum/\(room.urlPathEscaped)"
-        case .room(room: let room):
-            path += "raum/\(room.urlPathEscaped)"
+        case .room(room: let room, door: let door):
+            if let door = door {
+                path += "raum/\(room.urlPathEscaped)?d=\(door)"
+            } else {
+                path += "raum/\(room.urlPathEscaped)"
+            }
         }
         return URL(string: path, relativeTo: Config.baseURL)
     }
@@ -189,8 +198,8 @@ extension Resource: Equatable {
             return lhsBuilding == rhsBuilding && lhsFloor == rhsFloor
         case (.roomOnFloor(building: let lhsBuilding, floor: let lhsFloor, room: let lhsRoom), .roomOnFloor(building: let rhsBuilding, floor: let rhsFloor, room: let rhsRoom)):
             return lhsBuilding == rhsBuilding && lhsFloor == rhsFloor && lhsRoom == rhsRoom
-        case (.room(room: let lhsRoom), .room(room: let rhsRoom)):
-            return lhsRoom == rhsRoom
+        case (.room(room: let lhsRoom, door: let lhsDoor), .room(room: let rhsRoom, door: let rhsDoor)):
+            return lhsRoom == rhsRoom && lhsDoor == rhsDoor
         default:
             return false
         }

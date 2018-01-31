@@ -10,4 +10,14 @@ internal extension String {
     var urlQueryEscaped: String {
         return self.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!
     }
+
+    var queryParams: [String: String] {
+        let params = self
+            .split(separator: "&")
+            .map { $0.split(separator: "=")
+                     .map(String.init) }
+            .map { ($0[0], $0[1])}
+
+        return Dictionary(uniqueKeysWithValues: params)
+    }
 }
