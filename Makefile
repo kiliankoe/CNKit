@@ -1,12 +1,9 @@
 SWIFTCMD=swift
 
 test:
-	$(SWIFTCMD) test
-
-xcode:
-	$(SWIFTCMD) package generate-xcodeproj
+	$(SWIFTCMD) test --parallel
 
 docs:
 	jazzy --xcodebuild-arguments -target,CNKit --theme fullwidth
 
-.PHONY: test, xcode, docs
+.PHONY: test, docs
