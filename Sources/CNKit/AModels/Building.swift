@@ -157,7 +157,7 @@ extension BuildingComplex {
         let rawLat: Double?
         let rawLon: Double?
 
-        /// The entrancen's image (if any) as a direct URL.
+        /// The entrance's image (if any) as an absolute URL.
         public var imageURL: URL? {
             guard let image = image else {
                 return nil
