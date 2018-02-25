@@ -72,8 +72,7 @@ public struct BuildingComplex: Codable, CustomStringConvertible {
     ///   - roomID: room identifier
     public func contains(roomWithID roomID: RoomID) -> Bool {
         return self.structures
-            .filter { return $0.id == roomID.buildingStructure }
-            .count != 0
+            .contains { $0.id == roomID.buildingStructure }
     }
 
     private enum CodingKeys: String, CodingKey {
