@@ -1,6 +1,7 @@
 import Foundation
 
 /// Helper type for accessing a list of all building complexes.
+/// - Tag: Campus
 public enum Campus {
     /// Fetch all building complexes.
     ///

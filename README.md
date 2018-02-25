@@ -23,7 +23,7 @@ github "kiliankoe/CNKit"
 
 ## Overview
 
-The basic interaction is the same through all model types.
+The basic interaction is the same through all model types. Here as an example for the all-encompassing [`Campus`](x-source-tag://Campus) type.
 
 ```swift
 Campus.fetch { result in
