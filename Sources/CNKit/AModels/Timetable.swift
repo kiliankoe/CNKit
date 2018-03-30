@@ -65,11 +65,34 @@ extension Timetable.Day {
         public let timeslot: Int
         /// Name
         public let name: String
-        // TODO: Isn't there an optional lecturer field here?
+        /// Lecturer
+        public let lecturer: String?
+        /// Field
+        public let field: String?
+
+        /// LSK field
+        public let lskField: String?
+        /// LSK course language
+        public let lskCourseLanguage: String?
+        /// LSK course URL
+        public let lskCourseURL: URL?
 
         private enum CodingKeys: String, CodingKey {
             case timeslot = "ds"
             case name = "fach"
+            case lecturer = "doz"
+            case field = "bereich"
+            case lskField = "lskbereich"
+            case lskCourseLanguage = "lskkurslang"
+            case lskCourseURL = "lskkursurl"
+        }
+
+        /// Returns true if this course has LSK information.
+        public var isLSK: Bool {
+            if let _ = self.lskField {
+                return true
+            }
+            return false
         }
     }
 }
