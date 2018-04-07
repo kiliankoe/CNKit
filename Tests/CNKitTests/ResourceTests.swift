@@ -24,7 +24,7 @@ class ResourceTests: XCTestCase {
             "https://navigator.tu-dresden.de/routing/APB/WEB/foot,shortest/@13.755,51.03800000000001,12.z",
         ]
 
-        let validURLs = rawValidURLs.flatMap(URL.init(string:))
+        let validURLs = rawValidURLs.compactMap(URL.init(string:))
         guard rawValidURLs.count == validURLs.count else { XCTFail(); return }
 
         for url in validURLs {
@@ -52,7 +52,7 @@ class ResourceTests: XCTestCase {
             "https://navigator.tu-dresden.de/raum/02/062102.0020",
         ]
 
-        let invalidURLs = rawInvalidURLs.flatMap(URL.init(string:))
+        let invalidURLs = rawInvalidURLs.compactMap(URL.init(string:))
         guard rawInvalidURLs.count == invalidURLs.count else { XCTFail(); return }
 
         for url in invalidURLs {
@@ -76,7 +76,7 @@ class ResourceTests: XCTestCase {
             "apb/00/raum/542100.2230",
         ]
 
-        let validURLs = rawValidURLs.flatMap(URL.init(string:))
+        let validURLs = rawValidURLs.compactMap(URL.init(string:))
         guard rawValidURLs.count == validURLs.count else { XCTFail(); return }
 
         for url in validURLs {
@@ -89,7 +89,7 @@ class ResourceTests: XCTestCase {
             "apb/00",
         ]
 
-        let invalidURLs = rawInvalidURLs.flatMap(URL.init(string:))
+        let invalidURLs = rawInvalidURLs.compactMap(URL.init(string:))
         guard rawInvalidURLs.count == invalidURLs.count else { XCTFail(); return }
 
         for url in invalidURLs {

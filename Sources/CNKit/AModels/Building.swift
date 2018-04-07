@@ -28,7 +28,7 @@ public struct BuildingComplex: Codable, CustomStringConvertible {
     /// The list of images as URLs.
     public var imageURLs: [URL] {
         guard let images = images else { return [] }
-        return images.flatMap { URL(cnPath: $0) }
+        return images.compactMap { URL(cnPath: $0) }
     }
 
     let rawPoints: [[[String: Double]]]
