@@ -3,7 +3,7 @@ import struct CoreLocation.CLLocationCoordinate2D
 
 /// A specific Campus Navigator resource, e.g. a room, a building's lecture halls, etc.
 /// This primarily maps to anything the webapp can display in a specific view.
-public enum Resource: Decodable {
+public enum Resource: Decodable, Equatable {
     /// A coordinate on the map, e.g. https://navigator.tu-dresden.de/@13.732,51.02839999999999,15.z
     case coordinate(coord: CLLocationCoordinate2D, zoom: Int)
     /// A specific region on the map, e.g. https://navigator.tu-dresden.de/karten/dresden/geb/apb
@@ -176,32 +176,5 @@ public enum Resource: Decodable {
     internal enum URLOrdering {
         case actual
         case search
-    }
-}
-
-extension Resource: Equatable {
-    public static func ==(lhs: Resource, rhs: Resource) -> Bool {
-        switch (lhs, rhs) {
-        case (.coordinate(coord: let lhsCoord, zoom: let lhsZoom), .coordinate(coord: let rhsCoord, zoom: let rhsZoom)):
-            return lhsCoord.latitude == rhsCoord.latitude && lhsCoord.longitude == rhsCoord.longitude && lhsZoom == rhsZoom
-        case (.map(region: let lhsRegion, building: let lhsBuilding), .map(region: let rhsRegion, building: let rhsBuilding)):
-            return lhsRegion == rhsRegion && lhsBuilding == rhsBuilding
-        case (.route(origin: let lhsOrigin, destination: let lhsDestination, mode: let lhsMode), .route(origin: let rhsOrigin, destination: let rhsDestination, mode: let rhsMode)):
-            return lhsOrigin == rhsOrigin && lhsDestination == rhsDestination && lhsMode == rhsMode
-        case (.building(building: let lhsBuilding), .building(building: let rhsBuilding)):
-            return lhsBuilding == rhsBuilding
-        case (.buildingAccessibility(building: let lhsBuilding), .buildingAccessibility(building: let rhsBuilding)):
-            return lhsBuilding == rhsBuilding
-        case (.lectureHalls(building: let lhsBuilding), .lectureHalls(building: let rhsBuilding)):
-            return lhsBuilding == rhsBuilding
-        case (.floor(building: let lhsBuilding, floor: let lhsFloor), .floor(building: let rhsBuilding, floor: let rhsFloor)):
-            return lhsBuilding == rhsBuilding && lhsFloor == rhsFloor
-        case (.roomOnFloor(building: let lhsBuilding, floor: let lhsFloor, room: let lhsRoom), .roomOnFloor(building: let rhsBuilding, floor: let rhsFloor, room: let rhsRoom)):
-            return lhsBuilding == rhsBuilding && lhsFloor == rhsFloor && lhsRoom == rhsRoom
-        case (.room(room: let lhsRoom, door: let lhsDoor), .room(room: let rhsRoom, door: let rhsDoor)):
-            return lhsRoom == rhsRoom && lhsDoor == rhsDoor
-        default:
-            return false
-        }
     }
 }

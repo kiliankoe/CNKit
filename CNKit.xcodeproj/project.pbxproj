@@ -59,6 +59,7 @@
 		39C8ED241F745E2D00AD3DE2 /* Int.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39C8ED231F745E2D00AD3DE2 /* Int.swift */; };
 		39D25BCB1F6C94D900FAFDB6 /* CanteenMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39D25BCA1F6C94D900FAFDB6 /* CanteenMenu.swift */; };
 		39D25BCD1F6C967F00FAFDB6 /* CanteenMenuTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39D25BCC1F6C967F00FAFDB6 /* CanteenMenuTests.swift */; };
+		39E97913207A2EB900F1E6A0 /* CLLocationCoordinate2D.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39E97912207A2EB900F1E6A0 /* CLLocationCoordinate2D.swift */; };
 		39FA4AE91F75CD83003DF5F3 /* ResourceRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39FA4AE81F75CD83003DF5F3 /* ResourceRepresentable.swift */; };
 		OBJ_34 /* Package.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_6 /* Package.swift */; };
 		OBJ_41 /* HashTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_24 /* HashTests.swift */; };
@@ -126,6 +127,7 @@
 		39C8ED231F745E2D00AD3DE2 /* Int.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Int.swift; sourceTree = "<group>"; };
 		39D25BCA1F6C94D900FAFDB6 /* CanteenMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CanteenMenu.swift; sourceTree = "<group>"; };
 		39D25BCC1F6C967F00FAFDB6 /* CanteenMenuTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CanteenMenuTests.swift; sourceTree = "<group>"; };
+		39E97912207A2EB900F1E6A0 /* CLLocationCoordinate2D.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CLLocationCoordinate2D.swift; sourceTree = "<group>"; };
 		39FA4AE81F75CD83003DF5F3 /* ResourceRepresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResourceRepresentable.swift; sourceTree = "<group>"; };
 		"CNKit::CNKit::Product" /* CNKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = CNKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		"CNKit::CNKitTests::Product" /* CNKitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; path = CNKitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -170,6 +172,7 @@
 				3990B5971F71332B00A58ACD /* URL.swift */,
 				3990B5991F71350100A58ACD /* Dictionary.swift */,
 				39C8ED231F745E2D00AD3DE2 /* Int.swift */,
+				39E97912207A2EB900F1E6A0 /* CLLocationCoordinate2D.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -406,6 +409,7 @@
 				OBJ_53 /* Error.swift in Sources */,
 				39B71CC71F6C625F00342208 /* Route.swift in Sources */,
 				39FA4AE91F75CD83003DF5F3 /* ResourceRepresentable.swift in Sources */,
+				39E97913207A2EB900F1E6A0 /* CLLocationCoordinate2D.swift in Sources */,
 				39B976D41F70795100F6F0AD /* String.swift in Sources */,
 				39185D781F658E0A00003BDD /* Campus.swift in Sources */,
 				398149301F6A048100C6B9E3 /* Timetable.swift in Sources */,
