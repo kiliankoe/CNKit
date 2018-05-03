@@ -21,6 +21,25 @@ public struct RoomInfo: Decodable {
         case accessibilityBadge = "accessibility"
         case doorplate
     }
+
+    public init(from decoder: Decoder) throws {
+        let container = try decoder.container(keyedBy: CodingKeys.self)
+        self.name = try container.decode(String.self, forKey: .name)
+        self.type = try container.decode(RoomType.self, forKey: .type)
+        self.isRoutable = try container.decode(Bool.self, forKey: .isRoutable)
+
+        if let accBadge = try? container.decode(AccessibilityBadge.self, forKey: .accessibilityBadge) {
+            self.accessibilityBadge = accBadge
+        } else {
+            self.accessibilityBadge = nil
+        }
+
+        if let doorplate = try? container.decode(Doorplate.self, forKey: .doorplate) {
+            self.doorplate = doorplate
+        } else {
+            self.doorplate = nil
+        }
+    }
 }
 
 extension RoomInfo {
