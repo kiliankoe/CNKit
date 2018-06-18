@@ -137,7 +137,8 @@ extension RoomInfo: APIResource {
     }
 
     static func request(to resource: RoomInfo.RequestResource) throws -> URLRequest {
-        let url = URL(string: "api/0.1/roominfo/\(resource.roomID.urlQueryEscaped)?accessibility=true&doorplate=true", relativeTo: Config.baseURL)!
+        let url = URL(string: "api/0.1/roominfo/\(resource.roomID.urlQueryEscaped)?accessibility=true&doorplate=true",
+                      relativeTo: Config.baseURL)!
         return URLRequest(url: url)
     }
 
@@ -216,7 +217,8 @@ extension RoomInfo.AccessibilityInfo: APIResource {
     }
 
     static func request(to resource: RoomInfo.AccessibilityInfo.RequestResource) throws -> URLRequest {
-        let url = URL(string: "m/json_barriereinfos/raum/\(resource.roomID.urlQueryEscaped)", relativeTo: Config.baseURL)!
+        let url = URL(string: "m/json_barriereinfos/raum/\(resource.roomID.urlQueryEscaped)",
+                      relativeTo: Config.baseURL)!
         return URLRequest(url: url)
     }
 
