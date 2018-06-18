@@ -40,11 +40,11 @@ public struct BuildingComplex: Codable, CustomStringConvertible {
 
     /// A rectangle encompassing the entire building complex.
     public var rect: MKMapRect {
-        var mapRect = MKMapRectNull
+        var mapRect = MKMapRect.null
         for structurePoints in points {
             for point in structurePoints {
-                let mapPoint = MKMapPointForCoordinate(point)
-                mapRect = MKMapRectUnion(mapRect, MKMapRectMake(mapPoint.x, mapPoint.y, 0, 0))
+                let mapPoint = MKMapPoint(point)
+                mapRect = mapRect.union(MKMapRect(x: mapPoint.x, y: mapPoint.y, width: 0, height: 0))
             }
         }
         return mapRect
@@ -58,7 +58,7 @@ public struct BuildingComplex: Codable, CustomStringConvertible {
 
         var rect = self.rect
         rect.resize(800)
-        return MKCoordinateRegionForMapRect(rect)
+        return MKCoordinateRegion(rect)
     }
 
     /// The geographical center of the entire building complex, great for rendering a name.
