@@ -81,3 +81,23 @@ extension Tiles {
     }
 }
 
+#if canImport(UIKit)
+import UIKit
+
+extension Tiles {
+    /// Single UIImage representing the floorplan for a given building, floor and zoomlevel.
+    ///
+    /// - Parameters:
+    ///   - building: building
+    ///   - floor: floor
+    ///   - zoomLevel: zoomlevel
+    ///   - completion: handler
+    public static func stitchedFloorplan(forBuilding building: String,
+                                         floor: Int,
+                                         zoomLevel: Zoomlevel,
+                                         completion: @escaping (Result<UIImage>) -> Void) {
+        // see this -> https://stackoverflow.com/a/707329/1843020
+        completion(.failure(Error.invalidQuery(reason: "\(#function) is not yet implemented")))
+    }
+}
+#endif
