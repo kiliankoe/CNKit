@@ -55,7 +55,7 @@ class RouteTests: XCTestCase {
 
             XCTAssertEqual(route.length, 643, accuracy: 1)
             XCTAssertEqual(route.duration, 7, accuracy: 1)
-            XCTAssertEqual(route.coords.count, 23)
+            XCTAssertEqual(route.coords.count, 24)
             XCTAssertEqual(route.instructions.count, 14)
 
             e.fulfill()
