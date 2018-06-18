@@ -26,6 +26,8 @@
 		39185D7C1F6608DF00003BDD /* AccessibilityInfoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39185D7B1F6608DF00003BDD /* AccessibilityInfoTests.swift */; };
 		393652611F7D387B0059D85E /* RoomID.swift in Sources */ = {isa = PBXBuildFile; fileRef = 393652601F7D387B0059D85E /* RoomID.swift */; };
 		393652631F7D41500059D85E /* RoomIDTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 393652621F7D41500059D85E /* RoomIDTests.swift */; };
+		39369FAC20D7F6B50052D92B /* Transport.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39369FAB20D7F6B50052D92B /* Transport.swift */; };
+		39369FAE20D7FDEC0052D92B /* TransportTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39369FAD20D7FDEC0052D92B /* TransportTests.swift */; };
 		393F6FC31F69778C004D9BCC /* FloorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 393F6FC21F69778C004D9BCC /* FloorTests.swift */; };
 		393F6FC51F69FA5F004D9BCC /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 393F6FC41F69FA5F004D9BCC /* Color.swift */; };
 		3973A3601F6BF2D300ECE236 /* Ternary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3973A35F1F6BF2D300ECE236 /* Ternary.swift */; };
@@ -94,6 +96,8 @@
 		39185D7B1F6608DF00003BDD /* AccessibilityInfoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessibilityInfoTests.swift; sourceTree = "<group>"; };
 		393652601F7D387B0059D85E /* RoomID.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomID.swift; sourceTree = "<group>"; };
 		393652621F7D41500059D85E /* RoomIDTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomIDTests.swift; sourceTree = "<group>"; };
+		39369FAB20D7F6B50052D92B /* Transport.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Transport.swift; sourceTree = "<group>"; };
+		39369FAD20D7FDEC0052D92B /* TransportTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransportTests.swift; sourceTree = "<group>"; };
 		393F6FC21F69778C004D9BCC /* FloorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FloorTests.swift; sourceTree = "<group>"; };
 		393F6FC41F69FA5F004D9BCC /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 		3973A35F1F6BF2D300ECE236 /* Ternary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ternary.swift; sourceTree = "<group>"; };
@@ -193,6 +197,7 @@
 				39B71CCC1F6C8F1D00342208 /* Search.swift */,
 				39D25BCA1F6C94D900FAFDB6 /* CanteenMenu.swift */,
 				393652601F7D387B0059D85E /* RoomID.swift */,
+				39369FAB20D7F6B50052D92B /* Transport.swift */,
 			);
 			path = AModels;
 			sourceTree = "<group>";
@@ -226,6 +231,7 @@
 				3990B5A51F726C6600A58ACD /* ColorTests.swift */,
 				39C8ED201F72949F00AD3DE2 /* CampusTests.swift */,
 				393652621F7D41500059D85E /* RoomIDTests.swift */,
+				39369FAD20D7FDEC0052D92B /* TransportTests.swift */,
 			);
 			name = CNKitTests;
 			path = Tests/CNKitTests;
@@ -386,6 +392,7 @@
 				3990B5A61F726C6600A58ACD /* ColorTests.swift in Sources */,
 				39A6657E1F6C5CDF000FA88B /* LoginTests.swift in Sources */,
 				39B531601F66B031008EE183 /* BuildingComplexTests.swift in Sources */,
+				39369FAE20D7FDEC0052D92B /* TransportTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -415,6 +422,7 @@
 				398149301F6A048100C6B9E3 /* Timetable.swift in Sources */,
 				39B71CCD1F6C8F1D00342208 /* Search.swift in Sources */,
 				3990B59A1F71350100A58ACD /* Dictionary.swift in Sources */,
+				39369FAC20D7F6B50052D92B /* Transport.swift in Sources */,
 				3990B59C1F71538C00A58ACD /* Tiles.swift in Sources */,
 				OBJ_54 /* MKMapRect.swift in Sources */,
 				OBJ_58 /* Hash.swift in Sources */,
