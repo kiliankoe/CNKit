@@ -24,7 +24,8 @@ public enum Tiles {
     /// - Returns: URL for the specified tile.
     public static func floorplanURL(building: String, floor: Int, x: Int, y: Int, z: Zoomlevel) -> URL {
         let buildingID = building.uppercased().urlPathEscaped
-        return URL(string: "/images/etplan_cache/\(buildingID)\(floor.floorLevel)_\(z.rawValue)/\(x)_\(y).png/nobase64", relativeTo: Config.baseURL)!
+        return URL(string: "/images/etplan_cache/\(buildingID)\(floor.floorLevel)_\(z.rawValue)/\(x)_\(y).png/nobase64",
+                   relativeTo: Config.baseURL)!
     }
 }
 
@@ -53,7 +54,10 @@ extension Tiles {
     ///   - zoomLevel: zoomlevel
     ///   - completion: handler
     /// - Warning: This triggers a whole bunch of HEAD requests, especially for closer zoomlevels.
-    public static func allFloorplanTiles(forBuilding building: String, floor: Int, zoomLevel: Zoomlevel, completion: @escaping ([FloorplanTile]) -> Void) {
+    public static func allFloorplanTiles(forBuilding building: String,
+                                         floor: Int,
+                                         zoomLevel: Zoomlevel,
+                                         completion: @escaping ([FloorplanTile]) -> Void) {
         let queue = DispatchQueue(label: "de.tu-dresden.navigator.CNKit", qos: .background)
 
         queue.async {

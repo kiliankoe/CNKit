@@ -31,10 +31,9 @@ extension APIResource {
         request.setValue(Locale.current.languageCode ?? "de-DE", forHTTPHeaderField: "Accept-Language")
 
         let task = session.dataTask(with: request) { data, response, error in
-            guard
-                var data = data,
-                let response = response as? HTTPURLResponse,
-                error == nil
+            guard var data = data,
+                  let response = response as? HTTPURLResponse,
+                  error == nil
             else {
                 completion(.failure(Error.response))
                 return
@@ -46,11 +45,11 @@ extension APIResource {
             }
 
             // The API is mostly giving back Latin1 encoded data, which isn't compatible with JSONSerialization below.
-            // But on some endpoints we do get UTF8 data and then this fails. A default (preferably UTF8) would be fantastic...
+            // But on some endpoints we do get UTF8 data and then this fails. A default (preferably UTF8) would be
+            // fantastic...
             if expectedEncoding == .isoLatin1 {
-                guard
-                    let isoString = String(data: data, encoding: .isoLatin1),
-                    let newData = isoString.data(using: .utf8)
+                guard let isoString = String(data: data, encoding: .isoLatin1),
+                      let newData = isoString.data(using: .utf8)
                 else {
                     completion(.failure(Error.reEncoding))
                     return
